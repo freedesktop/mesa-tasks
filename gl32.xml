@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="tasks.xsl"?>
 <tasks name="OpenGL 3.2 Implementation Checklist">
   <category name="Miscellaneous">
-    <task name="NewUniTokens" specref="GL 3.2 2.11.4">
+    <task name="NewUniTokens" specref="GL 3.2 2.11.4" mesa="done">
       New tokens for use by GetActiveUniform() and
       GetActiveUniformsiv()
 
