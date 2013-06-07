@@ -1,0 +1,1875 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="tasks.xsl"?>
+<tasks name="OpenGL 3.2 Implementation Checklist">
+  <category name="Miscellaneous">
+    <task name="NewUniTokens" specref="GL 3.2 2.11.4">
+      New tokens for use by GetActiveUniform() and
+      GetActiveUniformsiv()
+
+      Table 2.10 adds the following tokens:
+
+      SAMPLER_BUFFER, INT_SAMPLER_BUFFER,
+      INT_SAMPLER_2D_RECT, UNSIGNED_INT_SAMPLER_BUFFER, and
+      UNSIGNED_INT_SAMPLER_2D_RECT
+    </task>
+    <task name="NamedBlockNoModify" specref="GL 3.2 2.11.4">
+      Uniforms in a named uniform block may <b>not</b> be modified using the
+      Uniform* commands.  (Previously the spec said they may be
+      modified, however this was likely a typographical error).
+    </task>
+    <task name="XFBVaryingBadProg" specref="GL 3.2 2.11.6">
+      TransformFeedbackVaryings() no longer generates INVALID_VALUE if
+      "program" is not the name of a program object (presumably an
+      oversight).
+    </task>
+    <task name="MinClipSpaces" specref="GL 3.2 2.19">
+      The minimum number of client-defined halfspaces available for
+      clipping has been increased from 6 to 8 (probably just fixing a
+      spec bug, since both GL 3.1 and GL 3.2 list MAX_CLIP_DISTANCES=8
+      in their state tables).
+    </task>
+    <task name="NoRestartVertexID" specref="GL 3.2 2.8.1">
+      Though is not explicitly stated, it appears that primitive restart
+      should *not* restart the gl_VertexID index.
+    </task>
+    <task name="UndefinedMapRead" specref="GL 3.2 2.8.3">
+      An undetected attempt to read data from a mapped buffer object has
+      undefined results, and may result in GL interruption or
+      termination.
+    </task>
+    <task name="SkipDetectingMaps" specref="GL 3.2 2.8.3">
+      Most, but not all GL commands will detect attempts to read data
+      from a mapped buffer object.  (Previously all commands did so.)
+    </task>
+    <task name="StencilDataType" specref="GL 3.2 3.7.2">
+      For type FLOAT_32_UNSIGNED_INT_24_8_REV, "data" must be evenly
+      divisible by 4.
+    </task>
+    <task name="NoCombinedTexChecks" specref="GL 3.2 3.8">
+      Commands such as TexParameter(), TexImage(), BindTexture(), and
+      queries of all such state no longercheck the texture image unit
+      number against MAX_COMBINED_TEXTURE_IMAGE_UNITS.
+    </task>
+    <task name="NoColorClamping" specref="GL 3.2 3.9.2">
+      Verbiage related to fragment color clamping is removed.
+    </task>
+    <task name="SRGBEnables" specref="GL 3.2 4.1.8">
+      SRGB conversion is no longer switched off by disabling
+      FRAMEBUFFER_SRGB.  It now happens whenever
+      FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING is SRGB.
+    </task>
+    <task name="DrawBufErrors" specref="GL 3.2 4.2.1">
+      Passing the constants FRONT, BACK, LEFT, RIGHT, or FRONT_AND_BACK
+      to DrawBuffers() results in INVALID_ENUM.  (Previously, it
+      resulted in INVALID_OPERATION).
+    </task>
+    <task name="ClearNothing" specref="GL 3.2 4.2.3">
+      Clear() may now be passed a bitfield of zero, causing no buffers
+      to be cleared.
+    </task>
+    <task name="BlitConversions" specref="GL 3.2 4.3.2">
+      Blit operations: format conversion rules are cleaned up so that
+      the only conversion that is possible is between floating and fixed
+      point (the 3.1 spec seems buggy, so this is likely a clarification
+      rather than a deliberate change in functionality).
+    </task>
+    <task name="FBCompleteErrors" specref="GL 3.2 4.4.4">
+      Rendering commands and commands that read the framebuffer will
+      generate INVALID_FRAMEBUFFER_OPERATION if called while the
+      framebuffer is not framebuffer complete, *even* if no fragments
+      are read/written to the framebuffer (for example,
+      RASTERIZER_DISCARD does not prevent
+      INVALID_FRAMEBUFFER_OPERATION).  (This is likely a clarification
+      rather than an explicit change in functionality).
+    </task>
+    <task name="OOBTexQueries" specref="GL 3.2 6.1.2">
+      Texture state queries no longer result in INVALID_OPERATION error
+      if the value of ACTIVE_TEXTURE is greater than or equal to
+      MAX_COMBINED_TEXTURE_IMAGE_UNITS.
+    </task>
+    <task name="MaxVarying60" specref="GL 3.2 6.2">
+      In implementation dependent aggregate shader limits (table 6.44),
+      MAX_VARYING_COMPONENTS is reduced from 64 to 60.
+    </task>
+    <task name="MinVersion" specref="GL 3.2 6.2">
+      In implementation dependent version and extension support (table
+      6.40), MAJOR_VERSION now has a minimum value of 3 (presumably it's
+      just an oversight that this wasn't included in OpenGL 3.1).
+    </task>
+    <task name="TBRemoved" specref="GL 3.2 6.2">
+      In miscellaneous (table 6.47), TEXTURE_BUFFER is removed
+      (presumably an oversight?)
+    </task>
+    <task name="UBSState" specref="GL 3.2 6.2">
+      In program object state (table 6.30), UNIFORM_BUFFER_START and
+      UNIFORM_BUFFER_SIZE are added.
+    </task>
+    <task name="VAASType" specref="GL 3.2 6.2">
+      In vertex array object state (table 6.4), VERTEX_ATTRIB_ARRAY_SIZE
+      now has type "16 * xZ5" (previously was "16 * xZ")
+    </task>
+    <task name="DropPolyShading" specref="GL 3.2 B">
+      The requirement that "polygon shading is completed before polygon
+      mode is interpreted" is dropped.
+    </task>
+    <task name="ShareRBs" specref="GL 3.2 D">
+      Renderbuffer objects are added to the list of objects that can be
+      shared between contexts.
+    </task>
+    <task name="DeleteBind" specref="GL 3.2 D.1.1">
+      When a buffer, texture, or renderbuffer object is deleted, bind
+      points in other contexts are not affected.
+    </task>
+    <task name="NameDeletion" specref="GL 3.2 D.1.2">
+      Names remain valid until the underlying object can be deleted
+      because it is no longer in use.  However, names are immediately
+      marked unused at the time of deletion, so they may be returned by
+      future Gen* commands even if the name is still in use (this
+      appears to be a clarification, not a change in behaviour).
+    </task>
+    <task name="NoWideLines" specref="GL 3.2 E.2.1">
+      Wide lines are deprecated
+    </task>
+    <task name="UnusedOutputs" specref="GLSL 1.50 4.3.6">
+      Only the output variables that are read by the subsequent pipeline
+      stage need to be written; it is allowed to have superfluous
+      declarations of output variables.
+    </task>
+    <task name="LayoutScope" specref="GLSL 1.50 4.3.8">
+      Layout declarations can only be made at global scope.
+    </task>
+    <task name="LayoutVars" specref="GLSL 1.50 4.3.8">
+      Layout qualifiers can appear with an individual variable declared
+      with an interface qualifier (i.e. a single "in", "out", or
+      "uniform" variable outside of any interface block).
+    </task>
+    <task name="LayoutOrder" specref="GLSL 1.50 4.3.8">
+      Order is not important within a layout-qualifier-id-list (with
+      certain exceptions).
+    </task>
+    <task name="LayoutIdent" specref="GLSL 1.50 4.3.8">
+      The tokens in a layout-qualifier-id-list are identifiers, not
+      keywords.
+    </task>
+    <task name="LayoutNoCase" specref="GLSL 1.50 4.3.8">
+      The tokens in a layout-qualifier-id-list are not case-sensitive
+      (with certain exceptions).
+    </task>
+    <task name="LayoutVSNoInput" specref="GLSL 1.50 4.3.8.1">
+      Vertex shaders have no input layout qualifiers.
+    </task>
+    <task name="LayoutFSNoOutput" specref="GLSL 1.50 4.3.8.2">
+      Fragment shaders cannot have output layout qualifiers.
+    </task>
+    <task name="LayoutVSNoOutput" specref="GLSL 1.50 4.3.8.2">
+      Vertex shaders cannot have output layout qualifiers.
+    </task>
+    <task name="SwitchOnlyCases" specref="GLSL 1.50 6.2">
+      No statements are allowed in a switch statement before the first
+      case statement.
+    </task>
+    <task name="ClipVertAndDistError" specref="GLSL 1.50 7.1.1">
+      It is now an error for the set of shaders forming a program to
+      statically read or write both gl_ClipVertex and gl_ClipDistance
+      (previously, it was only an error for a *shader*, not the set of
+      shaders forming a program, and it was only an error to statically
+      *write* to both, not to read).
+    </task>
+    <task name="CombinedTexIncrease" specref="GLSL 1.50 7.4">
+      The minimum value allowed for gl_MaxCombinedTextureImageUnits has
+      been increased from 16 to 48.
+    </task>
+    <task name="CombinedVarying" specref="GLSL 1.50 7.4">
+      The minimum value allowed for gl_MaxVaryingFloats and
+      gl_MaxVaryingComponents has been reduced from 64 to 60.
+    </task>
+    <task name="MinTexUnits" specref="GLSL 1.50 7.5">
+      The minimum value allowed for gl_MaxTextureUnits has been reduced
+      from 16 to 2.
+    </task>
+    <task name="MaxTexCoords" specref="GLSL 1.50 7.5">
+      gl_MaxTextureCoords (min: 8) is added.
+    </task>
+    <task name="DeprecateMaxTexUnits" specref="GLSL 1.50 7.5">
+      gl_MaxTextureUnits is now only available in the compatibility
+      profile (previously it was always available).
+    </task>
+    <task name="DeprecateFF" specref="GLSL 1.50 7.6">
+      In the compatibility profile, the GL can provide fixed
+      functionality behavior for any programmable pipeline stage.  This
+      is not allowed in the core profile.
+    </task>
+    <task name="Determinant" specref="GLSL 1.50 8.5">
+      The function determinant() is added.
+    </task>
+    <task name="RecursiveQuals" specref="GLSL 1.50 9">
+      "type_qualifier" rules are revised to eliminate recursion.
+    </task>
+    <task name="InvariantQual" specref="GLSL 1.50 9">
+      New rule for "type_qualifier": invariant.
+    </task>
+    <task name="InvariantEverywhere" specref="GLSL 1.50 9">
+      Rule "INVARIANT IDENTIFIER" for "single_declaration" is no longer
+      vertex only.
+    </task>
+  </category>
+  <category name="GL_ARB_vertex_array_bgra">
+    <task name="BGRANormalizedOnly" specref="GL 3.2 2.8">
+      VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
+      normalized == GL_FALSE.
+    </task>
+    <task name="BGRAUnsignedByteOnly" specref="GL 3.2 2.8">
+      VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
+      type != GL_UNSIGNED_BYTE.
+    </task>
+    <task name="BGRA" specref="GL 3.2 2.8">
+      VertexAttribPointer now accepts a "size" of GL_BGRA, which
+      indicates four value, but reverses the order of the first through
+      third values of each array element.
+    </task>
+  </category>
+  <category name="texture borders">
+    <task name="NoBorders1" specref="GL 3.2 2.11.7">
+      Texture border size ("bs") is replaced with 0 in the texel fetch
+      equations.
+    </task>
+    <task name="NoBorders2" specref="GL 3.2 3.8.3">
+      Reference to TEXTURE_BORDER is dropped from the list of
+      requirements in order to guarantee that a call to
+      CompressedTexSubImage1D, CompressedTexSubImage2D,
+      CompressedTexSubImage3D will not result in an INVALID_OPERATION
+      error.
+    </task>
+    <task name="NoBorders3" specref="GL 3.2 3.8.3">
+      Reference to border/TEXTURE_BORDER is dropped from the list of
+      values which must match in order to guarantee that a call to
+      CompressedTexImage1D, CompressedTexImage2D, or
+      CompressedTexImage3D will not result in an INVALID_OPERATION
+      error.
+    </task>
+    <task name="NoBorder4" specref="GL 3.2 6.1.3">
+      TEXTURE_BORDER queries are removed.
+    </task>
+  </category>
+  <category name="64-bit API">
+    <task name="I64Type" specref="GL 3.2 2.3">
+      "i64" is added the the list of type descriptors which may appear
+      in GL function names.
+    </task>
+    <task name="IntUint64Types" specref="GL 3.2 2.4">
+      The "GL Data Types" table is expanded to include int64 and uint64.
+    </task>
+    <task name="Int64Buffers" specref="GL 3.2 2.9.1">
+      The type of BUFFER_SIZE, BUFFER_MAP_OFFSET, and BUFFER_MAP_LENGTH
+      has been changed from integer to int64.
+    </task>
+    <task name="GetInteger64i_v" specref="GL 3.2 6.1.1">
+      GetInteger64i_v() is added.
+    </task>
+    <task name="GetInteger64v" specref="GL 3.2 6.1.1">
+      GetInteger64v() is added.
+    </task>
+    <task name="GetBufParami64v" specref="GL 3.2 6.1.8">
+      GetBufferParameteri64v() is added.
+    </task>
+    <task name="BufQueries64" specref="GL 3.2 6.2">
+      In buffer object state (table 6.7), the following pieces of state
+      now use GetBufferParameteri64v: BUFFER_SIZE, BUFFER_MAP_OFFSET,
+      and BUFFER_MAP_LENGTH (previously these used GetBufferParameteriv)
+    </task>
+    <task name="XFBQueries64" specref="GL 3.2 6.2">
+      In tranform feedback state (table 6.34),
+      TRANSFORM_FEEDBACK_BUFFER_START and TRANSFORM_FEEDBACK_BUFFER_SIZE
+      now use Getinteger64i_v (previously they used GetIntegeri_v).
+    </task>
+  </category>
+  <category name="GL_ARB_draw_elements_base_vertex">
+    <task name="BaseVertex1" specref="GL 3.2 2.8.1">
+      When a *BaseVertex drawing command is used, the primitive restart
+      comparison occurs before the basevertex offset is added.
+    </task>
+    <task name="BaseVertex2" specref="GL 3.2 2.8.2">
+      DrawElementsBaseVertex() is added.
+    </task>
+    <task name="BaseVertex3" specref="GL 3.2 2.8.2">
+      DrawElementsInstancedBaseVertex() is added.
+    </task>
+    <task name="BaseVertex4" specref="GL 3.2 2.8.2">
+      DrawRangeElementsBaseVertex() is added.
+    </task>
+    <task name="BaseVertex5" specref="GL 3.2 2.8.2">
+      For DrawRangeElementsBaseVertex, index values are compared to
+      start and end values prior to adding basevertex.
+    </task>
+    <task name="BaseVertex6" specref="GL 3.2 2.8.2">
+      MultiDrawElementsBaseVertex() is added.
+    </task>
+    <task name="BaseVertex7" specref="GL 3.2 2.8.2">
+      When the *BaseVertex drawing commands are used with an indices
+      buffer having &lt;32-bit width, the addition of a basevertex
+      should occur as though upconverted to 32-bit.
+    </task>
+    <task name="BaseVertex8" specref="GL 3.2 2.8.2">
+      When the *BaseVertex drawing commands are used, basevertex is
+      implicitly added to each index in the indices buffer.
+    </task>
+    <task name="BaseVertex9" specref="GL 3.2 2.8.2">
+      When the *BaseVertex drawing commands are used, the operation is
+      undefined if adding the offset would cause a negative index.
+    </task>
+  </category>
+  <category name="GL_ARB_depth_clamp">
+    <task name="DepthClamp1" specref="GL 3.2 2.19">
+      If depth clamping is enabled (DEPTH_CLAMP), the -wc &lt;= zc &lt;=
+      wc plane equation is ignored by view volume clipping.
+    </task>
+    <task name="DepthClamp2" specref="GL 3.2 4.1.5">
+      If depth clamping is enabled, the incoming fragment's zw is
+      clamped to the range [min(n, f), max(n, f)] before the depth
+      buffer test is performed.
+    </task>
+    <task name="DepthClamp3" specref="GL 3.2 6.2">
+      In transformation state (table 6.8), DEPTH_CLAMP is added.
+    </task>
+  </category>
+  <category name="GL_ARB_fragment_coord_conventions">
+    <task name="FCC1" specref="GL 3.2 3.9.2">
+      The specification of gl_FragCoord is expanded to account for
+      pixel-center and origin conventions.
+    </task>
+    <task name="FCC2" specref="GLSL 1.50 4.3.8.1">
+      All redeclarations of gl_FragCoord must use the same set of
+      qualifiers.
+    </task>
+    <task name="FCC3" specref="GLSL 1.50 4.3.8.1">
+      Fragment shaders can have an input layout only for redeclaring
+      gl_FragCoord.
+    </task>
+    <task name="FCC4" specref="GLSL 1.50 4.3.8.1">
+      If gl_FragCoord is redeclared in any fragment shader compilation
+      unit, it must be redeclared in all fragment shader compilation
+      units that have a static use of gl_FragCoord.
+    </task>
+    <task name="FCC5" specref="GLSL 1.50 4.3.8.1">
+      Redeclaring gl_FragCoord does not affect rasterization,
+      transformation, or any other part of the OpenGL pipeline or
+      language features.
+    </task>
+    <task name="FCC6" specref="GLSL 1.50 4.3.8.1">
+      Redeclaring gl_FragCoord in any shader other than a fragment
+      shader is illegal.
+    </task>
+    <task name="FCC7" specref="GLSL 1.50 4.3.8.1">
+      The layout qualifier identifiers for gl_FragCoord are
+      "origin_upper_left" and "pixel_center_integer".
+    </task>
+    <task name="FCC8" specref="GLSL 1.50 4.3.8.1">
+      Within a fragment shader compilation unit, the first redeclartion
+      of gl_FragCoord (if any) must appear before the first use of
+      gl_FragCoord.
+    </task>
+    <task name="FCC9" specref="GLSL 1.50 4.3.8.1">
+      gl_FragCoord may be redeclared as "layout(origin_upper_left) in
+      vec4 gl_FragCoord;", causing (0.5, 0.5) to be used for the upper
+      left pixel of the window.
+    </task>
+    <task name="FCC10" specref="GLSL 1.50 4.3.8.1">
+      gl_FragCoord may be redeclared as "layout(origin_upper_left,
+      pixel_center_integer) in vec4 gl_FragCoord;", causing (0.0, 0.0)
+      to be used for the upper left pixel of the window.
+    </task>
+    <task name="FCC11" specref="GLSL 1.50 4.3.8.1">
+      gl_FragCoord may be redeclared as "layout(pixel_center_integer) in
+      vec4 gl_FragCoord;", causing (0.0, 0.0) to be used for the lower
+      left pixel of the window.
+    </task>
+    <task name="FCC12" specref="GLSL 1.50 4.3.8.1">
+      gl_FragCoord may be redeclared in a way that changes nothing
+      (i.e. "in vec4 gl_FragCoord;"), causing (0.5, 0.5) to be used for
+      the lower left pixel of the window.
+    </task>
+  </category>
+  <category name="GL_ARB_geometry_shader4">
+    <task name="GS1" specref="GL 3.2 2.11.2">
+      Linking will now fail if a geometry shader fails to specify input
+      primitive type, output primitive type, or maximum output vertex
+      count.
+    </task>
+    <task name="GS2" specref="GL 3.2 2.11.2">
+      Linking will now fail if input primitive type, output primitive
+      type, or maximum output vertex count is specified differently in
+      multiple geometry shader objects.
+    </task>
+    <task name="GS3" specref="GL 3.2 2.11.2">
+      Linking will now fail if there is a geometry shader but no vertex
+      shader.
+    </task>
+    <task name="GS4" specref="GL 3.2 2.11.4">
+      GetActiveUniformBlockiv() now accepts a pname of
+      UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER.
+    </task>
+    <task name="GS5" specref="GL 3.2 2.11.4">
+      GetIntegerv() now accepts MAX_GEOMETRY_UNIFORM_BLOCKS.
+    </task>
+    <task name="GS6" specref="GL 3.2 2.11.6">
+      MAX_VARYING_COMPONENTS now only applies when linking a program
+      containing only a vertex and fragment shader.
+    </task>
+    <task name="GS7" specref="GL 3.2 2.11.6">
+      The maximum number of components of varying and special variables
+      that can be written by the vertex shader is
+      MAX_VERTEX_OUTPUT_COMPONENTS.
+    </task>
+    <task name="GS8" specref="GL 3.2 2.11.6">
+      When a geometry shader is active, transform feedback records
+      geometry shader outputs.
+    </task>
+    <task name="GS9" specref="GL 3.2 2.11.7">
+      Geometry shaders handle incomplete textures in the same way as
+      vertex shaders.
+    </task>
+    <task name="GS10" specref="GL 3.2 2.11.7">
+      If a geometry shader is active, vertices processed by the vertex
+      shader are passed to the geometry shader.
+    </task>
+    <task name="GS11" specref="GL 3.2 2.11.7">
+      Shader-only texturing is now available to geometry shaders.
+    </task>
+    <task name="GS12" specref="GL 3.2 2.11.7">
+      The constant MAX_GEOMETRY_TEXTURE_UNITS is added.
+    </task>
+    <task name="GS13" specref="GL 3.2 2.12">
+      A program object that includes a geometry shader must also include
+      a vertex shader.
+    </task>
+    <task name="GS14" specref="GL 3.2 2.12">
+      The geometry shader pipeline stage is after primitive assembly,
+      prior to transform feedback.
+    </task>
+    <task name="GS15" specref="GL 3.2 2.12.1">
+      Geometry shaders with input type "lines" may only be used with the
+      GL_LINES, GL_LINE_STRIP, and GL_LINE_LOOP primitive types.
+    </task>
+    <task name="GS16" specref="GL 3.2 2.12.1">
+      Geometry shaders with input type "lines_adjacency" may only be
+      used with the GL_LINES_ADJACENCY and GL_LINE_STRIP_ADJACENCY
+      primitive types.
+    </task>
+    <task name="GS17" specref="GL 3.2 2.12.1">
+      Geometry shaders with input type "points" may only be used with
+      the GL_POINTS primitive type.
+    </task>
+    <task name="GS18" specref="GL 3.2 2.12.1">
+      Geometry shaders with input type "triangles" may only be used with
+      the GL_TRIANGLES, GL_TRIANGLE_STRIP, and GL_TRIANGLE_FAN primitive
+      types.
+    </task>
+    <task name="GS19" specref="GL 3.2 2.12.1">
+      Geometry shaders with input type "triangles_adjacency" may only be
+      used with the GL_TRIANGLES_ADJACENCY and
+      GL_TRIANGLE_STRIP_ADJACENCY primitive types.
+    </task>
+    <task name="GS20" specref="GL 3.2 2.12.1">
+      It is a link error if multiple geometry shader objects specify
+      different input primitive types.
+    </task>
+    <task name="GS21" specref="GL 3.2 2.12.1">
+      It is a link error if no geometry shader object specifies an input
+      primitive type.
+    </task>
+    <task name="GS22" specref="GL 3.2 2.12.1">
+      It is a link error, not a compile error, for a geometry shader to
+      access more input vertices than are available for the input
+      primitive type, since the input primitive type is not part of the
+      shader object (probably incorrect--seems like this is only true of
+      ARB_geometry_shader4).
+    </task>
+    <task name="GS23" specref="GL 3.2 2.12.1">
+      The input primitive type may be queried using
+      GetProgramiv(GEOMETRY_INPUT_TYPE).
+    </task>
+    <task name="GS24" specref="GL 3.2 2.12.2">
+      If the number of vertices emitted by the geometry shader is not
+      sufficient to produce a single primitive, nothing is drawn.
+    </task>
+    <task name="GS25" specref="GL 3.2 2.12.2">
+      It is a link error if multiple geometry shader objects specify
+      different output primitive types or maximum output vertex counts.
+    </task>
+    <task name="GS26" specref="GL 3.2 2.12.2">
+      It is a link error if no geometry shader object specifies an
+      output primitive type or maximum output vertex count.
+    </task>
+    <task name="GS27" specref="GL 3.2 2.12.2">
+      The maximum number of output vertices can be queried using
+      GetProgramiv(GEOMETRY_VERTICES_OUT).
+    </task>
+    <task name="GS28" specref="GL 3.2 2.12.2">
+      The output primitve type can be queried using
+      GetProgramiv(GEOMETRY_OUTPUT_TYPE)
+    </task>
+    <task name="GS29" specref="GL 3.2 2.12.3">
+      MAX_GEOMETRY_UNIFORM_COMPONENTS is added.
+    </task>
+    <task name="GS30" specref="GL 3.2 2.12.4">
+      For triangles drawn in point or line mode, gl_PrimitiveIDIn is
+      incremented only once per triangle, even though multiple
+      points/lines may eventually be drawn.
+    </task>
+    <task name="GS31" specref="GL 3.2 2.12.4">
+      GEOMTERY_VERTICES_OUT may not exceed MAX_GEOMETRY_OUTPUT_VERTICES.
+    </task>
+    <task name="GS32" specref="GL 3.2 2.12.4">
+      If a drawing operation is performed while a geometry shader is
+      active, and the primitive mode is incompatible with the geometry
+      shader's input primitive type, INVALID_OPERATION will result and
+      nothing will be drawn.
+    </task>
+    <task name="GS33" specref="GL 3.2 2.12.4">
+      If a geometry shader outputs more than its declared maximum number
+      of output vertices, then the emitted vertices *may* have no
+      effect.
+    </task>
+    <task name="GS34" specref="GL 3.2 2.12.4">
+      MAX_GEOMETRY_INPUT_COMPONENTS is added.
+    </task>
+    <task name="GS35" specref="GL 3.2 2.12.4">
+      MAX_GEOMETRY_OUTPUT_COMPONENTS is added.
+    </task>
+    <task name="GS36" specref="GL 3.2 2.12.4">
+      Restarting a primitive topology using the primitive restart index
+      has no effect on the primitive ID counter.
+    </task>
+    <task name="GS37" specref="GL 3.2 2.12.4">
+      The product of the total number of vertices and the sum of all
+      components of all active varying variables may not exceed
+      MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS.
+    </task>
+    <task name="GS38" specref="GL 3.2 2.12.4">
+      Writing to gl_Position from either the vertex or geometry shader
+      is optional.
+    </task>
+    <task name="GS39" specref="GL 3.2 2.12.4">
+      gl_in[] receives values from built-in output variables written by
+      the vertex shader.
+    </task>
+    <task name="GS40" specref="GL 3.2 2.16">
+      For the purpose of error checking the primitiveMode parameter of
+      BeginTransformFeedback(), if a geometry shader is present, its
+      output primitive type is used instead of the mode parameter passed
+      to drawing commands.
+    </task>
+    <task name="GS41" specref="GL 3.2 2.16">
+      Transform feedback occurs after geometry shading.
+    </task>
+    <task name="GS42" specref="GL 3.2 2.17">
+      If a geometry shader is active, PRIMITIVES_GENERATED counts the
+      number of primitives it emits.
+    </task>
+    <task name="GS43" specref="GL 3.2 2.18">
+      Table 2.12 describes the behaviour of the provoking vertex for all
+      primitive types, including the new "adjacency" types.
+    </task>
+    <task name="GS44" specref="GL 3.2 2.4">
+      Geometry shading is added to the pipeline.
+    </task>
+    <task name="GS45" specref="GL 3.2 2.6.1">
+      "Line Strips with Adjacency" is added.
+    </task>
+    <task name="GS46" specref="GL 3.2 2.6.1">
+      "Lines with Adjacency" is added.
+    </task>
+    <task name="GS47" specref="GL 3.2 2.6.1">
+      "Triangle Strips with Adjacency" is added.
+    </task>
+    <task name="GS48" specref="GL 3.2 2.6.1">
+      "Triangles with Adjacency" is added.
+    </task>
+    <task name="GS49" specref="GL 3.2 2.6.1">
+      In "Line Strips with Adjacency" mode, if the number of vertices is
+      less than 4, all vertices are ignored.
+    </task>
+    <task name="GS50" specref="GL 3.2 2.6.1">
+      In "Line Strips with Adjacency" mode, if there is no geometry
+      shader, adjacent vertices are ignored.
+    </task>
+    <task name="GS51" specref="GL 3.2 2.6.1">
+      In "Line Strips with Adjacency" mode, line segments are drawn
+      between vertex i+2 and i+3 (i counts from 0 to n-1, vertices count
+      from 1 to n+3).
+    </task>
+    <task name="GS52" specref="GL 3.2 2.6.1">
+      In "Lines with Adjacency" mode, if the number of vertices is 4n+k
+      and k != 0, the final k vertices are ignored.
+    </task>
+    <task name="GS53" specref="GL 3.2 2.6.1">
+      In "Lines with Adjacency" mode, if there is no geometry shader,
+      adjacent vertices are ignored.
+    </task>
+    <task name="GS54" specref="GL 3.2 2.6.1">
+      In "Lines with Adjacency" mode, line segments are drawn between
+      vertex 4*i+2 and 4*i+3 (i counts from 0 to n-1, vertices count
+      from 1 to 4n+k).
+    </task>
+    <task name="GS55" specref="GL 3.2 2.6.1">
+      In "Triangle Strips with Adjacency" mode, if the number of
+      vertices is 2(n+2)+k and k == 1, the final vertex is ignored.
+    </task>
+    <task name="GS56" specref="GL 3.2 2.6.1">
+      In "Triangle Strips with Adjacency" mode, if there is no geometry
+      shader, adjacent vertices are ignored.
+    </task>
+    <task name="GS57" specref="GL 3.2 2.6.1">
+      In "Triangle Strips with Adjacency" mode, n triangles are drawn
+      when there are 2(n+2)+k vertices (the exact set of triangles drawn
+      is specified in table 2.4).
+    </task>
+    <task name="GS58" specref="GL 3.2 2.6.1">
+      In "Triangles with Adjacency" mode, if the number of vertices is
+      6n+k and k != 0, the final k verties are ignored.
+    </task>
+    <task name="GS59" specref="GL 3.2 2.6.1">
+      In "Triangles with Adjacency" mode, if there is no geometry
+      shader, adjacent vertices are ignored.
+    </task>
+    <task name="GS60" specref="GL 3.2 2.6.1">
+      In "Triangles with Adjacency" mode, triangles are drawn using
+      vertex 6*i+1, 6*i+3, and 6*i+5 (i counts from 0 to n-1, vertices
+      count from 1 to 6n+k).
+    </task>
+    <task name="GS61" specref="GL 3.2 3.4">
+      PROGRAM_POINT_SIZE has been changed to VERTEX_PROGRAM_POINT_SIZE.
+    </task>
+    <task name="GS62" specref="GL 3.2 3.9.2">
+      If a geometry shader is active, gl_PrimitiveID contains the value
+      emitted by the geometry shader for the provoking vertex.
+    </task>
+    <task name="GS63" specref="GL 3.2 3.9.2">
+      MAX_FRAGMENT_INPUT_COMPONENTS is added.
+    </task>
+    <task name="GS64" specref="GL 3.2 6.1.10">
+      GetProgramiv() generates an INVALID_OPERATION error if it is
+      passed GEOMETRY_VERTICES_OUT, GEOMETRY_INPUT_TYPE, or
+      GEOMETRY_OUTPUT_TYPE for a program which has not been linked
+      successfully or which does not contain a geometry shader.
+    </task>
+    <task name="GS65" specref="GL 3.2 6.1.10">
+      GetProgramiv() may now be passed GEOMETRY_INPUT_TYPE.
+    </task>
+    <task name="GS66" specref="GL 3.2 6.1.10">
+      GetProgramiv() may now be passed GEOMETRY_OUTPUT_TYPE.
+    </task>
+    <task name="GS67" specref="GL 3.2 6.1.10">
+      GetProgramiv() may now be passed GEOMETRY_VERTICES_OUT.
+    </task>
+    <task name="GS68" specref="GL 3.2 6.1.10">
+      GetShaderiv() may now return GEOMETRY_SHADER if pname is
+      SHADER_TYPE.
+    </task>
+    <task name="GS69" specref="GL 3.2 6.2">
+      Implementation dependent geometry shader limits (table 6.42) is
+      new.
+    </task>
+    <task name="GS70" specref="GL 3.2 6.2">
+      In implementation dependent aggregate shader limits (table 6.44),
+      MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS is added.
+    </task>
+    <task name="GS71" specref="GL 3.2 6.2">
+      In implementation dependent aggregate shader limits (table 6.44),
+      MAX_COMBINED_TEXTURE_IMAGE_UNITS has increased from 32 to 48.
+    </task>
+    <task name="GS72" specref="GL 3.2 6.2">
+      In implementation dependent aggregate shader limits (table 6.44),
+      MAX_COMBINED_UNIFORM_BLOCKS has increased from 24 to 36.
+    </task>
+    <task name="GS73" specref="GL 3.2 6.2">
+      In implementation dependent aggregate shader limits (table 6.44),
+      MAX_UNIFORM_BUFFER_BINDINGS has increased from 24 to 36.
+    </task>
+    <task name="GS74" specref="GL 3.2 6.2">
+      In implementation dependent fragment processing limits (table
+      6.43), MAX_FRAGMENT_INPUT_COMPONENTS is new.
+    </task>
+    <task name="GS75" specref="GL 3.2 6.2">
+      In implementation dependent vertex shader limits (table 6.41),
+      MAX_VERTEX_OUTPUT_COMPONENTS is new.
+    </task>
+    <task name="GS76" specref="GL 3.2 6.2">
+      In program object state (table 6.29), GEOMETRY_VERTICES_OUT,
+      GEOMETRY_INPUT_TYPE, and GEOMETRY_OUTPUT_TYPE are added.
+    </task>
+    <task name="GS77" specref="GL 3.2 6.2">
+      In program object state (table 6.31),
+      UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER is added.
+    </task>
+    <task name="GS78" specref="GL 3.2 6.2">
+      In program object state (table 6.32), VERTEX_PROGRAM_POINT_SIZE
+      changes to PROGRAM_POINT_SIZE.
+    </task>
+    <task name="GS79" specref="GL 3.2 6.2">
+      In shader object state (table 6.25), SHADER_TYPE is now Z3
+      (previously was Z2).
+    </task>
+    <task name="GS80" specref="GL 3.2 6.2">
+      In texture environment and generation (table 6.17), ACTIVE_TEXTURE
+      is now Z48* (previously was Z32*).
+    </task>
+    <task name="GS81" specref="GL 3.2 6.2">
+      In textures (table 6.13-6.14), TEXTURE_BINDING_xD,
+      TEXTURE_BINDING_1D_ARRAY, TEXTURE_BINDING_2D_ARRAY,
+      TEXTURE_BINDING_RECTANGLE, TEXTURE_BINDING_BUFFER, and
+      TEXTURE_BINDING_CUBE_MAP are now replicated by 48 instead of 32.
+    </task>
+    <task name="GS82" specref="GL 3.2 6.2">
+      Note: MAX_FRAGMENT_INPUT_COMPONENTS is 128 (double the old value
+      of MAX_VARYING_COMPONENTS).
+    </task>
+    <task name="GS83" specref="GL 3.2 6.2">
+      Note: MAX_GEOMETRY_OUTPUT_COMPONENTS is 128 (double the old value
+      of MAX_VARYING_COMPONENTS).
+    </task>
+    <task name="GS84" specref="GL 3.2 E.2.1">
+      MAX_VARYING_COMPONENTS and MAX_VARYING_FLOATS are deprecated
+    </task>
+    <task name="GS85" specref="GLSL 1.50 2">
+      Geometry shaders are added.
+    </task>
+    <task name="GS86" specref="GLSL 1.50 2.1">
+      Vertex shaders no longer need to compute the homogeneous position
+      of the incoming vertex.
+    </task>
+    <task name="GS87" specref="GLSL 1.50 4.3">
+      The qualifiers "smooth", "flat", and "noperspective" are no longer
+      limited just to vertex shader outs and fragment shader ins.
+    </task>
+    <task name="GS88" specref="GLSL 1.50 4.3.4">
+      Each geometry shader input (or input block) needs to be declared
+      as an array.
+    </task>
+    <task name="GS89" specref="GLSL 1.50 4.3.4">
+      Each geometry shader input array can optionally have a size
+      declared.
+    </task>
+    <task name="GS90" specref="GLSL 1.50 4.3.4">
+      For the vertex/geometry interface, if the vertex output is an
+      array, it must appear in an output block (2D arrays are not
+      supported).
+    </task>
+    <task name="GS91" specref="GLSL 1.50 4.3.4">
+      For the vertex/geometry interface, variables of the same name must
+      match in type and qualification (except that geometry variable
+      must be an array, and vertex variable must not).
+    </task>
+    <task name="GS92" specref="GLSL 1.50 4.3.4">
+      Geometry shader inputs receive values from vertex outputs.
+    </task>
+    <task name="GS93" specref="GLSL 1.50 4.3.4">
+      If a geometry shader input array does not have a size provided,
+      the array size will be set by the input layout declaration(s)
+      establishing the type of input primitive.
+    </task>
+    <task name="GS94" specref="GLSL 1.50 4.3.4">
+      If a geometry shader input array has a size provided, it must be
+      consistent with the input layout declaration(s) establishing the
+      type of input primitive.
+    </task>
+    <task name="GS95" specref="GLSL 1.50 4.3.4">
+      If a program contains vertex and fragment shaders but no geometry
+      shader, then there is a vertex/fragment interface (as in GLSL
+      1.40).
+    </task>
+    <task name="GS96" specref="GLSL 1.50 4.3.4">
+      Integral fragment shader inputs must be qualified with "flat".
+    </task>
+    <task name="GS97" specref="GLSL 1.50 4.3.6">
+      Integral vertex shader inputs need no longer be qualified with
+      "flat".
+    </task>
+    <task name="GS98" specref="GLSL 1.50 4.3.8">
+      Layout qualifiers can appear with just an interface qualifier
+      ("in", "out", or "uniform").
+    </task>
+    <task name="GS99" specref="GLSL 1.50 4.3.8.1">
+      All geometry shader input unsized array declarations will be sized
+      by an *earlier* input layout qualifier (when present) according
+      to: points=1, lines=2, lines_adjacency=4, triangles=3,
+      triangles_adjacency=6.
+    </task>
+    <task name="GS100" specref="GLSL 1.50 4.3.8.1">
+      All input layouts specified in geometry shader compilation units
+      must declare the same layout.
+    </task>
+    <task name="GS101" specref="GLSL 1.50 4.3.8.1">
+      At least one compilation unit in a geometry shader must declare an
+      input layout.
+    </task>
+    <task name="GS102" specref="GLSL 1.50 4.3.8.1">
+      For geometry shader inputs declared without an array size
+      (including gl_in), a layout must be declared before any array use
+      requiring the size be known (e.g. use of the length() method).
+    </task>
+    <task name="GS103" specref="GLSL 1.50 4.3.8.1">
+      Geometry shaders allow input layout qualifiers *only* on the
+      interface qualifier "in" (i.e. "layout(...) in;").
+    </task>
+    <task name="GS104" specref="GLSL 1.50 4.3.8.1">
+      If a geometry shader input is declared with an array size, it must
+      match the length implied by the geometry shader input layout.
+    </task>
+    <task name="GS105" specref="GLSL 1.50 4.3.8.1">
+      It is a link-time error if not all geometry shader input sizes
+      match (including both declared array sizes and the length implied
+      by the geometry shader input layout).
+    </task>
+    <task name="GS106" specref="GLSL 1.50 4.3.8.1">
+      Not all geometry shader compilation units need to declare an input
+      layout.
+    </task>
+    <task name="GS107" specref="GLSL 1.50 4.3.8.1">
+      Only one layout qualifier identifier may appear for geometry
+      shader inputs.
+    </task>
+    <task name="GS108" specref="GLSL 1.50 4.3.8.1">
+      The intrinsically declared geometry shader input array gl_in[]
+      will be sized by any input layout declaration.
+    </task>
+    <task name="GS109" specref="GLSL 1.50 4.3.8.1">
+      The layout qualifier identifiers for geometry shader inputs are
+      "points", "lines", "lines_adjacency", "triangles", and
+      "triangles_adjacency".
+    </task>
+    <task name="GS110" specref="GLSL 1.50 4.3.8.2">
+      All geometry shader output layout declarations in a program must
+      declare the same layout and the same value for max_vertices.
+    </task>
+    <task name="GS111" specref="GLSL 1.50 4.3.8.2">
+      Geometry shaders can have output layout qualifiers *only* on the
+      interface qualifier "out" (i.e. "layout(...) out;").
+    </task>
+    <task name="GS112" specref="GLSL 1.50 4.3.8.2">
+      If one declaration declares both primitive type and max_vertices,
+      order is irrelevant.
+    </task>
+    <task name="GS113" specref="GLSL 1.50 4.3.8.2">
+      It is an error if max_vertices is declared to be a value greater
+      than gl_MaxGeometryOutputVertices.
+    </task>
+    <task name="GS114" specref="GLSL 1.50 4.3.8.2">
+      Not all geometry shader compilation units need to declare an
+      output layout declaration.
+    </task>
+    <task name="GS115" specref="GLSL 1.50 4.3.8.2">
+      One declaration can declare either a primitive type (points,
+      line_strip, or triangle_strip), or max_vertices, or both.
+    </task>
+    <task name="GS116" specref="GLSL 1.50 4.3.8.2">
+      The geometry shader output layout qualifier "max_vertices =
+      &lt;integer-constant&gt;" is used to declare the maximum number of
+      vertices the shader will ever emit in a single execution.
+    </task>
+    <task name="GS117" specref="GLSL 1.50 4.3.8.2">
+      The geometry shader output layout qualifiers of "points",
+      "line_strip", or "triangle_strip" are used to declare the
+      primitive type used for geometry shader output.
+    </task>
+    <task name="GS118" specref="GLSL 1.50 4.3.8.2">
+      There must be at least one geometry output layout declaration
+      somewhere in a program.
+    </task>
+    <task name="GS119" specref="GLSL 1.50 4.3.9.1">
+      The variables gl_FrontColor, gl_BackColor, gl_FrontSecondaryColor,
+      and gl_BackSecondaryColor can now be redeclared in geometry
+      shaders (previously they were only allowed to be redeclared in
+      vertex shaders).
+    </task>
+    <task name="GS120" specref="GLSL 1.50 4.5.3">
+      The default precision qualifiers that were previously predeclared
+      for vertex shaders now apply to geometry shaders as well.
+    </task>
+    <task name="GS121" specref="GLSL 1.50 4.5.4">
+      The built-in macro GL_FRAGMENT_PRECISION_HIGH, which was
+      previously defined to 1 in vertex and fragment shaders, is now
+      available in geometry shaders as well.
+    </task>
+    <task name="GS122" specref="GLSL 1.50 7.1">
+      Fragment shaders will select the value of gl_PrimitiveID that is
+      written by the geometry shader for the provoking vertex.
+    </task>
+    <task name="GS123" specref="GLSL 1.50 7.1">
+      Geometry shaders also contain the special input variable "in int
+      gl_PrimitiveIDIn", which is filled with the number of primitives
+      processed by the geometry shader since the current set of
+      rendering primitives was started.
+    </task>
+    <task name="GS124" specref="GLSL 1.50 7.1">
+      Geometry shaders also contain the special output variable "out int
+      gl_PrimitiveID", which is communicated to fragment shaders.
+    </task>
+    <task name="GS125" specref="GLSL 1.50 7.1">
+      If a geometry shader fails to write to gl_PrimitiveID, the value
+      of gl_PrimitiveID within the fragment shader is undefined.
+    </task>
+    <task name="GS126" specref="GLSL 1.50 7.1">
+      If the geometry shader does not write gl_Position before its first
+      call to EmitVertex(), or between calls to EmitVertex(), its value
+      is undefined.
+    </task>
+    <task name="GS127" specref="GLSL 1.50 7.1">
+      If the vertex shader does not write gl_Position, its value is
+      undefined.
+    </task>
+    <task name="GS128" specref="GLSL 1.50 7.1">
+      The gl_PerVertex interface block also appears as a geometry shader
+      input interface block, having block-name gl_PerVertex,
+      instance_name gl_in, and an implicit array size.
+    </task>
+    <task name="GS129" specref="GLSL 1.50 7.1">
+      The gl_PerVertex interface block also appears as a geometry shader
+      output interface block, declared identically to the gl_PerVertex
+      vertex shader output interface block.
+    </task>
+    <task name="GS130" specref="GLSL 1.50 7.1.1">
+      gl_ClipVertex is also added to the gl_PerVertex output and input
+      interface blocks in the geometry shader.
+    </task>
+    <task name="GS131" specref="GLSL 1.50 7.2">
+      If a geometry shader is present, the value in gl_PrimitiveID comes
+      from the geometry shader's gl_PrimitiveID output.
+    </task>
+    <task name="GS132" specref="GLSL 1.50 7.2">
+      If no geometry shader is present, the value in gl_PrimitiveID is
+      the number of primitives processed by the vertex shader since the
+      current set of rendering primitives was started.
+    </task>
+    <task name="GS133" specref="GLSL 1.50 7.2">
+      The built-in input variable "in int gl_PrimitiveID" is added.
+    </task>
+    <task name="GS134" specref="GLSL 1.50 7.2">
+      gl_ClipDistance must be sized either implicitly or explicitly to
+      the same size in all shaders (previously the size needed to match
+      between vertex and fragment shaders).
+    </task>
+    <task name="GS135" specref="GLSL 1.50 7.4">
+      The built-in constants in this section are also provided to
+      geometry shaders (previously they were available only to vertex
+      and fragment shaders).
+    </task>
+    <task name="GS136" specref="GLSL 1.50 7.4">
+      gl_MaxFragmentInputComponents (min: 128) is added.
+    </task>
+    <task name="GS137" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryInputComponents (min: 64) is added.
+    </task>
+    <task name="GS138" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryOutputComponents (min: 128) is added.
+    </task>
+    <task name="GS139" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryOutputVertices (min: 256) is added.
+    </task>
+    <task name="GS140" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryTextureInputUnits (min: 16) is added.
+    </task>
+    <task name="GS141" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryTotalOutputComponents (min: 1024) is added.
+    </task>
+    <task name="GS142" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryUniformComponents (min: 1024) is added.
+    </task>
+    <task name="GS143" specref="GLSL 1.50 7.4">
+      gl_MaxGeometryVaryingComponents (min: 64) is added.
+    </task>
+    <task name="GS144" specref="GLSL 1.50 7.4">
+      gl_MaxVertexOutputComponents (min: 64) is added.
+    </task>
+    <task name="GS145" specref="GLSL 1.50 7.6">
+      These variables are also added to the gl_PerVertex output and
+      input interface blocks in the geometry shader (in the
+      compatibility profile only).
+    </task>
+    <task name="GS146" specref="GLSL 1.50 8.10">
+      EmitVertex() is added.  This emits the current values of output
+      variables to the current output primitive.
+    </task>
+    <task name="GS147" specref="GLSL 1.50 8.10">
+      EndPrimitive() is added.  This completes the current output
+      primitive and starts a new one, without emitting any vertices.
+    </task>
+    <task name="GS148" specref="GLSL 1.50 8.10">
+      EndPrimitive() is optional when the output layout is "points".
+    </task>
+    <task name="GS149" specref="GLSL 1.50 8.10">
+      If a geometry shader calls EmitVertex() more times than it has
+      declared with max_vertices, the results are undefined.
+    </task>
+    <task name="GS150" specref="GLSL 1.50 8.10">
+      It is not necessary to call EndPrimitive() if the geometry shader
+      writes only a single primitive.
+    </task>
+    <task name="GS151" specref="GLSL 1.50 8.10">
+      On return from EmitVertex(), the values of output variables are
+      undefined.
+    </task>
+    <task name="GS152" specref="GLSL 1.50 8.10">
+      When a geometry shader terminates, the current output primitive is
+      automatically completed.
+    </task>
+    <task name="GS153" specref="GLSL 1.50 8.7">
+      Texture lookup functions are now available to geometry shaders.
+    </task>
+    <task name="GS154" specref="GLSL 1.50 8.9">
+      Noise functions are now available to geometry shaders.
+    </task>
+    <task name="GS155" specref="GLSL 1.50 9">
+      "layout_list" is renamed to "layout_qualifier_id_list", and rules
+      are reworked so that it is a list of comma-separated
+      layout_qualifier_id's instead of a list of comma-separated
+      IDENTIFIER's.
+    </task>
+    <task name="GS156" specref="GLSL 1.50 9">
+      "layout_qualifier_id" has two rules: IDENTIFIER (to match previous
+      behvaiour), and IDENTIFIER EQUAL INTCONSTANT.
+    </task>
+    <task name="GS157" specref="GLSL 1.50 9">
+      New rule for "struct_declarator": IDENTIFIER LEFT_BRACKET
+      RIGHT_BRACKET.
+    </task>
+  </category>
+  <category name="GLSL 1.50 misc">
+    <task name="Need140And150" specref="GL 3.2 1.6.1">
+      Implementations are now required to support both GLSL versions
+      1.40 and 1.50 (previously only version 1.30 was required).
+    </task>
+    <task name="VersionMacro" specref="GLSL 1.50 3">
+      __VERSION__ should substitute 150.
+    </task>
+    <task name="Link140And150" specref="GLSL 1.50 3.3">
+      GLSL 1.40 and GLSL 1.50 shaders may be linked together.
+    </task>
+  </category>
+  <category name="interface blocks">
+    <task name="IB1" specref="GLSL 1.50 4.3.6">
+      It is permissible for an input and an output to have the same name
+      provided that one of them is nested inside an interface block with
+      an instance name.
+    </task>
+    <task name="IB2" specref="GLSL 1.50 4.3.6">
+      Outputs can also appear in interface blocks.
+    </task>
+    <task name="IB3" specref="GLSL 1.50 4.3.7">
+      "Attribute" and "varying" qualifiers may not be used in interface
+      blocks.
+    </task>
+    <task name="IB4" specref="GLSL 1.50 4.3.7">
+      A block-name is allowed to have different definitions in different
+      interfaces (e.g. same block name used as both an input and an
+      output block, I think)
+    </task>
+    <task name="IB5" specref="GLSL 1.50 4.3.7">
+      All input and output block arrays except geometry shader inputs
+      must specify an array size.
+    </task>
+    <task name="IB6" specref="GLSL 1.50 4.3.7">
+      An output block of one pipeline stage will be matched to an input
+      block with the same block-name (block-name is the name that
+      appears before the "{" that opens the interface block).
+    </task>
+    <task name="IB7" specref="GLSL 1.50 4.3.7">
+      Arrays of built-in types or structures can be used within an
+      interface block.
+    </task>
+    <task name="IB8" specref="GLSL 1.50 4.3.7">
+      Block names may not be used at global scope for anythin other than
+      as a block name.
+    </task>
+    <task name="IB9" specref="GLSL 1.50 4.3.7">
+      Built-in types can be used within an interface block.
+    </task>
+    <task name="IB10" specref="GLSL 1.50 4.3.7">
+      For blocks declared as arrays, the array index must be included
+      when accessing a member of a specific block, and must be omitted
+      when querying a characteristic such as the offset of the member
+      within the block.
+    </task>
+    <task name="IB11" specref="GLSL 1.50 4.3.7">
+      For interface blocks that are declared as arrays, in order to
+      match, their array sizes must match (exception: between VS and GS,
+      rules are different).
+    </task>
+    <task name="IB12" specref="GLSL 1.50 4.3.7">
+      For uniform blocks, the application uses the block name to
+      identify the block.
+    </task>
+    <task name="IB13" specref="GLSL 1.50 4.3.7">
+      If an interface block has an instance-name, names inside the block
+      are in a scope with their own name space, accessed with "." (like
+      structures).
+    </task>
+    <task name="IB14" specref="GLSL 1.50 4.3.7">
+      If an interface block has an instance-name, then members of the
+      block are accessed from the OpenGL API by the *block-name*,
+      followed by ".", followed by the name of the member.
+    </task>
+    <task name="IB15" specref="GLSL 1.50 4.3.7">
+      If an interface block has no instance-name (the optional name that
+      appears after the "}") the names inside the block are scoped at
+      the global level for purposes of access from within the shader.
+    </task>
+    <task name="IB16" specref="GLSL 1.50 4.3.7">
+      If an interface block has no instance-name, then members of the
+      block are accessed from the OpenGL API by their bare name.
+    </task>
+    <task name="IB17" specref="GLSL 1.50 4.3.7">
+      In order for interface blocks to match, their contents must be in
+      identical order.
+    </task>
+    <task name="IB18" specref="GLSL 1.50 4.3.7">
+      In order for interface blocks to match, their contents must
+      contain identical types, names, and member-wise layout
+      qualification.
+    </task>
+    <task name="IB19" specref="GLSL 1.50 4.3.7">
+      Indices used to index a uniform block array must be integral
+      constant expressions.
+    </task>
+    <task name="IB20" specref="GLSL 1.50 4.3.7">
+      Input variables may only appear in input blocks.
+    </task>
+    <task name="IB21" specref="GLSL 1.50 4.3.7">
+      Input, output, and uniform variable declarations can be grouped
+      into named interface blocks.
+    </task>
+    <task name="IB22" specref="GLSL 1.50 4.3.7">
+      Interface blocks can have an optional instance name (used to refer
+      to them within the shader).
+    </task>
+    <task name="IB23" specref="GLSL 1.50 4.3.7">
+      Interpolation and storage qualifiers may appear within an
+      interface block.
+    </task>
+    <task name="IB24" specref="GLSL 1.50 4.3.7">
+      It is illegal to have an input block in a vertex shader.
+    </task>
+    <task name="IB25" specref="GLSL 1.50 4.3.7">
+      It is illegal to have an output block in a fragment shader.
+    </task>
+    <task name="IB26" specref="GLSL 1.50 4.3.7">
+      Output blocks in one stage are matched up to input blocks in the
+      subsequent stage.
+    </task>
+    <task name="IB27" specref="GLSL 1.50 4.3.7">
+      Output variables may only appear in output blocks.
+    </task>
+    <task name="IB28" specref="GLSL 1.50 4.3.7">
+      Previously declared structures can be used within an interface
+      block.
+    </task>
+    <task name="IB29" specref="GLSL 1.50 4.3.7">
+      Repeating the "in", "out", or "uniform" interface qualifier for a
+      member within a block is optional.
+    </task>
+    <task name="IB30" specref="GLSL 1.50 4.3.7">
+      Structure definitions cannot be nested inside an interface block.
+    </task>
+    <task name="IB31" specref="GLSL 1.50 4.3.7">
+      Uniform block array declarations must specify an array size.
+    </task>
+    <task name="IB32" specref="GLSL 1.50 4.3.7">
+      Uniform variables may only appear in uniform blocks.
+    </task>
+    <task name="IB33" specref="GLSL 1.50 4.3.7">
+      Within interface blocks, initializers are not allowed.
+    </task>
+    <task name="IB34" specref="GLSL 1.50 4.3.7">
+      Within interface blocks, sampler types are not allowed.
+    </task>
+    <task name="IB35" specref="GLSL 1.50 4.3.8">
+      Layout qualifiers can appear as part of an interface block
+      definition.
+    </task>
+    <task name="IB36" specref="GLSL 1.50 4.3.8">
+      Layout qualifiers can appear as part of an interface block member.
+    </task>
+    <task name="IB37" specref="GLSL 1.50 4.3.9.1">
+      Input or output instance names on blocks are not used when
+      redeclaring built-in variables.  So for example, when
+      gl_FrontColor is redeclared as an input to the geometry shader, it
+      is redeclared as e.g. "flat in vec4 gl_FrontColor".  No "gl_in[]"
+      is used.
+    </task>
+    <task name="IB38" specref="GLSL 1.50 7.1">
+      The output variables gl_Position, gl_PointSize, and
+      gl_ClipDistance are now considered to be nested within an
+      interface block having block-name gl_PerVertex and no
+      instance-name.
+    </task>
+    <task name="IB39" specref="GLSL 1.50 7.1.1">
+      The vertex shader output variable gl_ClipVertex is now considered
+      to be nested within the gl_PerVertex output interface block.
+    </task>
+    <task name="IB40" specref="GLSL 1.50 7.6">
+      Redeclaration of gl_TexCoord is done at global scope, not in an
+      interface block.
+    </task>
+    <task name="IB41" specref="GLSL 1.50 7.6">
+      The variables gl_FrontColor, gl_BackColor, gl_FrontSecondaryColor,
+      gl_BackSecondaryColor, gl_TexCoord[], and gl_FogFragCoord are now
+      considered to be nested within the gl_PerVertex output interface
+      block (in the compatibility profile only).
+    </task>
+    <task name="IB42" specref="GLSL 1.50 9">
+      New rule for "declaration": type_qualifier IDENTIFIER LEFT_BRACE
+      struct_declaration_list RIGHT_BRACE IDENTIFIER LEFT_BRACKET
+      RIGHT_BRACKET SEMICOLON
+    </task>
+    <task name="IB43" specref="GLSL 1.50 9">
+      New rule for "declaration": type_qualifier IDENTIFIER LEFT_BRACE
+      struct_declaration_list RIGHT_BRACE IDENTIFIER LEFT_BRACKET
+      constant_expression RIGHT_BRACKET SEMICOLON
+    </task>
+    <task name="IB44" specref="GLSL 1.50 9">
+      New rule for "declaration": type_qualifier IDENTIFIER LEFT_BRACE
+      struct_declaration_list RIGHT_BRACE IDENTIFIER SEMICOLON
+    </task>
+  </category>
+  <category name="layered rendering">
+    <task name="Layer1" specref="GL 3.2 2.12.4">
+      Layered rendering requires the use of framebuffer objects.
+    </task>
+    <task name="Layer2" specref="GL 3.2 2.12.4">
+      Through layered rendering, geometry shaders may render primitives
+      to arbitrary layers of a cube-map texture, 3D texture, or 1D or 2D
+      texture array.
+    </task>
+    <task name="Layer3" specref="GL 3.2 4.3.2">
+      Blit operations: If both read and draw framebuffers are layered,
+      the blit operation is still performed only on layer zero.
+    </task>
+    <task name="Layer4" specref="GL 3.2 4.3.2">
+      Blit operations: If the draw framebuffer is layered, pixel values
+      are written to layer zero.
+    </task>
+    <task name="Layer5" specref="GL 3.2 4.3.2">
+      Blit operations: If the read framebuffer is layered, pixel values
+      are read from layer zero.
+    </task>
+    <task name="Layer6" specref="GL 3.2 4.4.1">
+      If the number of layers of each attachment are not all identical,
+      rendering will be limited to the smallest number of layers of any
+      attachment.
+    </task>
+    <task name="Layer7" specref="GL 3.2 4.4.2">
+      FRAMEBUFFER_ATTACHMENT_LAYERED is set to TRUE if
+      FramebufferTexture is called and texture is the name of a
+      three-dimensional, cube map, two-dimensional multisample array, or
+      one- or two-dimensional array texture.  Otherwise it is set to
+      FALSE.
+    </task>
+    <task name="Layer8" specref="GL 3.2 4.4.2">
+      FramebufferTexture() generates INVALID_OPERATION for buffer
+      textures.
+    </task>
+    <task name="Layer9" specref="GL 3.2 4.4.2">
+      FramebufferTexture() is added.
+    </task>
+    <task name="Layer10" specref="GL 3.2 4.4.2">
+      If FramebufferTexture() is supplied a three-dimensional texture,
+      cube map texture, one- or two-dimensional array texture, or
+      two-dimensional multisample array texture, the entire texture
+      level is attached as a layered framebuffer attachment.
+    </task>
+    <task name="Layer11" specref="GL 3.2 4.4.2">
+      If a texture of zero is passed to any FramebufferTexture*
+      function, additional parameters (level, textarget, and/or layer)
+      are ignored, and state values are set to their default values.
+    </task>
+    <task name="Layer12" specref="GL 3.2 4.4.2">
+      The set of framebuffer-attachable images is clarified.  I *think*
+      the only thing that's new is the ability to attach an entire level
+      of a three-dimensional texture, cube map texture, or one- or
+      two-dimensional array texture, creating a layered attachment
+      point.
+    </task>
+    <task name="Layer13" specref="GL 3.2 4.4.4">
+      If any framebuffer attachment is layered, all popelated color
+      attachments must be from textures of the same target
+      (FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS).
+    </task>
+    <task name="Layer14" specref="GL 3.2 4.4.4">
+      If any framebuffer attachment is layered, all popuated attachments
+      must be layered (FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS).
+    </task>
+    <task name="Layer15" specref="GL 3.2 4.4.7">
+      A framebuffer is layered if it is complete and all of its
+      populated attachments are layered.
+    </task>
+    <task name="Layer16" specref="GL 3.2 4.4.7">
+      A layer number written by a geometry shader has no effect if the
+      framebuffer is not layered.
+    </task>
+    <task name="Layer17" specref="GL 3.2 4.4.7">
+      Clear() clears all layers.
+    </task>
+    <task name="Layer18" specref="GL 3.2 4.4.7">
+      ClearBuffer() clears all layers.
+    </task>
+    <task name="Layer19" specref="GL 3.2 4.4.7">
+      Commands such as ReadPixels() always read from layer zero.
+    </task>
+    <task name="Layer20" specref="GL 3.2 4.4.7">
+      If a layer number is out of range (negative or greater than the
+      number of layers of any attachment), the effect is undefined.
+    </task>
+    <task name="Layer21" specref="GL 3.2 4.4.7">
+      If there is a geometry shader and it statically assigns to
+      gl_Layer, then all fragments are assigned a layer based on this
+      value.
+    </task>
+    <task name="Layer22" specref="GL 3.2 4.4.7">
+      Table 4.12 establishes a mapping between layer number and cube map
+      face.
+    </task>
+    <task name="Layer23" specref="GL 3.2 4.4.7">
+      The layer number selects an image for use by stencil test, depth
+      buffer test, blending, and color buffer writes.
+    </task>
+    <task name="Layer24" specref="GL 3.2 4.4.7">
+      The vertex used to determine the layer is
+      implementation-dependent.
+    </task>
+    <task name="Layer25" specref="GL 3.2 4.4.7">
+      When the current geometry shader does not statically assign a
+      value to gl_Layer, all fragments are assigned a layer of zero.
+    </task>
+    <task name="Layer26" specref="GL 3.2 4.4.7">
+      When there is no geometry shader, all fragments are assigned layer
+      of zero.
+    </task>
+    <task name="Layer27" specref="GL 3.2 6.1.11">
+      GetFramebufferAttachmentParameteriv() may now be passed
+      FRAMEBUFFER_ATTACHMENT_LAYERED.
+    </task>
+    <task name="Layer28" specref="GL 3.2 6.2">
+      In framebuffer (table 6.23), FRAMEBUFFER_ATTACHMENT_LAYERED is
+      added.
+    </task>
+    <task name="Layer29" specref="GLSL 1.50 7.1">
+      Geometry shaders also contain the special output variable "out int
+      gl_Layer".
+    </task>
+    <task name="Layer30" specref="GLSL 1.50 7.1">
+      If a geometry shader statically assigns a value to gl_Layer in
+      some execution paths but not others, then layered rendering mode
+      is still enabled, and gl_Layer is undefined in those execution
+      paths where no value was assigned.
+    </task>
+    <task name="Layer31" specref="GLSL 1.50 7.1">
+      If a geometry shader statically assigns a value to gl_Layer,
+      layered rendering mode is enabled.
+    </task>
+    <task name="Layer32" specref="GLSL 1.50 7.1">
+      The geometry shader output gl_Layer is used to select a layer of a
+      multi-layer framebuffer attachment.
+    </task>
+    <task name="Layer33" specref="GLSL 1.50 7.1">
+      The value of gl_Layer which is used for rendering comes from one
+      of the vertices of the primitive being shaded; which vertex it
+      comes from is undefined.
+    </task>
+  </category>
+  <category name="core/compatibility profiles">
+    <task name="ProfileMask" specref="GL 3.2 6.1.5">
+      GetIntegerv() may be passed CONTEXT_PROFILE_MASK; it returns
+      either CONTEXT_CORE_PROFILE_BIT or
+      CONTEXT_COMPATIBILITY_PROFILE_BIT depending on the API implemented
+      by the context.
+    </task>
+    <task name="CoreRequired" specref="GL 3.2 E">
+      All implementations must support the core profile.
+    </task>
+    <task name="GLSLProfile" specref="GLSL 1.50 3.3">
+      After "#version &lt;number&gt;" there is an optional profile.
+    </task>
+    <task name="GLSLCoreDefault" specref="GLSL 1.50 3.3">
+      If no profile argument is provided, the default is "core".
+    </task>
+    <task name="CoreDefine" specref="GLSL 1.50 3.3">
+      In both core and compatibility profiles, GL_core_profile is
+      #defined to 1.
+    </task>
+    <task name="CompatDefine" specref="GLSL 1.50 3.3">
+      In the compatibility profile, GL_compatibility_profile is #defined
+      to 1.
+    </task>
+    <task name="GLSLValidProfiles" specref="GLSL 1.50 3.3">
+      The optional profile may be either "core" or "compatibility".
+    </task>
+  </category>
+  <category name="GL_ARB_provoking_vertex">
+    <task name="PV1" specref="GL 3.2 2.11.7">
+      Flatshading is added to the list of operations applied to vertices
+      processed by the vertex shader.
+    </task>
+    <task name="PV2" specref="GL 3.2 2.16">
+      Transform feedback occurs before flatshading.
+    </task>
+    <task name="PV3" specref="GL 3.2 2.18">
+      Flatshading selects the varying output corresponding to the
+      provoking vertex of the primitive.
+    </task>
+    <task name="PV4" specref="GL 3.2 2.18">
+      The initial value of the provoking vertex mode is
+      LAST_VERTEX_CONVENTION.
+    </task>
+    <task name="PV5" specref="GL 3.2 2.18">
+      The provoking vertex is controlled by the ProvokingVertex()
+      command.
+    </task>
+    <task name="PV6" specref="GL 3.2 6.2">
+      In coloring (table 6.9), PROVOKING_VERTEX is added.
+    </task>
+    <task name="PV7" specref="GL 3.2 6.2">
+      In implementation dependent values (table 6.45),
+      QUADS_FOLLOW_PROVOKING_VERTEX is new.
+    </task>
+  </category>
+  <category name="GL_ARB_seamless_cube_map">
+    <task name="Cube1" specref="GL 3.2 3.8.8">
+      Initially, seamless cube map filtering is disabled.
+    </task>
+    <task name="Cube2" specref="GL 3.2 3.8.8">
+      Seamless Cube Map Filtering is added.
+    </task>
+    <task name="Cube3" specref="GL 3.2 3.8.8">
+      When seamless cube map filtering is enabled, if LINEAR filtering
+      is done within a miplevel, wrap mode CLAMP_TO_BORDER is used.
+    </task>
+    <task name="Cube4" specref="GL 3.2 3.8.8">
+      When seamless cube map filtering is enabled, if NEAREST filtering
+      is done within a miplevel, wrap mode CLAMP_TO_EDGE is used.
+    </task>
+    <task name="Cube5" specref="GL 3.2 3.8.8">
+      When seamless cube map filtering is enabled, if a texture sample
+      location would lie in the texture border in both u and v
+      (i.e. sampling at a corner), if the corresponding corner samples
+      of the three faces meeting at the corner all have the same value,
+      then that value is required to be selected.
+    </task>
+    <task name="Cube6" specref="GL 3.2 3.8.8">
+      When seamless cube map filtering is enabled, if a texture sample
+      location would lie in the texture border in both u and v
+      (i.e. sampling at a corner), the *recommended* method is to
+      average the values of the corresponding corner samples of the
+      three faces meeting at the corner.
+    </task>
+    <task name="Cube7" specref="GL 3.2 3.8.8">
+      When seamless cube map filtering is enabled, if a texture sample
+      location would lie in the texture border in either u or v, instead
+      select the corresponding texel from the appropriate neighboring
+      face.
+    </task>
+    <task name="Cube8" specref="GL 3.2 3.8.8">
+      When seamless cube map filtering is enabled, texture wrap modes
+      are ignored.
+    </task>
+    <task name="Cube9" specref="GL 3.2 6.2">
+      In miscellaneous (table 6.47), TEXTURE_CUBE_MAP_SEAMLESS is added.
+    </task>
+  </category>
+  <category name="structured varyings">
+    <task name="FSStructIn" specref="GLSL 1.50 4.3.4">
+      Fragment shader inputs may be structures.
+    </task>
+    <task name="VSGSStructOut" specref="GLSL 1.50 4.3.6">
+      Vertex and geometry shader outputs may be structures.
+    </task>
+  </category>
+  <category name="GL_ARB_sync">
+    <task name="Sync1" specref="GL 3.2 2.4">
+      The "GL Data Types" table is expanded to include "sync".
+    </task>
+    <task name="Sync2" specref="GL 3.2 5.2">
+      DeleteSync() deletes sync objects.
+    </task>
+    <task name="Sync3" specref="GL 3.2 5.2">
+      DeleteSync() does not block on a sync object that is not yet
+      SIGNALED.
+    </task>
+    <task name="Sync4" specref="GL 3.2 5.2">
+      DeleteSync() generates INVALID_VALUE if the supplied sync
+      parameter is neither zero nor the name of a sync object.
+    </task>
+    <task name="Sync5" specref="GL 3.2 5.2">
+      DeleteSync() may be called on a sync object that currently has
+      ClientWaitSync() or WaitSync() commands blocking on it.
+    </task>
+    <task name="Sync6" specref="GL 3.2 5.2">
+      DeleteSync() siglently ignores sync values of zero.
+    </task>
+    <task name="Sync7" specref="GL 3.2 5.2">
+      FenceSync() creates a new fence sync object, inserts a fence
+      command in the GL command stream, and associates it with the sync
+      object.
+    </task>
+    <task name="Sync8" specref="GL 3.2 5.2">
+      Sync objects are initially UNSIGNALED.
+    </task>
+    <task name="Sync9" specref="GL 3.2 5.2">
+      Sync objects have a SYNC_CONDITION property which is the condition
+      passed to FenceSync().
+    </task>
+    <task name="Sync10" specref="GL 3.2 5.2">
+      Sync objects have a SYNC_FLAGS property which is the flags value
+      passed to FenceSync().
+    </task>
+    <task name="Sync11" specref="GL 3.2 5.2">
+      Sync objects have a SYNC_STATUS property with two possible states:
+      SIGNALED and UNSIGNALED.
+    </task>
+    <task name="Sync12" specref="GL 3.2 5.2">
+      Sync objects have an OBJECT_TYPE property which is always
+      SYNC_FENCE.
+    </task>
+    <task name="Sync13" specref="GL 3.2 5.2">
+      The only condition allowed by FenceSync is
+      SYNC_GPU_COMMANDS_COMPLETE (otherwise an INVALID_ENUM error is
+      generated).
+    </task>
+    <task name="Sync14" specref="GL 3.2 5.2">
+      The only flags value allowed by FenceSync is 0 (otherwise an
+      INVALID_VALUE error is generated).
+    </task>
+    <task name="Sync15" specref="GL 3.2 5.2">
+      When all proceeding commands from the same command stream have
+      been fully realized on both the client and the server, the sync
+      object becomes signaled.
+    </task>
+    <task name="Sync16" specref="GL 3.2 5.2.1">
+      A single sync object can be blocked in multiple GL contexts.
+    </task>
+    <task name="Sync17" specref="GL 3.2 5.2.1">
+      A single sync object can block both client and server.
+    </task>
+    <task name="Sync18" specref="GL 3.2 5.2.1">
+      ClientWaitSync() blocks waiting until a sync object is signaled,
+      or a timeout expires.
+    </task>
+    <task name="Sync19" specref="GL 3.2 5.2.1">
+      ClientWaitSync() generates INVALID_VALUE if flags contains any
+      bits other than SYNC_FLUSH_COMMANDS_BIT.
+    </task>
+    <task name="Sync20" specref="GL 3.2 5.2.1">
+      ClientWaitSync() generates INVALID_VALUE if sync is not the name
+      of a sync object.
+    </task>
+    <task name="Sync21" specref="GL 3.2 5.2.1">
+      ClientWaitSync() returns ALREADY_SIGNALED if sync was already
+      signaled.
+    </task>
+    <task name="Sync22" specref="GL 3.2 5.2.1">
+      ClientWaitSync() returns CONDITION_SATISFIED if sync became
+      signaled while the ClientWaitSync() call was in effect.
+    </task>
+    <task name="Sync23" specref="GL 3.2 5.2.1">
+      ClientWaitSync() returns TIMEOUT_EXPIRED if timeout occurred
+      before sync was signaled.
+    </task>
+    <task name="Sync24" specref="GL 3.2 5.2.1">
+      ClientWaitSync() returns WAIT_FAILED without blocking if there is
+      an error (and also generates a GL error).
+    </task>
+    <task name="Sync25" specref="GL 3.2 5.2.1">
+      ClientWaitSync() will return ALREADY_SIGNALED on an
+      already-signaled sync object even if timeout was zero.
+    </task>
+    <task name="Sync26" specref="GL 3.2 5.2.1">
+      If an error occurs, WaitSync() does not block.
+    </task>
+    <task name="Sync27" specref="GL 3.2 5.2.1">
+      If timeout is zero, ClientWaitSync() tests the current state of
+      sync.
+    </task>
+    <task name="Sync28" specref="GL 3.2 5.2.1">
+      The GL command stream may contain multiple WaitSync() commands on
+      the same sync object.  When sync object becomes signaled, any
+      queued WaitSync() commands for the same object become no-ops.
+    </task>
+    <task name="Sync29" specref="GL 3.2 5.2.1">
+      Timeout is in nanoseconds.
+    </task>
+    <task name="Sync30" specref="GL 3.2 5.2.1">
+      Timeout may be larger than requested due to
+      implementation-dependent timeout accuracy restrictions.
+    </task>
+    <task name="Sync31" specref="GL 3.2 5.2.1">
+      WaitSync() generates INVALID_VALUE if sync is not the name of a
+      sync object.
+    </task>
+    <task name="Sync32" specref="GL 3.2 5.2.1">
+      WaitSync() may only be passed a flags value of 0 (INVALID_VALUE is
+      generated otherwise).
+    </task>
+    <task name="Sync33" specref="GL 3.2 5.2.1">
+      WaitSync() may only be passed a timeout value of TIMEOUT_IGNORED
+      (INVALID_VALUE is generated otherwise).
+    </task>
+    <task name="Sync34" specref="GL 3.2 5.2.1">
+      WaitSync() returns immediately, but causes the GL server to block
+      until sync is signaled.
+    </task>
+    <task name="Sync35" specref="GL 3.2 5.2.1">
+      WaitSync() will wait no longer than MAX_SERVER_WAIT_TIMEOUT.
+    </task>
+    <task name="Sync36" specref="GL 3.2 5.2.2">
+      If SYNC_FLUSH_COMMANDS_BIT was not passed to ClientWaitSync(),
+      then ClientWaitSync() may hang forever.
+    </task>
+    <task name="Sync37" specref="GL 3.2 5.2.2">
+      If SYNC_FLUSH_COMMANDS_BIT was passed to ClientWaitSync(), then it
+      performs the equivalent of glFlush() before blocking on the sync
+      object.
+    </task>
+    <task name="Sync38" specref="GL 3.2 5.2.2">
+      If a sync object is marked for deletion while client or server is
+      blocking on it, deletion is deferred until nothing is blocking on
+      it.
+    </task>
+    <task name="Sync39" specref="GL 3.2 5.2.2">
+      SYNC_FLUSH_COMMANDS_BIT will not help when waiting for a fence
+      command issued in another context's command stream.
+    </task>
+    <task name="Sync40" specref="GL 3.2 6.1.7">
+      If GetSynciv() is passed an invalid pname, INVALID_ENUM is
+      generated.
+    </task>
+    <task name="Sync41" specref="GL 3.2 6.1.7">
+      If sync is not the name of a sync object GetSynciv() generates
+      INVALID_VALUE.
+    </task>
+    <task name="Sync42" specref="GL 3.2 6.1.7">
+      IsSync() returns true if sync is the name of a sync object.
+    </task>
+    <task name="Sync43" specref="GL 3.2 6.1.7">
+      Properties of a sync object may be queried with GetSynciv().
+    </task>
+    <task name="Sync44" specref="GL 3.2 6.1.7">
+      Sync object names immediately become invalid after calling
+      DeleteSync(), even if the underlying sync object is still
+      associated with a fence command or blocking a *WaitSync command.
+    </task>
+    <task name="Sync45" specref="GL 3.2 6.2">
+      In implementation dependent values (table 6.45),
+      MAX_SERVER_WAIT_TIMEOUT is new.
+    </task>
+    <task name="Sync46" specref="GL 3.2 6.2">
+      Sync (table 6.35) is new.
+    </task>
+    <task name="Sync47" specref="GL 3.2 D">
+      Sync objects are added to the list of objects that can be shared
+      between contexts.
+    </task>
+    <task name="Sync48" specref="GL 3.2 D.2">
+      Multiple GL clients and/or servers can be blocked on a single sync
+      object.
+    </task>
+    <task name="Sync49" specref="GL 3.2 D.2">
+      When multiple GL clients and/or servers are blocked on a single
+      sync object, the order in which blocks are released is
+      implementation-dependent.
+    </task>
+    <task name="Sync50" specref="GL 3.2 D.3.1">
+      In addition to Finish(), FenceSync() may be used to determine when
+      completion of a command has occurred.
+    </task>
+  </category>
+  <category name="GL_ARB_texture_multisample">
+    <task name="TMS1" specref="GL 3.2 2.11.4">
+      Table 2.10 adds new tokens for use by GetActiveUniform() and
+      GetActiveUniformsiv(): SAMPLER_2D_MULTISAMPLE,
+      SAMPLER_2D_MULTISAMPLE_ARRAY, INT_SAMPLER_2D_MULTISAMPLE,
+      INT_SAMPLER_2D_MULTISAMPLE_ARRAY,
+      UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE, and
+      UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY.
+    </task>
+    <task name="TMS2" specref="GL 3.2 2.11.7">
+      Multisample texel fetches are added.
+    </task>
+    <task name="TMS3" specref="GL 3.2 2.11.7">
+      Multisample texel fetches have no LOD parameter.
+    </task>
+    <task name="TMS4" specref="GL 3.2 2.11.7">
+      Multisample texel fetches may only be performed on multisample
+      texture samplers.
+    </task>
+    <task name="TMS5" specref="GL 3.2 2.11.7">
+      Multisample textures support only NEAREST filtering.
+    </task>
+    <task name="TMS6" specref="GL 3.2 3.3.1">
+      Sample locations can now be queried with GetMultisamplefv().
+    </task>
+    <task name="TMS7" specref="GL 3.2 3.8">
+      Two-dimensional multisample and two-dimensional multisample array
+      textures are added.
+    </task>
+    <task name="TMS8" specref="GL 3.2 3.8.12">
+      For rectangular and multisample textures, levelbase is always
+      zero.
+    </task>
+    <task name="TMS9" specref="GL 3.2 3.8.13">
+      Multisample textures contain a boolean indicating whether
+      identical sample locations and the same number of samples will be
+      used for all texels in the image.
+    </task>
+    <task name="TMS10" specref="GL 3.2 3.8.13">
+      Multisample textures contain an integer identifying the number of
+      samples in each texel.
+    </task>
+    <task name="TMS11" specref="GL 3.2 3.8.4">
+      Command TexImage2DMultisample() is added.
+    </task>
+    <task name="TMS12" specref="GL 3.2 3.8.4">
+      Command TexImage3DMultisample() is added.
+    </task>
+    <task name="TMS13" specref="GL 3.2 3.8.4">
+      For TexImage2DMultisample(), target must be TEXTURE_2D_MULTISAMPLE
+      or PROXY_TEXTURE_2D_MULTISAMPLE.
+    </task>
+    <task name="TMS14" specref="GL 3.2 3.8.4">
+      For TexImage3DMultisample(), target must be
+      TeXTURE_2D_MULTISAMPLE_ARRAY or
+      PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY.
+    </task>
+    <task name="TMS15" specref="GL 3.2 3.8.4">
+      If fixedsamplelocations=TRUE is provided to
+      TexImage2DMultisample() or TexImage3DMultisample(), then the
+      sample locations will depend on neither coordinate,
+      internalformat, nor image size.
+    </task>
+    <task name="TMS16" specref="GL 3.2 3.8.4">
+      MAX_COLOR_TEXTURE_SAMPLES is added.
+    </task>
+    <task name="TMS17" specref="GL 3.2 3.8.4">
+      MAX_DEPTH_TEXTURE_SAMPLES is added.
+    </task>
+    <task name="TMS18" specref="GL 3.2 3.8.4">
+      MAX_INTEGER_SAMPLES is added.
+    </task>
+    <task name="TMS19" specref="GL 3.2 4.1.3">
+      If SAMPLE_MASK is enabled, the fragment coverage is ANDed with
+      SAMPLE_MASK_VALUE.
+    </task>
+    <task name="TMS20" specref="GL 3.2 4.1.3">
+      MAX_SAMPLE_MASK_WORDS specifies how many 32-bit masks
+      SAMPLE_MASK_VALUE is separated into.
+    </task>
+    <task name="TMS21" specref="GL 3.2 4.1.3">
+      SAMPLE_MASK and SAMPLE_MASK_VALUE are added.
+    </task>
+    <task name="TMS22" specref="GL 3.2 4.1.3">
+      SAMPLE_MASK_VALUE is queried using
+      GetIntegeri_v(SAMPLE_MASK_VALUE) with index set to maskNumber.
+    </task>
+    <task name="TMS23" specref="GL 3.2 4.1.3">
+      SAMPLE_MASK_VALUE is separated into n 32-bit masks (to handle the
+      possibility of &gt;32x multisampling).
+    </task>
+    <task name="TMS24" specref="GL 3.2 4.1.3">
+      SAMPLE_MASK_VALUE is specified using SampleMaski().
+    </task>
+    <task name="TMS25" specref="GL 3.2 4.4.2">
+      FramebufferTexture2D may be used to bind one layer of a
+      TEXTURE_2D_MULTISAMPLE texture.
+    </task>
+    <task name="TMS26" specref="GL 3.2 4.4.2">
+      FramebufferTextureLayer may now be used on a two-dimensional
+      multisample array.
+    </task>
+    <task name="TMS27" specref="GL 3.2 4.4.2">
+      MAX_INTEGER_SAMPLES is added to allow the implementation to signal
+      the degree to which multisample integer renderbuffers are
+      supported.
+    </task>
+    <task name="TMS28" specref="GL 3.2 4.4.2">
+      When calling FramebufferTexture* commands with
+      TEXTURE_2D_MULTISAMPLE or TEXTURE_2D_MULTISAMPLE_ARRAY, level must
+      be zero.
+    </task>
+    <task name="TMS29" specref="GL 3.2 4.4.4">
+      FRAMEBUFFER_INCOMPLETE_MULTISAMPLE now checks
+      TEXTURE_FIXED_SAMPLE_LOCATIONS.
+    </task>
+    <task name="TMS30" specref="GL 3.2 4.4.4">
+      FRAMEBUFFER_INCOMPLETE_MULTISAMPLE now checks both
+      RENDERBUFFER_SAMPLES and TEXTURE_SAMPLES.
+    </task>
+    <task name="TMS31" specref="GL 3.2 4.4.4">
+      Renderbuffers effectively have a TEXTURE_FIXED_SAMPLE_LOCATIONS
+      value of TRUE for purposes of checking framebuffer completeness.
+    </task>
+    <task name="TMS32" specref="GL 3.2 6.1.3">
+      GetTexLevelParameter{if}v() may now be used with
+      TEXTURE_2D_MULTISAMPLE, TEXTURE_2D_MULTISAMPLE_ARRAY,
+      PROXY_TEXTURE_2D_MULTISAMPLE, or
+      PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY.
+    </task>
+    <task name="TMS33" specref="GL 3.2 6.2">
+      In framebuffer dependent values (table 6.46), SAMPLE_POSITION is
+      new.
+    </task>
+    <task name="TMS34" specref="GL 3.2 6.2">
+      In implementation dependent values (table 6.45),
+      MAX_SAMPLE_MASK_WORDS, MAX_COLOR_TEXTURE_SAMPLES,
+      MAX_DEPTH_TEXTURE_SAMPLES, and MAX_INTEGER_SAMPLES are new.
+    </task>
+    <task name="TMS35" specref="GL 3.2 6.2">
+      In multisampling (table 6.11), SAMPLE_MASK and SAMPLE_MASK_VALUE
+      are added.
+    </task>
+    <task name="TMS36" specref="GL 3.2 6.2">
+      In textures (table 6.14), TEXTURE_BINDING_2D_MULTISAMPLE and
+      TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY are added.
+    </task>
+    <task name="TMS37" specref="GL 3.2 6.2">
+      In textures (table 6.16), TEXTURE_SAMPLES and
+      TEXTURE_FIXED_SAMPLE_LOCATIONS are added.
+    </task>
+    <task name="TMS38" specref="GLSL 1.50 3.6">
+      The following keywords are added: sampler2DMS, isampler2DMS,
+      usampler2DMS, sampler2DMSArray, isampler2DMSArray,
+      usampler2DMSArray
+    </task>
+    <task name="TMS39" specref="GLSL 1.50 4.1">
+      The following basic data types are added: sampler2DMS,
+      sampler2DMSArray, isampler2DMS, isampler2DMSArray, usampler2DMS,
+      usampler2DMSArray
+    </task>
+    <task name="TMS40" specref="GLSL 1.50 8.7">
+      gvec4 texelFetch(gsampler2DMS sampler, ivec2 P, int sample) is
+      added.
+    </task>
+    <task name="TMS41" specref="GLSL 1.50 8.7">
+      gvec4 texelFetch(gsampler2DMSArray sampler, ivec3 P, int sample)
+      is added.
+    </task>
+    <task name="TMS42" specref="GLSL 1.50 8.7">
+      ivec2 textureSize(gsampler2DMS sampler) is added.
+    </task>
+    <task name="TMS43" specref="GLSL 1.50 8.7">
+      ivec2 textureSize(gsampler2DMSArray sampler) is added.
+    </task>
+    <task name="TMS44" specref="GLSL 1.50 9">
+      New rules for "type_specifier_nonarray": SAMPLER2DMS,
+      ISAMPLER2DMS, USAMPLER2DMS, SAMPLER2DMSArray, ISAMPLER2DMSArray,
+      and USAMPLER2DMSArray.
+    </task>
+    <task name="TMS45" specref="GLSL 1.50 9">
+      The following tokens are added: SAMPLER2DMS, ISAMPLER2DMS,
+      USAMPLER2DMS, SAMPLER2DMSArray, ISAMPLER2DMSArray,
+      USAMPLER2DMSArray.
+    </task>
+  </category>
+  <category name="vertex shader input arrays">
+    <task name="VSInputArrays" specref="GLSL 1.50 4.3.4">
+      Vertex shader inputs can now be arrays, but not structures.
+    </task>
+  </category>
+</tasks>
