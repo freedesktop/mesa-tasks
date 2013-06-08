@@ -1064,7 +1064,7 @@
       interfaces (e.g. same block name used as both an input and an
       output block, I think)
     </task>
-    <task name="IB5" specref="GLSL 1.50 4.3.7">
+    <task name="IB5" specref="GLSL 1.50 4.3.7" piglit="ML" mesa="done">
       All input and output block arrays except geometry shader inputs
       must specify an array size.
     </task>
