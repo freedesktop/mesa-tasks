@@ -1690,23 +1690,23 @@
       UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE, and
       UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY.
     </task>
-    <task name="TMS2" specref="GL 3.2 2.11.7">
+    <task name="TMS2" specref="GL 3.2 2.11.7" mesa="done">
       Multisample texel fetches are added.
     </task>
-    <task name="TMS3" specref="GL 3.2 2.11.7">
+    <task name="TMS3" specref="GL 3.2 2.11.7" mesa="done">
       Multisample texel fetches have no LOD parameter.
     </task>
     <task name="TMS4" specref="GL 3.2 2.11.7">
       Multisample texel fetches may only be performed on multisample
       texture samplers.
     </task>
-    <task name="TMS5" specref="GL 3.2 2.11.7">
+    <task name="TMS5" specref="GL 3.2 2.11.7" mesa="done">
       Multisample textures support only NEAREST filtering.
     </task>
     <task name="TMS6" specref="GL 3.2 3.3.1">
       Sample locations can now be queried with GetMultisamplefv().
     </task>
-    <task name="TMS7" specref="GL 3.2 3.8">
+    <task name="TMS7" specref="GL 3.2 3.8" mesa="done">
       Two-dimensional multisample and two-dimensional multisample array
       textures are added.
     </task>
@@ -1723,17 +1723,17 @@
       Multisample textures contain an integer identifying the number of
       samples in each texel.
     </task>
-    <task name="TMS11" specref="GL 3.2 3.8.4">
+    <task name="TMS11" specref="GL 3.2 3.8.4" mesa="done">
       Command TexImage2DMultisample() is added.
     </task>
-    <task name="TMS12" specref="GL 3.2 3.8.4">
+    <task name="TMS12" specref="GL 3.2 3.8.4" mesa="done">
       Command TexImage3DMultisample() is added.
     </task>
-    <task name="TMS13" specref="GL 3.2 3.8.4">
+    <task name="TMS13" specref="GL 3.2 3.8.4" mesa="done">
       For TexImage2DMultisample(), target must be TEXTURE_2D_MULTISAMPLE
       or PROXY_TEXTURE_2D_MULTISAMPLE.
     </task>
-    <task name="TMS14" specref="GL 3.2 3.8.4">
+    <task name="TMS14" specref="GL 3.2 3.8.4" mesa="done">
       For TexImage3DMultisample(), target must be
       TeXTURE_2D_MULTISAMPLE_ARRAY or
       PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY.
@@ -1744,13 +1744,13 @@
       sample locations will depend on neither coordinate,
       internalformat, nor image size.
     </task>
-    <task name="TMS16" specref="GL 3.2 3.8.4">
+    <task name="TMS16" specref="GL 3.2 3.8.4" mesa="done">
       MAX_COLOR_TEXTURE_SAMPLES is added.
     </task>
-    <task name="TMS17" specref="GL 3.2 3.8.4">
+    <task name="TMS17" specref="GL 3.2 3.8.4" mesa="done">
       MAX_DEPTH_TEXTURE_SAMPLES is added.
     </task>
-    <task name="TMS18" specref="GL 3.2 3.8.4">
+    <task name="TMS18" specref="GL 3.2 3.8.4" mesa="done">
       MAX_INTEGER_SAMPLES is added.
     </task>
     <task name="TMS19" specref="GL 3.2 4.1.3">
@@ -1832,36 +1832,36 @@
       In textures (table 6.16), TEXTURE_SAMPLES and
       TEXTURE_FIXED_SAMPLE_LOCATIONS are added.
     </task>
-    <task name="TMS38" specref="GLSL 1.50 3.6">
+    <task name="TMS38" specref="GLSL 1.50 3.6" mesa="done">
       The following keywords are added: sampler2DMS, isampler2DMS,
       usampler2DMS, sampler2DMSArray, isampler2DMSArray,
       usampler2DMSArray
     </task>
-    <task name="TMS39" specref="GLSL 1.50 4.1">
+    <task name="TMS39" specref="GLSL 1.50 4.1" mesa="done">
       The following basic data types are added: sampler2DMS,
       sampler2DMSArray, isampler2DMS, isampler2DMSArray, usampler2DMS,
       usampler2DMSArray
     </task>
-    <task name="TMS40" specref="GLSL 1.50 8.7">
+    <task name="TMS40" specref="GLSL 1.50 8.7" mesa="done">
       gvec4 texelFetch(gsampler2DMS sampler, ivec2 P, int sample) is
       added.
     </task>
-    <task name="TMS41" specref="GLSL 1.50 8.7">
+    <task name="TMS41" specref="GLSL 1.50 8.7" mesa="done">
       gvec4 texelFetch(gsampler2DMSArray sampler, ivec3 P, int sample)
       is added.
     </task>
-    <task name="TMS42" specref="GLSL 1.50 8.7">
+    <task name="TMS42" specref="GLSL 1.50 8.7" mesa="done">
       ivec2 textureSize(gsampler2DMS sampler) is added.
     </task>
-    <task name="TMS43" specref="GLSL 1.50 8.7">
+    <task name="TMS43" specref="GLSL 1.50 8.7" mesa="done">
       ivec2 textureSize(gsampler2DMSArray sampler) is added.
     </task>
-    <task name="TMS44" specref="GLSL 1.50 9">
+    <task name="TMS44" specref="GLSL 1.50 9" mesa="done">
       New rules for "type_specifier_nonarray": SAMPLER2DMS,
       ISAMPLER2DMS, USAMPLER2DMS, SAMPLER2DMSArray, ISAMPLER2DMSArray,
       and USAMPLER2DMSArray.
     </task>
-    <task name="TMS45" specref="GLSL 1.50 9">
+    <task name="TMS45" specref="GLSL 1.50 9" mesa="done">
       The following tokens are added: SAMPLER2DMS, ISAMPLER2DMS,
       USAMPLER2DMS, SAMPLER2DMSArray, ISAMPLER2DMSArray,
       USAMPLER2DMSArray.
