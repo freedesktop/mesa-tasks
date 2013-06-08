@@ -1099,7 +1099,7 @@
       For uniform blocks, the application uses the block name to
       identify the block.
     </task>
-    <task name="IB13" specref="GLSL 1.50 4.3.7">
+    <task name="IB13" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       If an interface block has an instance-name, names inside the block
       are in a scope with their own name space, accessed with "." (like
       structures).
