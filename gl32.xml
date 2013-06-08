@@ -288,10 +288,10 @@
       When a *BaseVertex drawing command is used, the primitive restart
       comparison occurs before the basevertex offset is added.
     </task>
-    <task name="BaseVertex2" specref="GL 3.2 2.8.2">
+    <task name="BaseVertex2" specref="GL 3.2 2.8.2" piglit="done" mesa="done">
       DrawElementsBaseVertex() is added.
     </task>
-    <task name="BaseVertex3" specref="GL 3.2 2.8.2">
+    <task name="BaseVertex3" specref="GL 3.2 2.8.2" piglit="done" mesa="done">
       DrawElementsInstancedBaseVertex() is added.
     </task>
     <task name="BaseVertex4" specref="GL 3.2 2.8.2">
