@@ -1142,7 +1142,7 @@
       Interface blocks can have an optional instance name (used to refer
       to them within the shader).
     </task>
-    <task name="IB23" specref="GLSL 1.50 4.3.7">
+    <task name="IB23" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Interpolation and storage qualifiers may appear within an
       interface block.
     </task>
