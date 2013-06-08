@@ -1047,19 +1047,19 @@
     </task>
   </category>
   <category name="interface blocks">
-    <task name="IB1" specref="GLSL 1.50 4.3.6">
+    <task name="IB1" specref="GLSL 1.50 4.3.6" piglit="done" mesa="done">
       It is permissible for an input and an output to have the same name
       provided that one of them is nested inside an interface block with
       an instance name.
     </task>
-    <task name="IB2" specref="GLSL 1.50 4.3.6">
+    <task name="IB2" specref="GLSL 1.50 4.3.6" piglit="done" mesa="done">
       Outputs can also appear in interface blocks.
     </task>
     <task name="IB3" specref="GLSL 1.50 4.3.7">
       "Attribute" and "varying" qualifiers may not be used in interface
       blocks.
     </task>
-    <task name="IB4" specref="GLSL 1.50 4.3.7">
+    <task name="IB4" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       A block-name is allowed to have different definitions in different
       interfaces (e.g. same block name used as both an input and an
       output block, I think)
