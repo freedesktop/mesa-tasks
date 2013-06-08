@@ -294,14 +294,14 @@
     <task name="BaseVertex3" specref="GL 3.2 2.8.2" piglit="done" mesa="done">
       DrawElementsInstancedBaseVertex() is added.
     </task>
-    <task name="BaseVertex4" specref="GL 3.2 2.8.2">
+    <task name="BaseVertex4" specref="GL 3.2 2.8.2" mesa="done">
       DrawRangeElementsBaseVertex() is added.
     </task>
     <task name="BaseVertex5" specref="GL 3.2 2.8.2">
       For DrawRangeElementsBaseVertex, index values are compared to
       start and end values prior to adding basevertex.
     </task>
-    <task name="BaseVertex6" specref="GL 3.2 2.8.2">
+    <task name="BaseVertex6" specref="GL 3.2 2.8.2" mesa="done">
       MultiDrawElementsBaseVertex() is added.
     </task>
     <task name="BaseVertex7" specref="GL 3.2 2.8.2">
