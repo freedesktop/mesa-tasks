@@ -1055,7 +1055,7 @@
     <task name="IB2" specref="GLSL 1.50 4.3.6" piglit="done" mesa="done">
       Outputs can also appear in interface blocks.
     </task>
-    <task name="IB3" specref="GLSL 1.50 4.3.7">
+    <task name="IB3" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       "Attribute" and "varying" qualifiers may not be used in interface
       blocks.
     </task>
