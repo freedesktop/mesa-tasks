@@ -1163,7 +1163,7 @@
       Previously declared structures can be used within an interface
       block.
     </task>
-    <task name="IB29" specref="GLSL 1.50 4.3.7">
+    <task name="IB29" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Repeating the "in", "out", or "uniform" interface qualifier for a
       member within a block is optional.
     </task>
