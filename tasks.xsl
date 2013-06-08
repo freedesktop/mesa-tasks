@@ -93,12 +93,14 @@
       <xsl:attribute name="href">
         javascript:showOverlay('<xsl:value-of select="@name"/>:info')
       </xsl:attribute>
-      <xsl:if test="@mesa and @piglit = 'done'">
-        <xsl:attribute name="class">done</xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@mesa or @piglit">
-        <xsl:attribute name="class">partial</xsl:attribute>
-      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="@mesa and @piglit = 'done'">
+          <xsl:attribute name="class">done</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@mesa or @piglit">
+          <xsl:attribute name="class">partial</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
       <span>
         <xsl:value-of select="@name"/>
       </span>
