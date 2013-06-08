@@ -199,7 +199,7 @@
       functionality behavior for any programmable pipeline stage.  This
       is not allowed in the core profile.
     </task>
-    <task name="Determinant" specref="GLSL 1.50 8.5">
+    <task name="Determinant" specref="GLSL 1.50 8.5" piglit="done" mesa="done">
       The function determinant() is added.
     </task>
     <task name="RecursiveQuals" specref="GLSL 1.50 9">
