@@ -187,10 +187,10 @@
       The minimum value allowed for gl_MaxTextureUnits has been reduced
       from 16 to 2.
     </task>
-    <task name="MaxTexCoords" specref="GLSL 1.50 7.5">
+    <task name="MaxTexCoords" specref="GLSL 1.50 7.5" piglit="done" mesa="done">
       gl_MaxTextureCoords (min: 8) is added.
     </task>
-    <task name="DeprecateMaxTexUnits" specref="GLSL 1.50 7.5">
+    <task name="DeprecateMaxTexUnits" specref="GLSL 1.50 7.5" piglit="done" mesa="done">
       gl_MaxTextureUnits is now only available in the compatibility
       profile (previously it was always available).
     </task>
