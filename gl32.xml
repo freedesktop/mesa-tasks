@@ -1173,7 +1173,7 @@
     <task name="IB31" specref="GLSL 1.50 4.3.7">
       Uniform block array declarations must specify an array size.
     </task>
-    <task name="IB32" specref="GLSL 1.50 4.3.7">
+    <task name="IB32" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Uniform variables may only appear in uniform blocks.
     </task>
     <task name="IB33" specref="GLSL 1.50 4.3.7">
