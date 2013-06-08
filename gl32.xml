@@ -309,7 +309,7 @@
       buffer having &lt;32-bit width, the addition of a basevertex
       should occur as though upconverted to 32-bit.
     </task>
-    <task name="BaseVertex8" specref="GL 3.2 2.8.2">
+    <task name="BaseVertex8" specref="GL 3.2 2.8.2" piglit="done" mesa="done">
       When the *BaseVertex drawing commands are used, basevertex is
       implicitly added to each index in the indices buffer.
     </task>
