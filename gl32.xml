@@ -1039,7 +1039,7 @@
       Implementations are now required to support both GLSL versions
       1.40 and 1.50 (previously only version 1.30 was required).
     </task>
-    <task name="VersionMacro" specref="GLSL 1.50 3">
+    <task name="VersionMacro" specref="GLSL 1.50 3" piglit="done" mesa="done">
       __VERSION__ should substitute 150.
     </task>
     <task name="Link140And150" specref="GLSL 1.50 3.3">
