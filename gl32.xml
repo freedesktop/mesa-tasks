@@ -1210,7 +1210,7 @@
       Redeclaration of gl_TexCoord is done at global scope, not in an
       interface block.
     </task>
-    <task name="IB41" specref="GLSL 1.50 7.6">
+    <task name="IB41" specref="GLSL 1.50 7.6" piglit="done" mesa="done">
       The variables gl_FrontColor, gl_BackColor, gl_FrontSecondaryColor,
       gl_BackSecondaryColor, gl_TexCoord[], and gl_FogFragCoord are now
       considered to be nested within the gl_PerVertex output interface
