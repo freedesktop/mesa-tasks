@@ -1068,7 +1068,7 @@
       All input and output block arrays except geometry shader inputs
       must specify an array size.
     </task>
-    <task name="IB6" specref="GLSL 1.50 4.3.7">
+    <task name="IB6" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       An output block of one pipeline stage will be matched to an input
       block with the same block-name (block-name is the name that
       appears before the "{" that opens the interface block).
