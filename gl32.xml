@@ -1216,17 +1216,17 @@
       considered to be nested within the gl_PerVertex output interface
       block (in the compatibility profile only).
     </task>
-    <task name="IB42" specref="GLSL 1.50 9">
+    <task name="IB42" specref="GLSL 1.50 9" piglit="done" mesa="done">
       New rule for "declaration": type_qualifier IDENTIFIER LEFT_BRACE
       struct_declaration_list RIGHT_BRACE IDENTIFIER LEFT_BRACKET
       RIGHT_BRACKET SEMICOLON
     </task>
-    <task name="IB43" specref="GLSL 1.50 9">
+    <task name="IB43" specref="GLSL 1.50 9" piglit="done" mesa="done">
       New rule for "declaration": type_qualifier IDENTIFIER LEFT_BRACE
       struct_declaration_list RIGHT_BRACE IDENTIFIER LEFT_BRACKET
       constant_expression RIGHT_BRACKET SEMICOLON
     </task>
-    <task name="IB44" specref="GLSL 1.50 9">
+    <task name="IB44" specref="GLSL 1.50 9" piglit="done" mesa="done">
       New rule for "declaration": type_qualifier IDENTIFIER LEFT_BRACE
       struct_declaration_list RIGHT_BRACE IDENTIFIER SEMICOLON
     </task>
