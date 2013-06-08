@@ -1146,10 +1146,10 @@
       Interpolation and storage qualifiers may appear within an
       interface block.
     </task>
-    <task name="IB24" specref="GLSL 1.50 4.3.7">
+    <task name="IB24" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       It is illegal to have an input block in a vertex shader.
     </task>
-    <task name="IB25" specref="GLSL 1.50 4.3.7">
+    <task name="IB25" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       It is illegal to have an output block in a fragment shader.
     </task>
     <task name="IB26" specref="GLSL 1.50 4.3.7">
