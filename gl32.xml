@@ -1134,7 +1134,7 @@
     <task name="IB20" specref="GLSL 1.50 4.3.7">
       Input variables may only appear in input blocks.
     </task>
-    <task name="IB21" specref="GLSL 1.50 4.3.7">
+    <task name="IB21" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Input, output, and uniform variable declarations can be grouped
       into named interface blocks.
     </task>
