@@ -313,7 +313,7 @@
       When the *BaseVertex drawing commands are used, basevertex is
       implicitly added to each index in the indices buffer.
     </task>
-    <task name="BaseVertex9" specref="GL 3.2 2.8.2">
+    <task name="BaseVertex9" specref="GL 3.2 2.8.2" piglit="done" mesa="done">
       When the *BaseVertex drawing commands are used, the operation is
       undefined if adding the offset would cause a negative index.
     </task>
