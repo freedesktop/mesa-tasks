@@ -1138,7 +1138,7 @@
       Input, output, and uniform variable declarations can be grouped
       into named interface blocks.
     </task>
-    <task name="IB22" specref="GLSL 1.50 4.3.7">
+    <task name="IB22" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Interface blocks can have an optional instance name (used to refer
       to them within the shader).
     </task>
