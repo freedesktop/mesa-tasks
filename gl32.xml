@@ -1433,7 +1433,7 @@
     </task>
   </category>
   <category name="GL_ARB_seamless_cube_map">
-    <task name="Cube1" specref="GL 3.2 3.8.8">
+    <task name="Cube1" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       Initially, seamless cube map filtering is disabled.
     </task>
     <task name="Cube2" specref="GL 3.2 3.8.8">
