@@ -1436,7 +1436,7 @@
     <task name="Cube1" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       Initially, seamless cube map filtering is disabled.
     </task>
-    <task name="Cube2" specref="GL 3.2 3.8.8">
+    <task name="Cube2" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       Seamless Cube Map Filtering is added.
     </task>
     <task name="Cube3" specref="GL 3.2 3.8.8">
