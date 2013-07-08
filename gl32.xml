@@ -1389,7 +1389,7 @@
     <task name="GLSLProfile" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
       After "#version &lt;number&gt;" there is an optional profile.
     </task>
-    <task name="GLSLCoreDefault" specref="GLSL 1.50 3.3">
+    <task name="GLSLCoreDefault" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
       If no profile argument is provided, the default is "core".
     </task>
     <task name="CoreDefine" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
