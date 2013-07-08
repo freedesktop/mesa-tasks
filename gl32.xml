@@ -1377,7 +1377,7 @@
     </task>
   </category>
   <category name="core/compatibility profiles">
-    <task name="ProfileMask" specref="GL 3.2 6.1.5">
+    <task name="ProfileMask" specref="GL 3.2 6.1.5" piglit="done" mesa="done">
       GetIntegerv() may be passed CONTEXT_PROFILE_MASK; it returns
       either CONTEXT_CORE_PROFILE_BIT or
       CONTEXT_COMPATIBILITY_PROFILE_BIT depending on the API implemented
