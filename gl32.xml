@@ -1502,7 +1502,7 @@
       DeleteSync() may be called on a sync object that currently has
       ClientWaitSync() or WaitSync() commands blocking on it.
     </task>
-    <task name="Sync6" specref="GL 3.2 5.2">
+    <task name="Sync6" specref="GL 3.2 5.2" mesa="done">
       DeleteSync() siglently ignores sync values of zero.
     </task>
     <task name="Sync7" specref="GL 3.2 5.2">
