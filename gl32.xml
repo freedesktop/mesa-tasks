@@ -1534,7 +1534,7 @@
       SYNC_GPU_COMMANDS_COMPLETE (otherwise an INVALID_ENUM error is
       generated).
     </task>
-    <task name="Sync14" specref="GL 3.2 5.2">
+    <task name="Sync14" specref="GL 3.2 5.2" mesa="done">
       The only flags value allowed by FenceSync is 0 (otherwise an
       INVALID_VALUE error is generated).
     </task>
