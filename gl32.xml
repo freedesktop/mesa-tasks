@@ -1490,7 +1490,7 @@
     <task name="Sync2" specref="GL 3.2 5.2" mesa="done">
       DeleteSync() deletes sync objects.
     </task>
-    <task name="Sync3" specref="GL 3.2 5.2">
+    <task name="Sync3" specref="GL 3.2 5.2" mesa="done">
       DeleteSync() does not block on a sync object that is not yet
       SIGNALED.
     </task>
