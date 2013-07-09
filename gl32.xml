@@ -1656,7 +1656,7 @@
       DeleteSync(), even if the underlying sync object is still
       associated with a fence command or blocking a *WaitSync command.
     </task>
-    <task name="Sync45" specref="GL 3.2 6.2">
+    <task name="Sync45" specref="GL 3.2 6.2" mesa="done">
       In implementation dependent values (table 6.45),
       MAX_SERVER_WAIT_TIMEOUT is new.
     </task>
