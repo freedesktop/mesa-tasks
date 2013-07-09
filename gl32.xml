@@ -1529,7 +1529,7 @@
       Sync objects have an OBJECT_TYPE property which is always
       SYNC_FENCE.
     </task>
-    <task name="Sync13" specref="GL 3.2 5.2">
+    <task name="Sync13" specref="GL 3.2 5.2" mesa="done">
       The only condition allowed by FenceSync is
       SYNC_GPU_COMMANDS_COMPLETE (otherwise an INVALID_ENUM error is
       generated).
