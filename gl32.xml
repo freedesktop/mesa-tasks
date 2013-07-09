@@ -1513,11 +1513,11 @@
     <task name="Sync8" specref="GL 3.2 5.2">
       Sync objects are initially UNSIGNALED.
     </task>
-    <task name="Sync9" specref="GL 3.2 5.2">
+    <task name="Sync9" specref="GL 3.2 5.2" mesa="done">
       Sync objects have a SYNC_CONDITION property which is the condition
       passed to FenceSync().
     </task>
-    <task name="Sync10" specref="GL 3.2 5.2">
+    <task name="Sync10" specref="GL 3.2 5.2" mesa="done">
       Sync objects have a SYNC_FLAGS property which is the flags value
       passed to FenceSync().
     </task>
