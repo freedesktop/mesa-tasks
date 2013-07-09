@@ -1525,7 +1525,7 @@
       Sync objects have a SYNC_STATUS property with two possible states:
       SIGNALED and UNSIGNALED.
     </task>
-    <task name="Sync12" specref="GL 3.2 5.2">
+    <task name="Sync12" specref="GL 3.2 5.2" mesa="done">
       Sync objects have an OBJECT_TYPE property which is always
       SYNC_FENCE.
     </task>
