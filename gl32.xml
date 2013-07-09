@@ -1637,11 +1637,11 @@
       SYNC_FLUSH_COMMANDS_BIT will not help when waiting for a fence
       command issued in another context's command stream.
     </task>
-    <task name="Sync40" specref="GL 3.2 6.1.7">
+    <task name="Sync40" specref="GL 3.2 6.1.7" mesa="done">
       If GetSynciv() is passed an invalid pname, INVALID_ENUM is
       generated.
     </task>
-    <task name="Sync41" specref="GL 3.2 6.1.7">
+    <task name="Sync41" specref="GL 3.2 6.1.7" mesa="done">
       If sync is not the name of a sync object GetSynciv() generates
       INVALID_VALUE.
     </task>
