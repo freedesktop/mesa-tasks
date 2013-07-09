@@ -1494,7 +1494,7 @@
       DeleteSync() does not block on a sync object that is not yet
       SIGNALED.
     </task>
-    <task name="Sync4" specref="GL 3.2 5.2">
+    <task name="Sync4" specref="GL 3.2 5.2" mesa="done">
       DeleteSync() generates INVALID_VALUE if the supplied sync
       parameter is neither zero nor the name of a sync object.
     </task>
