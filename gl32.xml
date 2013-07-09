@@ -319,11 +319,11 @@
     </task>
   </category>
   <category name="GL_ARB_depth_clamp">
-    <task name="DepthClamp1" specref="GL 3.2 2.19">
+    <task name="DepthClamp1" specref="GL 3.2 2.19" piglit="done" mesa="done">
       If depth clamping is enabled (DEPTH_CLAMP), the -wc &lt;= zc &lt;=
       wc plane equation is ignored by view volume clipping.
     </task>
-    <task name="DepthClamp2" specref="GL 3.2 4.1.5">
+    <task name="DepthClamp2" specref="GL 3.2 4.1.5" piglit="done" mesa="done">
       If depth clamping is enabled, the incoming fragment's zw is
       clamped to the range [min(n, f), max(n, f)] before the depth
       buffer test is performed.
