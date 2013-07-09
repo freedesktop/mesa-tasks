@@ -1505,7 +1505,7 @@
     <task name="Sync6" specref="GL 3.2 5.2" mesa="done">
       DeleteSync() siglently ignores sync values of zero.
     </task>
-    <task name="Sync7" specref="GL 3.2 5.2">
+    <task name="Sync7" specref="GL 3.2 5.2" mesa="done" piglit="done">
       FenceSync() creates a new fence sync object, inserts a fence
       command in the GL command stream, and associates it with the sync
       object.
