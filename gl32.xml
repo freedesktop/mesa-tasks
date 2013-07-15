@@ -1376,34 +1376,6 @@
       comes from is undefined.
     </task>
   </category>
-  <category name="core/compatibility profiles">
-    <task name="ProfileMask" specref="GL 3.2 6.1.5" piglit="done" mesa="done">
-      GetIntegerv() may be passed CONTEXT_PROFILE_MASK; it returns
-      either CONTEXT_CORE_PROFILE_BIT or
-      CONTEXT_COMPATIBILITY_PROFILE_BIT depending on the API implemented
-      by the context.
-    </task>
-    <task name="CoreRequired" specref="GL 3.2 E" piglit="done" mesa="done">
-      All implementations must support the core profile.
-    </task>
-    <task name="GLSLProfile" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
-      After "#version &lt;number&gt;" there is an optional profile.
-    </task>
-    <task name="GLSLCoreDefault" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
-      If no profile argument is provided, the default is "core".
-    </task>
-    <task name="CoreDefine" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
-      In both core and compatibility profiles, GL_core_profile is
-      #defined to 1.
-    </task>
-    <task name="CompatDefine" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
-      In the compatibility profile, GL_compatibility_profile is #defined
-      to 1.
-    </task>
-    <task name="GLSLValidProfiles" specref="GLSL 1.50 3.3" piglit="done" mesa="done">
-      The optional profile may be either "core" or "compatibility".
-    </task>
-  </category>
   <category name="GL_ARB_provoking_vertex">
     <task name="PV1" specref="GL 3.2 2.11.7">
       Flatshading is added to the list of operations applied to vertices
