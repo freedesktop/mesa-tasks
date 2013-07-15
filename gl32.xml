@@ -214,7 +214,7 @@
     </task>
   </category>
   <category name="GL_ARB_vertex_array_bgra">
-    <task name="BGRANormalizedOnly" specref="GL 3.2 2.8">
+    <task name="BGRANormalizedOnly" specref="GL 3.2 2.8" piglit="ML" mesa="ML">
       VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
       normalized == GL_FALSE.
     </task>
