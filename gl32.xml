@@ -218,7 +218,7 @@
       VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
       normalized == GL_FALSE.
     </task>
-    <task name="BGRAUnsignedByteOnly" specref="GL 3.2 2.8">
+    <task name="BGRAUnsignedByteOnly" specref="GL 3.2 2.8" piglit="ML" mesa="done">
       VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
       type != GL_UNSIGNED_BYTE.
     </task>
