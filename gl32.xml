@@ -222,7 +222,7 @@
       VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
       type != GL_UNSIGNED_BYTE.
     </task>
-    <task name="BGRA" specref="GL 3.2 2.8">
+    <task name="BGRA" specref="GL 3.2 2.8" piglit="done" mesa="done">
       VertexAttribPointer now accepts a "size" of GL_BGRA, which
       indicates four value, but reverses the order of the first through
       third values of each array element.
