@@ -78,6 +78,9 @@
         <xsl:when test="$attr = 'done'">
           <xsl:attribute name="class">done</xsl:attribute>&#10003;
         </xsl:when>
+        <xsl:when test="$attr = 'no'">
+          <xsl:attribute name="class">missing</xsl:attribute>&#10007;
+        </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$attr"/>
         </xsl:otherwise>
