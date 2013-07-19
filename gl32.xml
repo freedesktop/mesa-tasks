@@ -22,12 +22,6 @@
       "program" is not the name of a program object (presumably an
       oversight).
     </task>
-    <task name="MinClipSpaces" specref="GL 3.2 2.19">
-      The minimum number of client-defined halfspaces available for
-      clipping has been increased from 6 to 8 (probably just fixing a
-      spec bug, since both GL 3.1 and GL 3.2 list MAX_CLIP_DISTANCES=8
-      in their state tables).
-    </task>
     <task name="NoRestartVertexID" specref="GL 3.2 2.8.1">
       Though is not explicitly stated, it appears that primitive restart
       should *not* restart the gl_VertexID index.
