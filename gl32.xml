@@ -196,9 +196,6 @@
     <task name="Determinant" specref="GLSL 1.50 8.5" piglit="done" mesa="done">
       The function determinant() is added.
     </task>
-    <task name="InvariantQual" specref="GLSL 1.50 9">
-      New rule for "type_qualifier": invariant.
-    </task>
     <task name="InvariantEverywhere" specref="GLSL 1.50 9" piglit="no">
       Rule "INVARIANT IDENTIFIER" for "single_declaration" is no longer
       vertex only.
