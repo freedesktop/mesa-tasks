@@ -196,9 +196,6 @@
     <task name="Determinant" specref="GLSL 1.50 8.5" piglit="done" mesa="done">
       The function determinant() is added.
     </task>
-    <task name="RecursiveQuals" specref="GLSL 1.50 9" piglit="no">
-      "type_qualifier" rules are revised to eliminate recursion.
-    </task>
     <task name="InvariantQual" specref="GLSL 1.50 9">
       New rule for "type_qualifier": invariant.
     </task>
