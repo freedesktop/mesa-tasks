@@ -1110,7 +1110,7 @@
       In order for interface blocks to match, their contents must be in
       identical order.
     </task>
-    <task name="IB18" specref="GLSL 1.50 4.3.7" mesa="yes" piglit="yes">
+    <task name="IB18" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
       In order for interface blocks to match, their contents must
       contain identical types, names, and member-wise layout
       qualification.
