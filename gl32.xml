@@ -1106,7 +1106,7 @@
       If an interface block has no instance-name, then members of the
       block are accessed from the OpenGL API by their bare name.
     </task>
-    <task name="IB17" specref="GLSL 1.50 4.3.7">
+    <task name="IB17" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
       In order for interface blocks to match, their contents must be in
       identical order.
     </task>
