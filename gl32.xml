@@ -321,7 +321,7 @@
     </task>
   </category>
   <category name="GL_ARB_fragment_coord_conventions">
-    <task name="FCC1" specref="GL 3.2 3.9.2" piglit="no">
+    <task name="FCC1" specref="GL 3.2 3.9.2" piglit="done" mesa="done">
       The specification of gl_FragCoord is expanded to account for
       pixel-center and origin conventions.
     </task>
