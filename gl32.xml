@@ -1761,7 +1761,7 @@
       FRAMEBUFFER_INCOMPLETE_MULTISAMPLE now checks both
       RENDERBUFFER_SAMPLES and TEXTURE_SAMPLES.
     </task>
-    <task name="TMS31" specref="GL 3.2 4.4.4">
+    <task name="TMS31" specref="GL 3.2 4.4.4" piglit="done" mesa="done">
       Renderbuffers effectively have a TEXTURE_FIXED_SAMPLE_LOCATIONS
       value of TRUE for purposes of checking framebuffer completeness.
     </task>
