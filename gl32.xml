@@ -1147,7 +1147,7 @@
     <task name="IB27" specref="GLSL 1.50 4.3.7" piglit="no">
       Output variables may only appear in output blocks.
     </task>
-    <task name="IB28" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB28" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
       Previously declared structures can be used within an interface
       block.
     </task>
