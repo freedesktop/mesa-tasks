@@ -1069,7 +1069,7 @@
       Block names may not be used at global scope for anythin other than
       as a block name.
     </task>
-    <task name="IB9" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB9" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
       Built-in types can be used within an interface block.
     </task>
     <task name="IB10" specref="GLSL 1.50 4.3.7" piglit="no">
