@@ -1061,7 +1061,7 @@
       block with the same block-name (block-name is the name that
       appears before the "{" that opens the interface block).
     </task>
-    <task name="IB7" specref="GLSL 1.50 4.3.7">
+    <task name="IB7" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
       Arrays of built-in types or structures can be used within an
       interface block.
     </task>
