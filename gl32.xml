@@ -1065,7 +1065,7 @@
       Arrays of built-in types or structures can be used within an
       interface block.
     </task>
-    <task name="IB8" specref="GLSL 1.50 4.3.7">
+    <task name="IB8" specref="GLSL 1.50 4.3.7" mesa="no" piglit="ML">
       Block names may not be used at global scope for anythin other than
       as a block name.
     </task>
