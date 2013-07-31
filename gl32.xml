@@ -1155,7 +1155,7 @@
       Repeating the "in", "out", or "uniform" interface qualifier for a
       member within a block is optional.
     </task>
-    <task name="IB30" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB30" specref="GLSL 1.50 4.3.7" piglit="done">
       Structure definitions cannot be nested inside an interface block.
     </task>
     <task name="IB31" specref="GLSL 1.50 4.3.7" piglit="no">
