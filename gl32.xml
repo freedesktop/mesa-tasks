@@ -1436,7 +1436,7 @@
     </task>
   </category>
   <category name="structured varyings">
-    <task name="FSStructIn" specref="GLSL 1.50 4.3.4" piglit="no">
+    <task name="FSStructIn" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Fragment shader inputs may be structures.
     </task>
     <task name="VSGSStructOut" specref="GLSL 1.50 4.3.6" piglit="no">
