@@ -1439,7 +1439,7 @@
     <task name="FSStructIn" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Fragment shader inputs may be structures.
     </task>
-    <task name="VSGSStructOut" specref="GLSL 1.50 4.3.6" piglit="no">
+    <task name="VSGSStructOut" specref="GLSL 1.50 4.3.6" piglit="VS only">
       Vertex and geometry shader outputs may be structures.
     </task>
   </category>
