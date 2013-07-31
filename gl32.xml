@@ -1115,7 +1115,7 @@
       contain identical types, names, and member-wise layout
       qualification.
     </task>
-    <task name="IB19" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB19" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Indices used to index a uniform block array must be integral
       constant expressions.
     </task>
