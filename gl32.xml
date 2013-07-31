@@ -1158,7 +1158,7 @@
     <task name="IB30" specref="GLSL 1.50 4.3.7" piglit="done">
       Structure definitions cannot be nested inside an interface block.
     </task>
-    <task name="IB31" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB31" specref="GLSL 1.50 4.3.7" piglit="done">
       Uniform block array declarations must specify an array size.
     </task>
     <task name="IB32" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
