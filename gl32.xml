@@ -173,7 +173,7 @@
       The minimum value allowed for gl_MaxCombinedTextureImageUnits has
       been increased from 16 to 48.
     </task>
-    <task name="CombinedVarying" specref="GLSL 1.50 7.4" piglit="no">
+    <task name="CombinedVarying" specref="GLSL 1.50 7.4" piglit="done" mesa="done">
       The minimum value allowed for gl_MaxVaryingFloats and
       gl_MaxVaryingComponents has been reduced from 64 to 60.
     </task>
