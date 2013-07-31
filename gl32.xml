@@ -169,7 +169,7 @@
       shaders forming a program, and it was only an error to statically
       *write* to both, not to read).
     </task>
-    <task name="CombinedTexIncrease" specref="GLSL 1.50 7.4" piglit="no">
+    <task name="CombinedTexIncrease" specref="GLSL 1.50 7.4" piglit="done">
       The minimum value allowed for gl_MaxCombinedTextureImageUnits has
       been increased from 16 to 48.
     </task>
