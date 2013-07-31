@@ -1827,9 +1827,4 @@
       USAMPLER2DMSArray.
     </task>
   </category>
-  <category name="vertex shader input arrays">
-    <task name="VSInputArrays" specref="GLSL 1.50 4.3.4" piglit="no">
-      Vertex shader inputs can now be arrays, but not structures.
-    </task>
-  </category>
 </tasks>
