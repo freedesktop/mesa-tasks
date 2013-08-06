@@ -81,7 +81,7 @@
       if the value of ACTIVE_TEXTURE is greater than or equal to
       MAX_COMBINED_TEXTURE_IMAGE_UNITS.
     </task>
-    <task name="MaxVarying60" specref="GL 3.2 6.2">
+    <task name="MaxVarying60" specref="GL 3.2 6.2" piglit="done" mesa="done">
       In implementation dependent aggregate shader limits (table 6.44),
       MAX_VARYING_COMPONENTS is reduced from 64 to 60.
     </task>
