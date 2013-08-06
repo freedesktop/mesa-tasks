@@ -240,17 +240,6 @@
     </task>
   </category>
   <category name="64-bit API">
-    <task name="I64Type" specref="GL 3.2 2.3" piglit="no">
-      "i64" is added the the list of type descriptors which may appear
-      in GL function names.
-    </task>
-    <task name="IntUint64Types" specref="GL 3.2 2.4" piglit="no">
-      The "GL Data Types" table is expanded to include int64 and uint64.
-    </task>
-    <task name="Int64Buffers" specref="GL 3.2 2.9.1" piglit="no">
-      The type of BUFFER_SIZE, BUFFER_MAP_OFFSET, and BUFFER_MAP_LENGTH
-      has been changed from integer to int64.
-    </task>
     <task name="GetInteger64i_v" specref="GL 3.2 6.1.1" piglit="no">
       GetInteger64i_v() is added.
     </task>
