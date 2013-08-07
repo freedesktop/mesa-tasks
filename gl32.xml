@@ -397,7 +397,7 @@
       that can be written by the vertex shader is
       MAX_VERTEX_OUTPUT_COMPONENTS.
     </task>
-    <task name="GS8" specref="GL 3.2 2.11.6" piglit="no">
+    <task name="GS8" specref="GL 3.2 2.11.6" piglit="ML">
       When a geometry shader is active, transform feedback records
       geometry shader outputs.
     </task>
@@ -536,7 +536,7 @@
       output primitive type is used instead of the mode parameter passed
       to drawing commands.
     </task>
-    <task name="GS41" specref="GL 3.2 2.16">
+    <task name="GS41" specref="GL 3.2 2.16" piglit="ML">
       Transform feedback occurs after geometry shading.
     </task>
     <task name="GS42" specref="GL 3.2 2.17">
