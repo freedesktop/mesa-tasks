@@ -539,7 +539,7 @@
     <task name="GS41" specref="GL 3.2 2.16" piglit="ML">
       Transform feedback occurs after geometry shading.
     </task>
-    <task name="GS42" specref="GL 3.2 2.17">
+    <task name="GS42" specref="GL 3.2 2.17" piglit="ML">
       If a geometry shader is active, PRIMITIVES_GENERATED counts the
       number of primitives it emits.
     </task>
