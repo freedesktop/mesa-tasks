@@ -566,7 +566,7 @@
       In "Line Strips with Adjacency" mode, if the number of vertices is
       less than 4, all vertices are ignored.
     </task>
-    <task name="GS50" specref="GL 3.2 2.6.1">
+    <task name="GS50" specref="GL 3.2 2.6.1" piglit="done">
       In "Line Strips with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
@@ -579,7 +579,7 @@
       In "Lines with Adjacency" mode, if the number of vertices is 4n+k
       and k != 0, the final k vertices are ignored.
     </task>
-    <task name="GS53" specref="GL 3.2 2.6.1">
+    <task name="GS53" specref="GL 3.2 2.6.1" piglit="done">
       In "Lines with Adjacency" mode, if there is no geometry shader,
       adjacent vertices are ignored.
     </task>
@@ -592,7 +592,7 @@
       In "Triangle Strips with Adjacency" mode, if the number of
       vertices is 2(n+2)+k and k == 1, the final vertex is ignored.
     </task>
-    <task name="GS56" specref="GL 3.2 2.6.1">
+    <task name="GS56" specref="GL 3.2 2.6.1" piglit="done">
       In "Triangle Strips with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
@@ -605,7 +605,7 @@
       In "Triangles with Adjacency" mode, if the number of vertices is
       6n+k and k != 0, the final k verties are ignored.
     </task>
-    <task name="GS59" specref="GL 3.2 2.6.1">
+    <task name="GS59" specref="GL 3.2 2.6.1" piglit="done">
       In "Triangles with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
