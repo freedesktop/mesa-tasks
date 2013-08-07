@@ -772,15 +772,15 @@
       to: points=1, lines=2, lines_adjacency=4, triangles=3,
       triangles_adjacency=6.
     </task>
-    <task name="GS100" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS100" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       All input layouts specified in geometry shader compilation units
       must declare the same layout.
     </task>
-    <task name="GS101" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS101" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       At least one compilation unit in a geometry shader must declare an
       input layout.
     </task>
-    <task name="GS102" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS102" specref="GLSL 1.50 4.3.8.1" piglit="ML (all but gl_in)">
       For geometry shader inputs declared without an array size
       (including gl_in), a layout must be declared before any array use
       requiring the size be known (e.g. use of the length() method).
@@ -789,7 +789,7 @@
       Geometry shaders allow input layout qualifiers *only* on the
       interface qualifier "in" (i.e. "layout(...) in;").
     </task>
-    <task name="GS104" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS104" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       If a geometry shader input is declared with an array size, it must
       match the length implied by the geometry shader input layout.
     </task>
