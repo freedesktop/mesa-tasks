@@ -1388,7 +1388,7 @@
     <task name="Cube2" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       Seamless Cube Map Filtering is added.
     </task>
-    <task name="Cube3" specref="GL 3.2 3.8.8" piglit="no">
+    <task name="Cube3" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       When seamless cube map filtering is enabled, if LINEAR filtering
       is done within a miplevel, wrap mode CLAMP_TO_BORDER is used.
     </task>
@@ -1410,7 +1410,7 @@
       average the values of the corresponding corner samples of the
       three faces meeting at the corner.
     </task>
-    <task name="Cube7" specref="GL 3.2 3.8.8" piglit="no">
+    <task name="Cube7" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       When seamless cube map filtering is enabled, if a texture sample
       location would lie in the texture border in either u or v, instead
       select the corresponding texel from the appropriate neighboring
