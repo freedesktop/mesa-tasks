@@ -57,7 +57,7 @@
       to DrawBuffers() results in INVALID_ENUM.  (Previously, it
       resulted in INVALID_OPERATION).
     </task>
-    <task name="ClearNothing" specref="GL 3.2 4.2.3" piglit="no">
+    <task name="ClearNothing" specref="GL 3.2 4.2.3" piglit="done" mesa="done">
       Clear() may now be passed a bitfield of zero, causing no buffers
       to be cleared.
     </task>
