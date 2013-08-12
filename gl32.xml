@@ -52,7 +52,7 @@
       FRAMEBUFFER_SRGB.  It now happens whenever
       FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING is SRGB.
     </task>
-    <task name="DrawBufErrors" specref="GL 3.2 4.2.1" piglit="no">
+    <task name="DrawBufErrors" specref="GL 3.2 4.2.1" piglit="done">
       Passing the constants FRONT, BACK, LEFT, RIGHT, or FRONT_AND_BACK
       to DrawBuffers() results in INVALID_ENUM.  (Previously, it
       resulted in INVALID_OPERATION).
