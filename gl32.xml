@@ -124,7 +124,7 @@
     <task name="NoWideLines" specref="GL 3.2 E.2.1" piglit="no">
       Wide lines are deprecated
     </task>
-    <task name="UnusedOutputs" specref="GLSL 1.50 4.3.6" piglit="no">
+    <task name="UnusedOutputs" specref="GLSL 1.50 4.3.6" piglit="done" mesa="done">
       Only the output variables that are read by the subsequent pipeline
       stage need to be written; it is allowed to have superfluous
       declarations of output variables.
