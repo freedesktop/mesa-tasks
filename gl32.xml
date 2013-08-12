@@ -85,7 +85,7 @@
       In implementation dependent aggregate shader limits (table 6.44),
       MAX_VARYING_COMPONENTS is reduced from 64 to 60.
     </task>
-    <task name="MinVersion" specref="GL 3.2 6.2">
+    <task name="MinVersion" specref="GL 3.2 6.2" piglit="done" mesa="done">
       In implementation dependent version and extension support (table
       6.40), MAJOR_VERSION now has a minimum value of 3 (presumably it's
       just an oversight that this wasn't included in OpenGL 3.1).
