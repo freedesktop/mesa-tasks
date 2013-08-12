@@ -97,7 +97,7 @@
         javascript:showOverlay('<xsl:value-of select="@name"/>:info')
       </xsl:attribute>
       <xsl:choose>
-        <xsl:when test="@mesa and @piglit = 'done'">
+        <xsl:when test="@mesa = 'done' and @piglit = 'done'">
           <xsl:attribute name="class">done</xsl:attribute>
         </xsl:when>
         <xsl:when test="@mesa or @piglit">
