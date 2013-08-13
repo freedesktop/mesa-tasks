@@ -1378,7 +1378,11 @@
     </task>
     <task name="PV7" specref="GL 3.2 6.2">
       In implementation dependent values (table 6.45),
-      QUADS_FOLLOW_PROVOKING_VERTEX is new.
+      QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION is new.
+
+      Note that the spec refers to QUADS_FOLLOW_PROVOKING_VERTEX
+      (without the "_CONVENTION") but that's a spec bug.  See
+      https://cvs.khronos.org/bugzilla/show_bug.cgi?id=8432.
     </task>
   </category>
   <category name="GL_ARB_seamless_cube_map">
