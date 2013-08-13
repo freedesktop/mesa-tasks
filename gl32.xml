@@ -1795,20 +1795,32 @@
       Multisample textures contain an integer identifying the number of
       samples in each texel.
     </task>
-    <task name="TMS11" specref="GL 3.2 3.8.4" mesa="done">
+    <task name="TMS11" specref="GL 3.2 3.8.4" mesa="done" piglit="done">
       Command TexImage2DMultisample() is added.
+
+      Tested by
+      piglit/tests/spec/arb_texture_multisample/teximage-2d-multisample.c.
     </task>
-    <task name="TMS12" specref="GL 3.2 3.8.4" mesa="done">
+    <task name="TMS12" specref="GL 3.2 3.8.4" mesa="done" piglit="done">
       Command TexImage3DMultisample() is added.
+
+      Tested by
+      piglit/tests/spec/arb_texture_multisample/teximage-3d-multisample.c.
     </task>
-    <task name="TMS13" specref="GL 3.2 3.8.4" mesa="done">
+    <task name="TMS13" specref="GL 3.2 3.8.4" mesa="done" piglit="done">
       For TexImage2DMultisample(), target must be TEXTURE_2D_MULTISAMPLE
       or PROXY_TEXTURE_2D_MULTISAMPLE.
+
+      Tested by
+      piglit/tests/spec/arb_texture_multisample/teximage-2d-multisample.c.
     </task>
-    <task name="TMS14" specref="GL 3.2 3.8.4" mesa="done">
+    <task name="TMS14" specref="GL 3.2 3.8.4" mesa="done" piglit="done">
       For TexImage3DMultisample(), target must be
       TeXTURE_2D_MULTISAMPLE_ARRAY or
       PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY.
+
+      Tested by
+      piglit/tests/spec/arb_texture_multisample/teximage-3d-multisample.c.
     </task>
     <task name="TMS15" specref="GL 3.2 3.8.4">
       If fixedsamplelocations=TRUE is provided to
