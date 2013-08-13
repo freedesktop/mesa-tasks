@@ -44,8 +44,10 @@
       queries of all such state no longercheck the texture image unit
       number against MAX_COMBINED_TEXTURE_IMAGE_UNITS.
     </task>
-    <task name="NoColorClamping" specref="GL 3.2 3.9.2" piglit="no">
+    <task name="NoColorClamping" specref="GL 3.2 3.9.2" piglit="N/A">
       Verbiage related to fragment color clamping is removed.
+
+      There's nothing to test here.
     </task>
     <task name="SRGBEnables" specref="GL 3.2 4.1.8" piglit="no">
       SRGB conversion is no longer switched off by disabling
