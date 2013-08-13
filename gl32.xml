@@ -452,13 +452,19 @@
       used with the GL_TRIANGLES_ADJACENCY and
       GL_TRIANGLE_STRIP_ADJACENCY primitive types.
     </task>
-    <task name="GS20" specref="GL 3.2 2.12.1">
+    <task name="GS20" specref="GL 3.2 2.12.1" piglit="ML">
       It is a link error if multiple geometry shader objects specify
       different input primitive types.
+
+      Tested by "[PATCH 1/8] gs: Verify consistency checking of
+      geometry shader input layouts."
     </task>
-    <task name="GS21" specref="GL 3.2 2.12.1">
+    <task name="GS21" specref="GL 3.2 2.12.1" piglit="ML">
       It is a link error if no geometry shader object specifies an input
       primitive type.
+
+      Tested by "[PATCH 8/8] gs: Verify that an error is generated if
+      no input layout is specified."
     </task>
     <task name="GS22" specref="GL 3.2 2.12.1">
       It is a link error, not a compile error, for a geometry shader to
