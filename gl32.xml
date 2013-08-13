@@ -514,10 +514,13 @@
       shader's input primitive type, INVALID_OPERATION will result and
       nothing will be drawn.
     </task>
-    <task name="GS33" specref="GL 3.2 2.12.4">
+    <task name="GS33" specref="GL 3.2 2.12.4" piglit="N/A">
       If a geometry shader outputs more than its declared maximum number
       of output vertices, then the emitted vertices *may* have no
       effect.
+
+      Not necessary to test since it is undefined whether the emitted
+      vertex have any effect.
     </task>
     <task name="GS34" specref="GL 3.2 2.12.4">
       MAX_GEOMETRY_INPUT_COMPONENTS is added.
@@ -782,10 +785,13 @@
       Tested by "[PATCH 2/8] gs: Verify intra-shader checking of input
       layout vs. explicitly sized arrays."
     </task>
-    <task name="GS95" specref="GLSL 1.50 4.3.4">
+    <task name="GS95" specref="GLSL 1.50 4.3.4" piglit="N/A">
       If a program contains vertex and fragment shaders but no geometry
       shader, then there is a vertex/fragment interface (as in GLSL
       1.40).
+
+      Not necessary to test since this is what happens prior to GLSL
+      1.50.
     </task>
     <task name="GS96" specref="GLSL 1.50 4.3.4">
       Integral fragment shader inputs must be qualified with "flat".
@@ -909,11 +915,14 @@
       There must be at least one geometry output layout declaration
       somewhere in a program.
     </task>
-    <task name="GS119" specref="GLSL 1.50 4.3.9.1">
+    <task name="GS119" specref="GLSL 1.50 4.3.9.1" piglit="N/A">
       The variables gl_FrontColor, gl_BackColor, gl_FrontSecondaryColor,
       and gl_BackSecondaryColor can now be redeclared in geometry
       shaders (previously they were only allowed to be redeclared in
       vertex shaders).
+
+      Not necessary to test since this only affects compatibility
+      profiles.
     </task>
     <task name="GS120" specref="GLSL 1.50 4.5.3">
       The default precision qualifiers that were previously predeclared
@@ -944,18 +953,24 @@
 
       Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
     </task>
-    <task name="GS125" specref="GLSL 1.50 7.1">
+    <task name="GS125" specref="GLSL 1.50 7.1" piglit="N/A">
       If a geometry shader fails to write to gl_PrimitiveID, the value
       of gl_PrimitiveID within the fragment shader is undefined.
+
+      Not necessary to test since the value is undefined.
     </task>
-    <task name="GS126" specref="GLSL 1.50 7.1">
+    <task name="GS126" specref="GLSL 1.50 7.1" piglit="N/A">
       If the geometry shader does not write gl_Position before its first
       call to EmitVertex(), or between calls to EmitVertex(), its value
       is undefined.
+
+      Not necessary to test since the value is undefined.
     </task>
-    <task name="GS127" specref="GLSL 1.50 7.1">
+    <task name="GS127" specref="GLSL 1.50 7.1" piglit="N/A">
       If the vertex shader does not write gl_Position, its value is
       undefined.
+
+      Not necessary to test since the value is undefined.
     </task>
     <task name="GS128" specref="GLSL 1.50 7.1">
       The gl_PerVertex interface block also appears as a geometry shader
@@ -967,9 +982,12 @@
       output interface block, declared identically to the gl_PerVertex
       vertex shader output interface block.
     </task>
-    <task name="GS130" specref="GLSL 1.50 7.1.1">
+    <task name="GS130" specref="GLSL 1.50 7.1.1" piglit="N/A">
       gl_ClipVertex is also added to the gl_PerVertex output and input
       interface blocks in the geometry shader.
+
+      Not necessary to test since this only affects compatibility
+      profiles.
     </task>
     <task name="GS131" specref="GLSL 1.50 7.2" piglit="ML">
       If a geometry shader is present, the value in gl_PrimitiveID comes
@@ -1024,10 +1042,13 @@
     <task name="GS144" specref="GLSL 1.50 7.4">
       gl_MaxVertexOutputComponents (min: 64) is added.
     </task>
-    <task name="GS145" specref="GLSL 1.50 7.6">
+    <task name="GS145" specref="GLSL 1.50 7.6" piglit="N/A">
       These variables are also added to the gl_PerVertex output and
       input interface blocks in the geometry shader (in the
       compatibility profile only).
+
+      Not necessary to test since this only affects compatibility
+      profiles.
     </task>
     <task name="GS146" specref="GLSL 1.50 8.10">
       EmitVertex() is added.  This emits the current values of output
@@ -1042,9 +1063,11 @@
     <task name="GS148" specref="GLSL 1.50 8.10">
       EndPrimitive() is optional when the output layout is "points".
     </task>
-    <task name="GS149" specref="GLSL 1.50 8.10">
+    <task name="GS149" specref="GLSL 1.50 8.10" piglit="N/A">
       If a geometry shader calls EmitVertex() more times than it has
       declared with max_vertices, the results are undefined.
+
+      Not necessary to test since the results are undefined.
     </task>
     <task name="GS150" specref="GLSL 1.50 8.10" piglit="done">
       It is not necessary to call EndPrimitive() if the geometry shader
@@ -1053,9 +1076,11 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS151" specref="GLSL 1.50 8.10">
+    <task name="GS151" specref="GLSL 1.50 8.10" piglit="N/A">
       On return from EmitVertex(), the values of output variables are
       undefined.
+
+      Not necessary to test since the values are undefined.
     </task>
     <task name="GS152" specref="GLSL 1.50 8.10">
       When a geometry shader terminates, the current output primitive is
