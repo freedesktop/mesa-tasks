@@ -400,6 +400,9 @@
     <task name="GS8" specref="GL 3.2 2.11.6" piglit="ML">
       When a geometry shader is active, transform feedback records
       geometry shader outputs.
+
+      Tested by "[PATCH] Basic test that transform feedback works with
+      geometry shaders."
     </task>
     <task name="GS9" specref="GL 3.2 2.11.7" piglit="no">
       Geometry shaders handle incomplete textures in the same way as
@@ -419,9 +422,12 @@
       A program object that includes a geometry shader must also include
       a vertex shader.
     </task>
-    <task name="GS14" specref="GL 3.2 2.12">
+    <task name="GS14" specref="GL 3.2 2.12" piglit="ML">
       The geometry shader pipeline stage is after primitive assembly,
       prior to transform feedback.
+
+      Tested by "[PATCH] Basic test that transform feedback works with
+      geometry shaders."
     </task>
     <task name="GS15" specref="GL 3.2 2.12.1">
       Geometry shaders with input type "lines" may only be used with the
@@ -538,10 +544,16 @@
     </task>
     <task name="GS41" specref="GL 3.2 2.16" piglit="ML">
       Transform feedback occurs after geometry shading.
+
+      Tested by "[PATCH] Basic test that transform feedback works with
+      geometry shaders."
     </task>
     <task name="GS42" specref="GL 3.2 2.17" piglit="ML">
       If a geometry shader is active, PRIMITIVES_GENERATED counts the
       number of primitives it emits.
+
+      Tested by series "[PATCH 0/6] gs: Test interaction between
+      geometry shaders and transform feedback counting."
     </task>
     <task name="GS43" specref="GL 3.2 2.18">
       Table 2.12 describes the behaviour of the provoking vertex for all
@@ -617,9 +629,11 @@
     <task name="GS61" specref="GL 3.2 3.4">
       PROGRAM_POINT_SIZE has been changed to VERTEX_PROGRAM_POINT_SIZE.
     </task>
-    <task name="GS62" specref="GL 3.2 3.9.2">
+    <task name="GS62" specref="GL 3.2 3.9.2" piglit="ML">
       If a geometry shader is active, gl_PrimitiveID contains the value
       emitted by the geometry shader for the provoking vertex.
+
+      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
     </task>
     <task name="GS63" specref="GL 3.2 3.9.2">
       MAX_FRAGMENT_INPUT_COMPONENTS is added.
@@ -719,13 +733,19 @@
       The qualifiers "smooth", "flat", and "noperspective" are no longer
       limited just to vertex shader outs and fragment shader ins.
     </task>
-    <task name="GS88" specref="GLSL 1.50 4.3.4">
+    <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="ML">
       Each geometry shader input (or input block) needs to be declared
       as an array.
+
+      Tested by "[PATCH 1/2] gs: Test that geometry shader inputs must
+      be arrays."
     </task>
-    <task name="GS89" specref="GLSL 1.50 4.3.4">
+    <task name="GS89" specref="GLSL 1.50 4.3.4" piglit="ML">
       Each geometry shader input array can optionally have a size
       declared.
+
+      Tested by "[PATCH 7/8] gs: Verify checking of sized vs. unsized
+      geometry shader input arrays."
     </task>
     <task name="GS90" specref="GLSL 1.50 4.3.4">
       For the vertex/geometry interface, if the vertex output is an
@@ -740,15 +760,21 @@
     <task name="GS92" specref="GLSL 1.50 4.3.4">
       Geometry shader inputs receive values from vertex outputs.
     </task>
-    <task name="GS93" specref="GLSL 1.50 4.3.4">
+    <task name="GS93" specref="GLSL 1.50 4.3.4" piglit="ML">
       If a geometry shader input array does not have a size provided,
       the array size will be set by the input layout declaration(s)
       establishing the type of input primitive.
+
+      Tested by "[PATCH 4/8] gs: Verify intra-shader checking of input
+      layout vs. implicitly sized arrays."
     </task>
-    <task name="GS94" specref="GLSL 1.50 4.3.4">
+    <task name="GS94" specref="GLSL 1.50 4.3.4" piglit="ML">
       If a geometry shader input array has a size provided, it must be
       consistent with the input layout declaration(s) establishing the
       type of input primitive.
+
+      Tested by "[PATCH 2/8] gs: Verify intra-shader checking of input
+      layout vs. explicitly sized arrays."
     </task>
     <task name="GS95" specref="GLSL 1.50 4.3.4">
       If a program contains vertex and fragment shaders but no geometry
@@ -766,24 +792,37 @@
       Layout qualifiers can appear with just an interface qualifier
       ("in", "out", or "uniform").
     </task>
-    <task name="GS99" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS99" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       All geometry shader input unsized array declarations will be sized
       by an *earlier* input layout qualifier (when present) according
       to: points=1, lines=2, lines_adjacency=4, triangles=3,
       triangles_adjacency=6.
+
+      Tested by "[PATCH 4/8] gs: Verify intra-shader checking of input
+      layout vs. implicitly sized arrays."
     </task>
     <task name="GS100" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       All input layouts specified in geometry shader compilation units
       must declare the same layout.
+
+      Tested by "[PATCH 1/8] gs: Verify consistency checking of
+      geometry shader input layouts."
     </task>
     <task name="GS101" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       At least one compilation unit in a geometry shader must declare an
       input layout.
+
+      Tested by "[PATCH 8/8] gs: Verify that an error is generated if
+      no input layout is specified."
     </task>
     <task name="GS102" specref="GLSL 1.50 4.3.8.1" piglit="ML (all but gl_in)">
       For geometry shader inputs declared without an array size
       (including gl_in), a layout must be declared before any array use
       requiring the size be known (e.g. use of the length() method).
+
+      Partially tested by "[PATCH 4/8] gs: Verify intra-shader
+      checking of input layout vs. implicitly sized arrays."
+      Tests for gl_in still need to be written.
     </task>
     <task name="GS103" specref="GLSL 1.50 4.3.8.1">
       Geometry shaders allow input layout qualifiers *only* on the
@@ -792,15 +831,26 @@
     <task name="GS104" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       If a geometry shader input is declared with an array size, it must
       match the length implied by the geometry shader input layout.
+
+      Tested by "[PATCH 2/8] gs: Verify intra-shader checking of input
+      layout vs. explicitly sized arrays."
     </task>
-    <task name="GS105" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS105" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       It is a link-time error if not all geometry shader input sizes
       match (including both declared array sizes and the length implied
       by the geometry shader input layout).
+
+      Tested by "[PATCH 3/8] gs: Verify inter-shader checking of input
+      layout vs. explicitly sized arrays." and "[PATCH 5/8] gs: Verify
+      inter-shader checking of input layout vs. implicitly sized
+      arrays."
     </task>
-    <task name="GS106" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS106" specref="GLSL 1.50 4.3.8.1" piglit="ML">
       Not all geometry shader compilation units need to declare an input
       layout.
+
+      Tested by "[PATCH 3/8] gs: Verify inter-shader checking of input
+      layout vs. explicitly sized arrays."
     </task>
     <task name="GS107" specref="GLSL 1.50 4.3.8.1">
       Only one layout qualifier identifier may appear for geometry
@@ -868,19 +918,25 @@
       previously defined to 1 in vertex and fragment shaders, is now
       available in geometry shaders as well.
     </task>
-    <task name="GS122" specref="GLSL 1.50 7.1">
+    <task name="GS122" specref="GLSL 1.50 7.1" piglit="ML">
       Fragment shaders will select the value of gl_PrimitiveID that is
       written by the geometry shader for the provoking vertex.
+
+      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
     </task>
-    <task name="GS123" specref="GLSL 1.50 7.1">
+    <task name="GS123" specref="GLSL 1.50 7.1" piglit="ML">
       Geometry shaders also contain the special input variable "in int
       gl_PrimitiveIDIn", which is filled with the number of primitives
       processed by the geometry shader since the current set of
       rendering primitives was started.
+
+      Tested by "[PATCH] gs: Test primitive ID input."
     </task>
-    <task name="GS124" specref="GLSL 1.50 7.1">
+    <task name="GS124" specref="GLSL 1.50 7.1" piglit="ML">
       Geometry shaders also contain the special output variable "out int
       gl_PrimitiveID", which is communicated to fragment shaders.
+
+      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
     </task>
     <task name="GS125" specref="GLSL 1.50 7.1">
       If a geometry shader fails to write to gl_PrimitiveID, the value
@@ -909,17 +965,21 @@
       gl_ClipVertex is also added to the gl_PerVertex output and input
       interface blocks in the geometry shader.
     </task>
-    <task name="GS131" specref="GLSL 1.50 7.2">
+    <task name="GS131" specref="GLSL 1.50 7.2" piglit="ML">
       If a geometry shader is present, the value in gl_PrimitiveID comes
       from the geometry shader's gl_PrimitiveID output.
+
+      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
     </task>
     <task name="GS132" specref="GLSL 1.50 7.2">
       If no geometry shader is present, the value in gl_PrimitiveID is
       the number of primitives processed by the vertex shader since the
       current set of rendering primitives was started.
     </task>
-    <task name="GS133" specref="GLSL 1.50 7.2">
+    <task name="GS133" specref="GLSL 1.50 7.2" piglit="ML">
       The built-in input variable "in int gl_PrimitiveID" is added.
+
+      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
     </task>
     <task name="GS134" specref="GLSL 1.50 7.2">
       gl_ClipDistance must be sized either implicitly or explicitly to
@@ -967,9 +1027,11 @@
       EmitVertex() is added.  This emits the current values of output
       variables to the current output primitive.
     </task>
-    <task name="GS147" specref="GLSL 1.50 8.10">
+    <task name="GS147" specref="GLSL 1.50 8.10" piglit="ML">
       EndPrimitive() is added.  This completes the current output
       primitive and starts a new one, without emitting any vertices.
+
+      Tested by "[PATCH] gs: Test EndPrimitive() functionality."
     </task>
     <task name="GS148" specref="GLSL 1.50 8.10">
       EndPrimitive() is optional when the output layout is "points".
@@ -978,9 +1040,12 @@
       If a geometry shader calls EmitVertex() more times than it has
       declared with max_vertices, the results are undefined.
     </task>
-    <task name="GS150" specref="GLSL 1.50 8.10">
+    <task name="GS150" specref="GLSL 1.50 8.10" piglit="done">
       It is not necessary to call EndPrimitive() if the geometry shader
       writes only a single primitive.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS151" specref="GLSL 1.50 8.10">
       On return from EmitVertex(), the values of output variables are
