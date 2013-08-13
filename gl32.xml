@@ -568,8 +568,11 @@
       Table 2.12 describes the behaviour of the provoking vertex for all
       primitive types, including the new "adjacency" types.
     </task>
-    <task name="GS44" specref="GL 3.2 2.4">
+    <task name="GS44" specref="GL 3.2 2.4" piglit="done">
       Geometry shading is added to the pipeline.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS45" specref="GL 3.2 2.6.1">
       "Line Strips with Adjacency" is added.
@@ -731,8 +734,11 @@
     <task name="GS84" specref="GL 3.2 E.2.1">
       MAX_VARYING_COMPONENTS and MAX_VARYING_FLOATS are deprecated
     </task>
-    <task name="GS85" specref="GLSL 1.50 2">
+    <task name="GS85" specref="GLSL 1.50 2" piglit="done">
       Geometry shaders are added.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS86" specref="GLSL 1.50 2.1">
       Vertex shaders no longer need to compute the homogeneous position
@@ -766,8 +772,11 @@
       match in type and qualification (except that geometry variable
       must be an array, and vertex variable must not).
     </task>
-    <task name="GS92" specref="GLSL 1.50 4.3.4">
+    <task name="GS92" specref="GLSL 1.50 4.3.4" piglit="done">
       Geometry shader inputs receive values from vertex outputs.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS93" specref="GLSL 1.50 4.3.4" piglit="ML">
       If a geometry shader input array does not have a size provided,
@@ -901,10 +910,13 @@
       One declaration can declare either a primitive type (points,
       line_strip, or triangle_strip), or max_vertices, or both.
     </task>
-    <task name="GS116" specref="GLSL 1.50 4.3.8.2">
+    <task name="GS116" specref="GLSL 1.50 4.3.8.2" piglit="done">
       The geometry shader output layout qualifier "max_vertices =
       &lt;integer-constant&gt;" is used to declare the maximum number of
       vertices the shader will ever emit in a single execution.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS117" specref="GLSL 1.50 4.3.8.2">
       The geometry shader output layout qualifiers of "points",
@@ -1010,10 +1022,12 @@
       the same size in all shaders (previously the size needed to match
       between vertex and fragment shaders).
     </task>
-    <task name="GS135" specref="GLSL 1.50 7.4">
+    <task name="GS135" specref="GLSL 1.50 7.4" piglit="done">
       The built-in constants in this section are also provided to
       geometry shaders (previously they were available only to vertex
       and fragment shaders).
+
+      Tested by piglit/tests/spec/glsl-1.50/compiler/constants.geom
     </task>
     <task name="GS136" specref="GLSL 1.50 7.4">
       gl_MaxFragmentInputComponents (min: 128) is added.
@@ -1050,9 +1064,12 @@
       Not necessary to test since this only affects compatibility
       profiles.
     </task>
-    <task name="GS146" specref="GLSL 1.50 8.10">
+    <task name="GS146" specref="GLSL 1.50 8.10" piglit="done">
       EmitVertex() is added.  This emits the current values of output
       variables to the current output primitive.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS147" specref="GLSL 1.50 8.10" piglit="ML">
       EndPrimitive() is added.  This completes the current output
@@ -1082,9 +1099,12 @@
 
       Not necessary to test since the values are undefined.
     </task>
-    <task name="GS152" specref="GLSL 1.50 8.10">
+    <task name="GS152" specref="GLSL 1.50 8.10" piglit="done">
       When a geometry shader terminates, the current output primitive is
       automatically completed.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
     <task name="GS153" specref="GLSL 1.50 8.7">
       Texture lookup functions are now available to geometry shaders.
