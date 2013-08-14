@@ -643,11 +643,12 @@
     <task name="GS61" specref="GL 3.2 3.4">
       PROGRAM_POINT_SIZE has been changed to VERTEX_PROGRAM_POINT_SIZE.
     </task>
-    <task name="GS62" specref="GL 3.2 3.9.2" piglit="ML" mesa="on branch">
+    <task name="GS62" specref="GL 3.2 3.9.2" piglit="done" mesa="on branch">
       If a geometry shader is active, gl_PrimitiveID contains the value
       emitted by the geometry shader for the provoking vertex.
 
-      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
     <task name="GS63" specref="GL 3.2 3.9.2">
       MAX_FRAGMENT_INPUT_COMPONENTS is added.
@@ -955,25 +956,28 @@
       previously defined to 1 in vertex and fragment shaders, is now
       available in geometry shaders as well.
     </task>
-    <task name="GS122" specref="GLSL 1.50 7.1" piglit="ML" mesa="on branch">
+    <task name="GS122" specref="GLSL 1.50 7.1" piglit="done" mesa="on branch">
       Fragment shaders will select the value of gl_PrimitiveID that is
       written by the geometry shader for the provoking vertex.
 
-      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
-    <task name="GS123" specref="GLSL 1.50 7.1" piglit="ML" mesa="on branch">
+    <task name="GS123" specref="GLSL 1.50 7.1" piglit="done" mesa="on branch">
       Geometry shaders also contain the special input variable "in int
       gl_PrimitiveIDIn", which is filled with the number of primitives
       processed by the geometry shader since the current set of
       rendering primitives was started.
 
-      Tested by "[PATCH] gs: Test primitive ID input."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-in.shader_test
     </task>
-    <task name="GS124" specref="GLSL 1.50 7.1" piglit="ML" mesa="on branch">
+    <task name="GS124" specref="GLSL 1.50 7.1" piglit="done" mesa="on branch">
       Geometry shaders also contain the special output variable "out int
       gl_PrimitiveID", which is communicated to fragment shaders.
 
-      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
     <task name="GS125" specref="GLSL 1.50 7.1" piglit="N/A" mesa="on branch">
       If a geometry shader fails to write to gl_PrimitiveID, the value
@@ -1011,21 +1015,23 @@
       Not necessary to test since this only affects compatibility
       profiles.
     </task>
-    <task name="GS131" specref="GLSL 1.50 7.2" piglit="ML" mesa="on branch">
+    <task name="GS131" specref="GLSL 1.50 7.2" piglit="done" mesa="on branch">
       If a geometry shader is present, the value in gl_PrimitiveID comes
       from the geometry shader's gl_PrimitiveID output.
 
-      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
     <task name="GS132" specref="GLSL 1.50 7.2">
       If no geometry shader is present, the value in gl_PrimitiveID is
       the number of primitives processed by the vertex shader since the
       current set of rendering primitives was started.
     </task>
-    <task name="GS133" specref="GLSL 1.50 7.2" piglit="ML" mesa="on branch">
+    <task name="GS133" specref="GLSL 1.50 7.2" piglit="done" mesa="on branch">
       The built-in input variable "in int gl_PrimitiveID" is added.
 
-      Tested by "[PATCH 6/6] gs: Test gl_PrimitiveID output."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
     <task name="GS134" specref="GLSL 1.50 7.2">
       gl_ClipDistance must be sized either implicitly or explicitly to
