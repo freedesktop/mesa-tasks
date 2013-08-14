@@ -749,6 +749,8 @@
     <task name="GS87" specref="GLSL 1.50 4.3">
       The qualifiers "smooth", "flat", and "noperspective" are no longer
       limited just to vertex shader outs and fragment shader ins.
+
+      They can appear on geometry shader ins and geometry shader outs.
     </task>
     <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="ML">
       Each geometry shader input (or input block) needs to be declared
