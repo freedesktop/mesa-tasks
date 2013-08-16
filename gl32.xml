@@ -439,19 +439,19 @@
       used with the GL_TRIANGLES_ADJACENCY and
       GL_TRIANGLE_STRIP_ADJACENCY primitive types.
     </task>
-    <task name="GS20" specref="GL 3.2 2.12.1" piglit="ML" mesa="on branch">
+    <task name="GS20" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
       It is a link error if multiple geometry shader objects specify
       different input primitive types.
 
-      Tested by "[PATCH 1/8] gs: Verify consistency checking of
-      geometry shader input layouts."
+      Tested by
+      piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-conflicting-input-layouts.shader_test
     </task>
-    <task name="GS21" specref="GL 3.2 2.12.1" piglit="ML" mesa="on branch">
+    <task name="GS21" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
       It is a link error if no geometry shader object specifies an input
       primitive type.
 
-      Tested by "[PATCH 8/8] gs: Verify that an error is generated if
-      no input layout is specified."
+      Tested by
+      piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-no-input-layout-declared.shader_test
     </task>
     <task name="GS22" specref="GL 3.2 2.12.1">
       It is a link error, not a compile error, for a geometry shader to
@@ -745,12 +745,13 @@
       Tested by "[PATCH 1/2] gs: Test that geometry shader inputs must
       be arrays."
     </task>
-    <task name="GS89" specref="GLSL 1.50 4.3.4" piglit="ML" mesa="on branch">
+    <task name="GS89" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
       Each geometry shader input array can optionally have a size
       declared.
 
-      Tested by "[PATCH 7/8] gs: Verify checking of sized vs. unsized
-      geometry shader input arrays."
+      Tested by:
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-length-after-other-size-blocks.geom
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-length-after-other-size.geom
     </task>
     <task name="GS90" specref="GLSL 1.50 4.3.4" mesa="on branch">
       For the vertex/geometry interface, if the vertex output is an
@@ -768,21 +769,21 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS93" specref="GLSL 1.50 4.3.4" piglit="ML" mesa="on branch">
+    <task name="GS93" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
       If a geometry shader input array does not have a size provided,
       the array size will be set by the input layout declaration(s)
       establishing the type of input primitive.
 
-      Tested by "[PATCH 4/8] gs: Verify intra-shader checking of input
-      layout vs. implicitly sized arrays."
+      Tested by
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
-    <task name="GS94" specref="GLSL 1.50 4.3.4" piglit="ML" mesa="on branch">
+    <task name="GS94" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
       If a geometry shader input array has a size provided, it must be
       consistent with the input layout declaration(s) establishing the
       type of input primitive.
 
-      Tested by "[PATCH 2/8] gs: Verify intra-shader checking of input
-      layout vs. explicitly sized arrays."
+      Tested by
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
     <task name="GS95" specref="GLSL 1.50 4.3.4" piglit="N/A" mesa="on branch">
       If a program contains vertex and fragment shaders but no geometry
@@ -803,70 +804,72 @@
       Layout qualifiers can appear with just an interface qualifier
       ("in", "out", or "uniform").
     </task>
-    <task name="GS99" specref="GLSL 1.50 4.3.8.1" piglit="ML" mesa="on branch">
+    <task name="GS99" specref="GLSL 1.50 4.3.8.1" piglit="done" mesa="on branch">
       All geometry shader input unsized array declarations will be sized
       by an *earlier* input layout qualifier (when present) according
       to: points=1, lines=2, lines_adjacency=4, triangles=3,
       triangles_adjacency=6.
 
-      Tested by "[PATCH 4/8] gs: Verify intra-shader checking of input
-      layout vs. implicitly sized arrays."
+      Tested by
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
-    <task name="GS100" specref="GLSL 1.50 4.3.8.1" piglit="ML"
+    <task name="GS100" specref="GLSL 1.50 4.3.8.1" piglit="done"
           mesa="on branch">
       All input layouts specified in geometry shader compilation units
       must declare the same layout.
 
-      Tested by "[PATCH 1/8] gs: Verify consistency checking of
-      geometry shader input layouts."
+      Tested by:
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-layout-consistent-with-prev-layout.geom
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-layout-inconsistent-with-prev-layout.geom
+      piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-conflicting-input-layouts.shader_test
     </task>
-    <task name="GS101" specref="GLSL 1.50 4.3.8.1" piglit="ML"
+    <task name="GS101" specref="GLSL 1.50 4.3.8.1" piglit="done"
           mesa="on branch">
       At least one compilation unit in a geometry shader must declare an
       input layout.
 
-      Tested by "[PATCH 8/8] gs: Verify that an error is generated if
-      no input layout is specified."
+      Tested by
+      piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-no-input-layout-declared.shader_test
     </task>
-    <task name="GS102" specref="GLSL 1.50 4.3.8.1" piglit="ML (all but gl_in)">
+    <task name="GS102" specref="GLSL 1.50 4.3.8.1" piglit="all but gl_in">
       For geometry shader inputs declared without an array size
       (including gl_in), a layout must be declared before any array use
       requiring the size be known (e.g. use of the length() method).
 
-      Partially tested by "[PATCH 4/8] gs: Verify intra-shader
-      checking of input layout vs. implicitly sized arrays."
+      Partially tested by:
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
+
       Tests for gl_in still need to be written.
     </task>
     <task name="GS103" specref="GLSL 1.50 4.3.8.1">
       Geometry shaders allow input layout qualifiers *only* on the
       interface qualifier "in" (i.e. "layout(...) in;").
     </task>
-    <task name="GS104" specref="GLSL 1.50 4.3.8.1" piglit="ML"
+    <task name="GS104" specref="GLSL 1.50 4.3.8.1" piglit="done"
           mesa="on branch">
       If a geometry shader input is declared with an array size, it must
       match the length implied by the geometry shader input layout.
 
-      Tested by "[PATCH 2/8] gs: Verify intra-shader checking of input
-      layout vs. explicitly sized arrays."
+      Tested by tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
-    <task name="GS105" specref="GLSL 1.50 4.3.8.1" piglit="ML"
+    <task name="GS105" specref="GLSL 1.50 4.3.8.1" piglit="done"
           mesa="on branch">
       It is a link-time error if not all geometry shader input sizes
       match (including both declared array sizes and the length implied
       by the geometry shader input layout).
 
-      Tested by "[PATCH 3/8] gs: Verify inter-shader checking of input
-      layout vs. explicitly sized arrays." and "[PATCH 5/8] gs: Verify
-      inter-shader checking of input layout vs. implicitly sized
-      arrays."
+      Tested by:
+      piglit/tests/spec/glsl-1.50/execution/gs-input-sizing-layout-consistent-with-static-usage.shader_test
+      piglit/tests/spec/glsl-1.50/execution/gs-input-sizing-layout-larger-than-static-usage.shader_test
+      piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-layout-*.shader_test
     </task>
-    <task name="GS106" specref="GLSL 1.50 4.3.8.1" piglit="ML"
+    <task name="GS106" specref="GLSL 1.50 4.3.8.1" piglit="done"
           mesa="on branch">
       Not all geometry shader compilation units need to declare an input
       layout.
 
-      Tested by "[PATCH 3/8] gs: Verify inter-shader checking of input
-      layout vs. explicitly sized arrays."
+      Tested by
+      tests/spec/glsl-1.50/linker/gs-input-sizing-layout-*.shader_test
     </task>
     <task name="GS107" specref="GLSL 1.50 4.3.8.1">
       Only one layout qualifier identifier may appear for geometry
