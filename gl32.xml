@@ -203,21 +203,6 @@
       vertex only.
     </task>
   </category>
-  <category name="GL_ARB_vertex_array_bgra">
-    <task name="BGRANormalizedOnly" specref="GL 3.2 2.8" piglit="done" mesa="ML">
-      VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
-      normalized == GL_FALSE.
-    </task>
-    <task name="BGRAUnsignedByteOnly" specref="GL 3.2 2.8" piglit="done" mesa="done">
-      VertexAttribPointer generates INVALID_VALUE if size == GL_BGRA and
-      type != GL_UNSIGNED_BYTE.
-    </task>
-    <task name="BGRA" specref="GL 3.2 2.8" piglit="done" mesa="done">
-      VertexAttribPointer now accepts a "size" of GL_BGRA, which
-      indicates four value, but reverses the order of the first through
-      third values of each array element.
-    </task>
-  </category>
   <category name="texture borders">
     <task name="NoBorders1" specref="GL 3.2 2.11.7" piglit="no">
       Texture border size ("bs") is replaced with 0 in the texel fetch
