@@ -548,8 +548,8 @@
       If a geometry shader is active, PRIMITIVES_GENERATED counts the
       number of primitives it emits.
 
-      Tested by series "[PATCH 0/6] gs: Test interaction between
-      geometry shaders and transform feedback counting."
+      Tested by "[PATCH] Basic test that transform feedback works with
+      geometry shaders."
     </task>
     <task name="GS43" specref="GL 3.2 2.18" mesa="on branch">
       Table 2.12 describes the behaviour of the provoking vertex for all
