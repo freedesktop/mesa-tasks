@@ -384,12 +384,12 @@
       that can be written by the vertex shader is
       MAX_VERTEX_OUTPUT_COMPONENTS.
     </task>
-    <task name="GS8" specref="GL 3.2 2.11.6" piglit="ML">
+    <task name="GS8" specref="GL 3.2 2.11.6" piglit="done">
       When a geometry shader is active, transform feedback records
       geometry shader outputs.
 
-      Tested by "[PATCH] Basic test that transform feedback works with
-      geometry shaders."
+      Tested by
+      piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
     <task name="GS9" specref="GL 3.2 2.11.7" piglit="no" mesa="on branch">
       Geometry shaders handle incomplete textures in the same way as
@@ -409,12 +409,12 @@
       A program object that includes a geometry shader must also include
       a vertex shader.
     </task>
-    <task name="GS14" specref="GL 3.2 2.12" piglit="ML">
+    <task name="GS14" specref="GL 3.2 2.12" piglit="done">
       The geometry shader pipeline stage is after primitive assembly,
       prior to transform feedback.
 
-      Tested by "[PATCH] Basic test that transform feedback works with
-      geometry shaders."
+      Tested by
+      piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
     <task name="GS15" specref="GL 3.2 2.12.1">
       Geometry shaders with input type "lines" may only be used with the
@@ -538,18 +538,18 @@
       output primitive type is used instead of the mode parameter passed
       to drawing commands.
     </task>
-    <task name="GS41" specref="GL 3.2 2.16" piglit="ML">
+    <task name="GS41" specref="GL 3.2 2.16" piglit="done">
       Transform feedback occurs after geometry shading.
 
-      Tested by "[PATCH] Basic test that transform feedback works with
-      geometry shaders."
+      Tested by
+      piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS42" specref="GL 3.2 2.17" piglit="ML" mesa="on branch">
+    <task name="GS42" specref="GL 3.2 2.17" piglit="done" mesa="on branch">
       If a geometry shader is active, PRIMITIVES_GENERATED counts the
       number of primitives it emits.
 
-      Tested by "[PATCH] Basic test that transform feedback works with
-      geometry shaders."
+      Tested by
+      piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
     <task name="GS43" specref="GL 3.2 2.18" mesa="on branch">
       Table 2.12 describes the behaviour of the provoking vertex for all
