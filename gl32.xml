@@ -1670,9 +1670,6 @@
       the same sync object.  When sync object becomes signaled, any
       queued WaitSync() commands for the same object become no-ops.
     </task>
-    <task name="Sync29" specref="GL 3.2 5.2.1">
-      Timeout is in nanoseconds.
-    </task>
     <task name="Sync30" specref="GL 3.2 5.2.1">
       Timeout may be larger than requested due to
       implementation-dependent timeout accuracy restrictions.
