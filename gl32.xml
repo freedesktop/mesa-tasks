@@ -96,7 +96,7 @@
       In miscellaneous (table 6.47), TEXTURE_BUFFER is removed
       (presumably an oversight?)
     </task>
-    <task name="UBSState" specref="GL 3.2 6.2" piglit="no">
+    <task name="UBSState" specref="GL 3.2 6.2" piglit="done">
       In program object state (table 6.30), UNIFORM_BUFFER_START and
       UNIFORM_BUFFER_SIZE are added.
     </task>
