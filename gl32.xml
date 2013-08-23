@@ -1503,14 +1503,14 @@
       select the corresponding texel from the appropriate neighboring
       face.
     </task>
-    <task name="Cube8" specref="GL 3.2 3.8.8" piglit="done">
+    <task name="Cube8" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       When seamless cube map filtering is enabled, texture wrap modes
       are ignored.
 
       Tested by
       piglit/tests/spec/arb_seamless_cube_map/arb_seamless_cubemap.c
     </task>
-    <task name="Cube9" specref="GL 3.2 6.2" piglit="done">
+    <task name="Cube9" specref="GL 3.2 6.2" piglit="done" mesa="done">
       In miscellaneous (table 6.47), TEXTURE_CUBE_MAP_SEAMLESS is added.
 
       Tested by
