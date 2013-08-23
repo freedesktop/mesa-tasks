@@ -177,7 +177,7 @@
       swizzle.
     </task>
     <task name="TextureSwizzleParams" specref="GL 3.3 3.8.8">
-      TextureParameter functions now accept TEXTURE_SWIZZLE_R,
+      TexParameter functions now accept TEXTURE_SWIZZLE_R,
       TEXTURE_SWIZZLE_G, TEXTURE_SWIZZLE_B, TEXTURE_SWIZZLE_A, or
       TEXTURE_SWIZZLE_RGBA.
     </task>
