@@ -316,11 +316,11 @@
     </task>
   </category>
   <category name="ARB_texture_rgb10_a2ui">
-    <task name="Rgb10a2uiRequired" specref="GL 3.3 3.8.3">
+    <task name="Rgb10a2uiRequired" specref="GL 3.3 3.8.3" mesa="done">
       RGB10_A2UI is added as a required texture and renderbuffer color
       format.
     </task>
-    <task name="Rgb10a2uiAdded" specref="GL 3.3 3.8.3">
+    <task name="Rgb10a2uiAdded" specref="GL 3.3 3.8.3" mesa="done">
       RGB10_A2UI is added to table 3.12.
     </task>
   </category>
