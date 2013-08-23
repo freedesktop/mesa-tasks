@@ -151,13 +151,13 @@
       The tokens in a layout-qualifier-id-list are not case-sensitive
       (with certain exceptions).
     </task>
-    <task name="LayoutVSNoInput" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="LayoutVSNoInput" specref="GLSL 1.50 4.3.8.1" piglit="done" mesa="no">
       Vertex shaders have no input layout qualifiers.
     </task>
-    <task name="LayoutFSNoOutput" specref="GLSL 1.50 4.3.8.2" piglit="no">
+    <task name="LayoutFSNoOutput" specref="GLSL 1.50 4.3.8.2" piglit="done" mesa="no">
       Fragment shaders cannot have output layout qualifiers.
     </task>
-    <task name="LayoutVSNoOutput" specref="GLSL 1.50 4.3.8.2" piglit="no">
+    <task name="LayoutVSNoOutput" specref="GLSL 1.50 4.3.8.2" piglit="done" mesa="no">
       Vertex shaders cannot have output layout qualifiers.
     </task>
     <task name="SwitchOnlyCases" specref="GLSL 1.50 6.2" piglit="done" mesa="done">
