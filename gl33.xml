@@ -302,7 +302,7 @@
       QueryCounter generates INVALID_OPERATION if id is already in use
       within a BeginQuery/EndQuery block.
     </task>
-    <task name="QueryTimestamp" specref="GL 3.3 5.1">
+    <task name="QueryTimestamp" specref="GL 3.3 5.1" piglit="done" mesa="done">
       The current time may be queried by calling GetIntegerv or
       GetInteger64v with the symbolic constant TIMESTAMP.
     </task>
