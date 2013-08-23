@@ -124,7 +124,7 @@
       Functions VertexAttribP{1234}ui and VertexAttribP{1234}uiv are
       added.
     </task>
-    <task name="VertexAttribPType" specref="GL 3.3 2.7">
+    <task name="VertexAttribPType" specref="GL 3.3 2.7" piglit="no" mesa="done">
       When VertexAttribP{1234}ui and VertexAttribP{1234}uiv are used,
       the type parameter must be INT_2_10_10_10_REV or
       UNSIGNED_INT_2_10_10_10_REV.
