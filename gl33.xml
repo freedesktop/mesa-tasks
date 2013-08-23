@@ -290,7 +290,7 @@
     </task>
   </category>
   <category name="ARB_timer_query">
-    <task name="QueryCounter" specref="GL 3.3 5.1">
+    <task name="QueryCounter" specref="GL 3.3 5.1" piglit="done" mesa="done">
       The QueryCounter function is added.
     </task>
     <task name="BeginEndTimerQuery" specref="GL 3.3 5.1">
