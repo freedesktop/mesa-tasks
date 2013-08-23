@@ -281,10 +281,10 @@
     </task>
   </category>
   <category name="ARB_occlusion_query2">
-    <task name="AnySamplesPassed" specref="GL 3.3 6.1.7">
+    <task name="AnySamplesPassed" specref="GL 3.3 6.1.7" piglit="done" mesa="done">
       Query type ANY_SAMPLES_PASSED is added.
     </task>
-    <task name="AnySamplesPassedBits" specref="GL 3.3 6.1.7">
+    <task name="AnySamplesPassedBits" specref="GL 3.3 6.1.7" piglit="done" mesa="done">
       For occlusion queries with target ANY_SAMPLES_PASSED, if the
       number of bits is non-zero, the minimum number of bits is 1.
     </task>
