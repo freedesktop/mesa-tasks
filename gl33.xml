@@ -107,15 +107,15 @@
     </task>
   </category>
   <category name="ARB_shader_bit_encoding">
-    <task name="ARB_shader_bit_encoding">
+    <task name="ARB_shader_bit_encoding" piglit="ML" mesa="ML">
       Shaders no longer need to declare "#extension
       GL_ARB_shader_bit_encoding..." to take advantage of this
       functionality.
     </task>
-    <task name="floatBitsToInt" specref="GLSL 3.30 8.3">
+    <task name="floatBitsToInt" specref="GLSL 3.30 8.3" piglit="ML" mesa="ML">
       Function floatBitsToInt is added.
     </task>
-    <task name="intBitsToFloat" specref="GLSL 3.30 8.3">
+    <task name="intBitsToFloat" specref="GLSL 3.30 8.3" piglit="ML" mesa="ML">
       Function intBitsToFloat is added.
     </task>
   </category>
