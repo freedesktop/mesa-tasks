@@ -309,7 +309,7 @@
     <task name="NewTimerQueries" specref="GL 3.3 6.1.7" piglit="done" mesa="done">
       Query types TIME_ELAPSED and TIMESTAMP are added.
     </task>
-    <task name="TimerQueryBits" specref="GL 3.3 6.1.7">
+    <task name="TimerQueryBits" specref="GL 3.3 6.1.7" piglit="no" mesa="done">
       For timer queries (target TIME_ELAPSED and TIMESTAMP), if the
       number of bits is non-zero, the minimum number of bits allowed
       is 30.
