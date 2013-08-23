@@ -24,7 +24,7 @@
       an integer format, the SAMPLE_ALPHA_TO_COVERAGE and
       SAMPLE_ALPHA_TO_ONE operations are skipped.
     </task>
-    <task name="GetQueryObject64" specref="GL 3.3 6.1.7">
+    <task name="GetQueryObject64" specref="GL 3.3 6.1.7" piglit="done" mesa="done">
       Functions GetQueryObjecti64v and GetQueryObjectui64v are added.
     </task>
   </category>
