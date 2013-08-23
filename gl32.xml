@@ -1484,7 +1484,7 @@
       When seamless cube map filtering is enabled, if LINEAR filtering
       is done within a miplevel, wrap mode CLAMP_TO_BORDER is used.
     </task>
-    <task name="Cube4" specref="GL 3.2 3.8.8" piglit="N/A">
+    <task name="Cube4" specref="GL 3.2 3.8.8" piglit="N/A" mesa="done">
       When seamless cube map filtering is enabled, if NEAREST filtering
       is done within a miplevel, wrap mode CLAMP_TO_EDGE is used.
 
