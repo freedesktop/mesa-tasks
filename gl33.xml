@@ -262,7 +262,7 @@
       MAX_DUAL_SOURCE_DRAW_BUFFERS and has an active output assigned
       an index greater than or equal to one.
     </task>
-    <task name="MinMaxDualSource" specref="GL 3.3 4.1.7">
+    <task name="MinMaxDualSource" specref="GL 3.3 4.1.7" piglit="done" mesa="done">
       The value of MAX_DUAL_SOURCE_DRAW_BUFFERS must be at least 1.
     </task>
     <task name="DrawMaxDualSource" specref="GL 3.3 4.1.7">
