@@ -139,7 +139,7 @@
       with an interface qualifier (i.e. a single "in", "out", or
       "uniform" variable outside of any interface block).
     </task>
-    <task name="LayoutOrder" specref="GLSL 1.50 4.3.8" piglit="no">
+    <task name="LayoutOrder" specref="GLSL 1.50 4.3.8" piglit="done" mesa="done">
       Order is not important within a layout-qualifier-id-list (with
       certain exceptions).
     </task>
