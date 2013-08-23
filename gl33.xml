@@ -29,10 +29,10 @@
     </task>
   </category>
   <category name="GLSL 3.30 misc">
-    <task name="Version330Supported" specref="GL 3.3 1.7.1">
+    <task name="Version330Supported" specref="GL 3.3 1.7.1" piglit="ML" mesa="done">
       GLSL version 3.30 must be supported.
     </task>
-    <task name="VersionMacro" specref="GLSL 3.30 3.3">
+    <task name="VersionMacro" specref="GLSL 3.30 3.3" piglit="ML" mesa="done">
       __VERSION__ should substitute 330.
     </task>
     <task name="Link140-330" specref="GLSL 3.30 3.3">
