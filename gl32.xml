@@ -261,20 +261,6 @@
       undefined if adding the offset would cause a negative index.
     </task>
   </category>
-  <category name="GL_ARB_depth_clamp">
-    <task name="DepthClamp1" specref="GL 3.2 2.19" piglit="done" mesa="done">
-      If depth clamping is enabled (DEPTH_CLAMP), the -wc &lt;= zc &lt;=
-      wc plane equation is ignored by view volume clipping.
-    </task>
-    <task name="DepthClamp2" specref="GL 3.2 4.1.5" piglit="done" mesa="done">
-      If depth clamping is enabled, the incoming fragment's zw is
-      clamped to the range [min(n, f), max(n, f)] before the depth
-      buffer test is performed.
-    </task>
-    <task name="DepthClamp3" specref="GL 3.2 6.2" piglit="no" mesa="done">
-      In transformation state (table 6.8), DEPTH_CLAMP is added.
-    </task>
-  </category>
   <category name="GL_ARB_fragment_coord_conventions">
     <task name="FCC1" specref="GL 3.2 3.9.2" piglit="done" mesa="done">
       The specification of gl_FragCoord is expanded to account for
