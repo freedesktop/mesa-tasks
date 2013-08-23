@@ -150,16 +150,16 @@
     </task>
   </category>
   <category name="ARB_instanced_arrays">
-    <task name="VertexAttribDivisor" specref="GL 3.3 2.8.3">
+    <task name="VertexAttribDivisor" specref="GL 3.3 2.8.3" piglit="done" mesa="done">
       The function VertexAttribDivisor is added.  Instanced elements
       advance per instance depending on the value of the specified
       divisor.
     </task>
-    <task name="VertexAttribDivisorMaxIndex" specref="GL 3.3 2.8">
+    <task name="VertexAttribDivisorMaxIndex" specref="GL 3.3 2.8" piglit="no" mesa="done">
       VertextAttribDivisor generates INVALID_VALUE if index is greater
       than or equal to MAX_VERTEX_ATTRIBS.
     </task>
-    <task name="VertexAttribDivisorQuery" specref="GL 6.1.11">
+    <task name="VertexAttribDivisorQuery" specref="GL 6.1.11" piglit="no" mesa="done">
       VERTEX_ATTRIB_ARRAY_DIVISOR may be passed to GetVertexAttrib*
       functions.
     </task>
