@@ -144,7 +144,7 @@
       If INT_2_10_10_10_REV or UNSIGNED_INT_2_10_10_10_REV is passed
       to VertexAttribPointer, the size must be either 4 or BGRA.
     </task>
-    <task name="2101010_Format" specref="GL 3.3 2.8.2">
+    <task name="2101010_Format" specref="GL 3.3 2.8.2" piglit="done" mesa="done">
       Section 2.8.2 describes the precise format of INT_2_10_10_10_REV
       and UNSIGNED_INT_2_10_10_10_REV vertex data formats.
     </task>
