@@ -134,7 +134,7 @@
     <task name="LayoutScope" specref="GLSL 1.50 4.3.8" piglit="done" mesa="done">
       Layout declarations can only be made at global scope.
     </task>
-    <task name="LayoutVars" specref="GLSL 1.50 4.3.8" piglit="no">
+    <task name="LayoutVars" specref="GLSL 1.50 4.3.8" piglit="done" mesa="done">
       Layout qualifiers can appear with an individual variable declared
       with an interface qualifier (i.e. a single "in", "out", or
       "uniform" variable outside of any interface block).
