@@ -293,12 +293,12 @@
     <task name="QueryCounter" specref="GL 3.3 5.1" piglit="done" mesa="done">
       The QueryCounter function is added.
     </task>
-    <task name="BeginEndTimerQuery" specref="GL 3.3 5.1">
+    <task name="BeginEndTimerQuery" specref="GL 3.3 5.1" piglit="no">
       Timer queries can be used within a BeginQuery/EndQuery block
       where the target is TIME_ELAPSED and it does not affect the
       result of that query object.
     </task>
-    <task name="QueryCounterInUse" specref="GL 3.3 5.1">
+    <task name="QueryCounterInUse" specref="GL 3.3 5.1" piglit="no">
       QueryCounter generates INVALID_OPERATION if id is already in use
       within a BeginQuery/EndQuery block.
     </task>
