@@ -1490,7 +1490,7 @@
 
       Not worth testing because this is an infinitesimal edge case.
     </task>
-    <task name="Cube5" specref="GL 3.2 3.8.8" piglit="no">
+    <task name="Cube5" specref="GL 3.2 3.8.8" piglit="done" mesa="done">
       When seamless cube map filtering is enabled, if a texture sample
       location would lie in the texture border in both u and v
       (i.e. sampling at a corner), if the corresponding corner samples
