@@ -131,7 +131,7 @@
       stage need to be written; it is allowed to have superfluous
       declarations of output variables.
     </task>
-    <task name="LayoutScope" specref="GLSL 1.50 4.3.8" piglit="no">
+    <task name="LayoutScope" specref="GLSL 1.50 4.3.8" piglit="done" mesa="done">
       Layout declarations can only be made at global scope.
     </task>
     <task name="LayoutVars" specref="GLSL 1.50 4.3.8" piglit="no">
