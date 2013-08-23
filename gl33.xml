@@ -120,7 +120,7 @@
     </task>
   </category>
   <category name="ARB_vertex_type_2_10_10_10_rev">
-    <task name="VertexAttribP" specref="GL 3.3 2.7">
+    <task name="VertexAttribP" specref="GL 3.3 2.7" piglit="ui only" mesa="done">
       Functions VertexAttribP{1234}ui and VertexAttribP{1234}uiv are
       added.
     </task>
