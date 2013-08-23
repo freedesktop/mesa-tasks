@@ -226,27 +226,6 @@
       TEXTURE_BORDER queries are removed.
     </task>
   </category>
-  <category name="64-bit API">
-    <task name="GetInteger64i_v" specref="GL 3.2 6.1.1" piglit="no">
-      GetInteger64i_v() is added.
-    </task>
-    <task name="GetInteger64v" specref="GL 3.2 6.1.1" piglit="no">
-      GetInteger64v() is added.
-    </task>
-    <task name="GetBufParami64v" specref="GL 3.2 6.1.8" piglit="no">
-      GetBufferParameteri64v() is added.
-    </task>
-    <task name="BufQueries64" specref="GL 3.2 6.2" piglit="no">
-      In buffer object state (table 6.7), the following pieces of state
-      now use GetBufferParameteri64v: BUFFER_SIZE, BUFFER_MAP_OFFSET,
-      and BUFFER_MAP_LENGTH (previously these used GetBufferParameteriv)
-    </task>
-    <task name="XFBQueries64" specref="GL 3.2 6.2" piglit="no">
-      In tranform feedback state (table 6.34),
-      TRANSFORM_FEEDBACK_BUFFER_START and TRANSFORM_FEEDBACK_BUFFER_SIZE
-      now use Getinteger64i_v (previously they used GetIntegeri_v).
-    </task>
-  </category>
   <category name="GL_ARB_draw_elements_base_vertex">
     <task name="BaseVertex1" specref="GL 3.2 2.8.1" piglit="no">
       When a *BaseVertex drawing command is used, the primitive restart
