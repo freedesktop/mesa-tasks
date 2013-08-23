@@ -1464,7 +1464,7 @@
     <task name="PV6" specref="GL 3.2 6.2">
       In coloring (table 6.9), PROVOKING_VERTEX is added.
     </task>
-    <task name="PV7" specref="GL 3.2 6.2">
+    <task name="PV7" specref="GL 3.2 6.2" piglit="done">
       In implementation dependent values (table 6.45),
       QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION is new.
 
