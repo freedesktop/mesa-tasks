@@ -163,7 +163,7 @@
       VERTEX_ATTRIB_ARRAY_DIVISOR may be passed to GetVertexAttrib*
       functions.
     </task>
-    <task name="VertexAttribDivisorDefault" specref="GL 6.2">
+    <task name="VertexAttribDivisorDefault" specref="GL 6.2" piglit="done" mesa="done">
       VERTEX_ATTRIB_ARRAY_DIVISOR defaults to 0.
     </task>
   </category>
