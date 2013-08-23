@@ -1457,7 +1457,7 @@
       The initial value of the provoking vertex mode is
       LAST_VERTEX_CONVENTION.
     </task>
-    <task name="PV5" specref="GL 3.2 2.18">
+    <task name="PV5" specref="GL 3.2 2.18" piglit="done" mesa="done">
       The provoking vertex is controlled by the ProvokingVertex()
       command.
     </task>
