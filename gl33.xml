@@ -168,11 +168,11 @@
     </task>
   </category>
   <category name="ARB_texture_swizzle">
-    <task name="VertTextureAccessSwizzle" specref="GL 3.3 2.11.7">
+    <task name="VertTextureAccessSwizzle" specref="GL 3.3 2.11.7" piglit="done" mesa="done">
       Vertex shader texture access (and by extension, geometry shader
       texture access) may be modified by texture swizzle.
     </task>
-    <task name="FragTextureAccessSwizzle" specref="GL 3.3 3.9.7">
+    <task name="FragTextureAccessSwizzle" specref="GL 3.3 3.9.7" piglit="done" mesa="done">
       Fragment shader texture access may be modified by texture
       swizzle.
     </task>
