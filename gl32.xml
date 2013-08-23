@@ -1446,7 +1446,7 @@
       Flatshading is added to the list of operations applied to vertices
       processed by the vertex shader.
     </task>
-    <task name="PV2" specref="GL 3.2 2.16">
+    <task name="PV2" specref="GL 3.2 2.16" piglit="done" mesa="done">
       Transform feedback occurs before flatshading.
     </task>
     <task name="PV3" specref="GL 3.2 2.18">
