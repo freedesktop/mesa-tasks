@@ -250,10 +250,10 @@
     </task>
   </category>
   <category name="ARB_blend_func_extended">
-    <task name="BindFragDataLocInd" specref="GL 3.3 3.9.2">
+    <task name="BindFragDataLocInd" specref="GL 3.3 3.9.2" piglit="done" mesa="done">
       The function BindFragDataLocationIndexed is added.
     </task>
-    <task name="GetFragDataIndex" specref="GL 3.3 3.9.2">
+    <task name="GetFragDataIndex" specref="GL 3.3 3.9.2" piglit="done" mesa="done">
       The function GetFragDataIndex is added.
     </task>
     <task name="LinkMaxDualSource" specref="GL 3.3 3.9.2">
