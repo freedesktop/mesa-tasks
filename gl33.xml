@@ -181,7 +181,7 @@
       TEXTURE_SWIZZLE_G, TEXTURE_SWIZZLE_B, TEXTURE_SWIZZLE_A, or
       TEXTURE_SWIZZLE_RGBA.
     </task>
-    <task name="GetTextureSwizzleParams" specref="GL 3.3 3.8.8">
+    <task name="GetTextureSwizzleParams" specref="GL 3.3 3.8.8" piglit="done" mesa="done">
       GetTexParameter now accepts TEXTURE_SWIZZLE_R,
       TEXTURE_SWIZZLE_G, TEXTURE_SWIZZLE_B, or TEXTURE_SWIZZLE_A.
     </task>
