@@ -1453,7 +1453,7 @@
       Flatshading selects the varying output corresponding to the
       provoking vertex of the primitive.
     </task>
-    <task name="PV4" specref="GL 3.2 2.18">
+    <task name="PV4" specref="GL 3.2 2.18" piglit="done" mesa="done">
       The initial value of the provoking vertex mode is
       LAST_VERTEX_CONVENTION.
     </task>
