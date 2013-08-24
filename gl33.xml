@@ -236,7 +236,7 @@
 
       Mesa appears to accept legacy pnames even in core profile.
     </task>
-    <task name="SamplerQueryError" specref="GL 3.3 6.1.5">
+    <task name="SamplerQueryError" specref="GL 3.3 6.1.5" piglit="no" mesa="done">
       GetSamplerParameter{if}v and GetSamplerParameterI{i ui}v
       generate INVALID_VALUE if the sampler is not the name of a valid
       sampler, and INVALID_ENUM if pname is not the name of a valid
