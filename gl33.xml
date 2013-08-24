@@ -187,7 +187,7 @@
     </task>
   </category>
   <category name="ARB_sampler_objects">
-    <task name="SamplerObjectFunctions" specref="GL 3.3 3.8.2">
+    <task name="SamplerObjectFunctions" specref="GL 3.3 3.8.2" piglit="done" mesa="done">
       Functions GenSamplers and DeleteSamplers are added.
     </task>
     <task name="SamplerObjectSupersedes" specref="3.3 3.8.2">
