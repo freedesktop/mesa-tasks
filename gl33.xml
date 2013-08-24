@@ -224,7 +224,7 @@
       more texture units along with sampler objects with different
       states.
     </task>
-    <task name="IsSampler" specref="GL 3.3 6.1.5">
+    <task name="IsSampler" specref="GL 3.3 6.1.5" piglit="done" mesa="done">
       IsSampler() may be called to determine whether sampler is the
       name of a sampler object.
     </task>
