@@ -248,7 +248,7 @@
       signed integers or unsigned integers, respectively; otherwise
       the values are returned as described in section 6.1.2.
     </task>
-    <task name="QuerySamplerBinding" specref="GL 3.3 6.2">
+    <task name="QuerySamplerBinding" specref="GL 3.3 6.2" piglit="no" mesa="done">
       The sampler object bound to a texture unit may be queried using
       GetIntegerv(SAMPLER_BINDING).
     </task>
