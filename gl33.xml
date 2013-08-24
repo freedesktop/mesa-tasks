@@ -242,7 +242,7 @@
       sampler, and INVALID_ENUM if pname is not the name of a valid
       property.
     </task>
-    <task name="SamplerQueryBorderColor" specref="GL 3.3 6.1.5">
+    <task name="SamplerQueryBorderColor" specref="GL 3.3 6.1.5" piglit="no" mesa="done">
       Querying TEXTURE_BORDER_COLOR with GetSamplerParameterIiv or
       GetSamplerParameterIuiv returns the border color values as
       signed integers or unsigned integers, respectively; otherwise
