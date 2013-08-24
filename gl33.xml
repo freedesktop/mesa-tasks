@@ -228,9 +228,13 @@
       IsSampler() may be called to determine whether sampler is the
       name of a sampler object.
     </task>
-    <task name="SamplerQueries" specref="GL 3.3 6.1.5">
+    <task name="SamplerQueries" specref="GL 3.3 6.1.5" piglit="partial" mesa="partial">
       The current values of a sampler object may be queried using
       GetSamplerParameter{if}v and GetSamplerParameterI{i ui}v.
+
+      Piglit's sampler-objects.c tests some pnames, but not all of them.
+
+      Mesa appears to accept legacy pnames even in core profile.
     </task>
     <task name="SamplerQueryError" specref="GL 3.3 6.1.5">
       GetSamplerParameter{if}v and GetSamplerParameterI{i ui}v
