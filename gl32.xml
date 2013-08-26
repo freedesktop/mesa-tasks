@@ -703,12 +703,12 @@
 
       They can appear on geometry shader ins and geometry shader outs.
     </task>
-    <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="ML" mesa="on branch">
+    <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
       Each geometry shader input (or input block) needs to be declared
       as an array.
 
-      Tested by "[PATCH 1/2] gs: Test that geometry shader inputs must
-      be arrays."
+      Tested by
+      piglit/tests/spec/glsl-1.50/compiler/gs-input-nonarray*.geom
     </task>
     <task name="GS89" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
       Each geometry shader input array can optionally have a size
