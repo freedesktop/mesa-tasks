@@ -1040,11 +1040,12 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS147" specref="GLSL 1.50 8.10" piglit="ML" mesa="on branch">
+    <task name="GS147" specref="GLSL 1.50 8.10" piglit="done" mesa="on branch">
       EndPrimitive() is added.  This completes the current output
       primitive and starts a new one, without emitting any vertices.
 
-      Tested by "[PATCH] gs: Test EndPrimitive() functionality."
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/end-primitive.c
     </task>
     <task name="GS148" specref="GLSL 1.50 8.10">
       EndPrimitive() is optional when the output layout is "points".
