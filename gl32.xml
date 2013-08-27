@@ -319,19 +319,30 @@
     </task>
   </category>
   <category name="GL_ARB_geometry_shader4">
-    <task name="GS1" specref="GL 3.2 2.11.2" piglit="no">
+    <task name="GS1" specref="GL 3.2 2.11.2" piglit="done">
       Linking will now fail if a geometry shader fails to specify input
       primitive type, output primitive type, or maximum output vertex
       count.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/linker/gs-must-specify-*.shader_test.
     </task>
-    <task name="GS2" specref="GL 3.2 2.11.2" piglit="no">
+    <task name="GS2" specref="GL 3.2 2.11.2" piglit="done">
       Linking will now fail if input primitive type, output primitive
       type, or maximum output vertex count is specified differently in
       multiple geometry shader objects.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/linker/gs-different-*.shader_test
+      and
+      piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-conflicting-input-layouts.shader_test.
     </task>
-    <task name="GS3" specref="GL 3.2 2.11.2" piglit="no">
+    <task name="GS3" specref="GL 3.2 2.11.2" piglit="done">
       Linking will now fail if there is a geometry shader but no vertex
       shader.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/linker/gs-without-vs.shader_test.
     </task>
     <task name="GS4" specref="GL 3.2 2.11.4" piglit="no">
       GetActiveUniformBlockiv() now accepts a pname of
@@ -360,19 +371,20 @@
       Geometry shaders handle incomplete textures in the same way as
       vertex shaders.
     </task>
-    <task name="GS10" specref="GL 3.2 2.11.7" piglit="no" mesa="on branch">
+    <task name="GS10" specref="GL 3.2 2.11.7" piglit="done" mesa="on branch">
       If a geometry shader is active, vertices processed by the vertex
       shader are passed to the geometry shader.
+
+      Tested by
+      piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
     <task name="GS11" specref="GL 3.2 2.11.7" piglit="no" mesa="on branch">
       Shader-only texturing is now available to geometry shaders.
     </task>
-    <task name="GS12" specref="GL 3.2 2.11.7" piglit="no">
+    <task name="GS12" specref="GL 3.2 2.11.7" piglit="done">
       The constant MAX_GEOMETRY_TEXTURE_UNITS is added.
-    </task>
-    <task name="GS13" specref="GL 3.2 2.12" piglit="no">
-      A program object that includes a geometry shader must also include
-      a vertex shader.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
     <task name="GS14" specref="GL 3.2 2.12" piglit="done">
       The geometry shader pipeline stage is after primitive assembly,
@@ -433,14 +445,6 @@
       If the number of vertices emitted by the geometry shader is not
       sufficient to produce a single primitive, nothing is drawn.
     </task>
-    <task name="GS25" specref="GL 3.2 2.12.2">
-      It is a link error if multiple geometry shader objects specify
-      different output primitive types or maximum output vertex counts.
-    </task>
-    <task name="GS26" specref="GL 3.2 2.12.2">
-      It is a link error if no geometry shader object specifies an
-      output primitive type or maximum output vertex count.
-    </task>
     <task name="GS27" specref="GL 3.2 2.12.2">
       The maximum number of output vertices can be queried using
       GetProgramiv(GEOMETRY_VERTICES_OUT).
@@ -449,8 +453,10 @@
       The output primitve type can be queried using
       GetProgramiv(GEOMETRY_OUTPUT_TYPE)
     </task>
-    <task name="GS29" specref="GL 3.2 2.12.3">
+    <task name="GS29" specref="GL 3.2 2.12.3" piglit="done">
       MAX_GEOMETRY_UNIFORM_COMPONENTS is added.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
     <task name="GS30" specref="GL 3.2 2.12.4" mesa="on branch">
       For triangles drawn in point or line mode, gl_PrimitiveIDIn is
@@ -474,11 +480,15 @@
       Not necessary to test since it is undefined whether the emitted
       vertex have any effect.
     </task>
-    <task name="GS34" specref="GL 3.2 2.12.4">
+    <task name="GS34" specref="GL 3.2 2.12.4" piglit="done">
       MAX_GEOMETRY_INPUT_COMPONENTS is added.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS35" specref="GL 3.2 2.12.4">
+    <task name="GS35" specref="GL 3.2 2.12.4" piglit="done">
       MAX_GEOMETRY_OUTPUT_COMPONENTS is added.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
     <task name="GS36" specref="GL 3.2 2.12.4" mesa="on branch">
       Restarting a primitive topology using the primitive restart index
@@ -590,8 +600,10 @@
       vertex 6*i+1, 6*i+3, and 6*i+5 (i counts from 0 to n-1, vertices
       count from 1 to 6n+k).
     </task>
-    <task name="GS61" specref="GL 3.2 3.4">
-      PROGRAM_POINT_SIZE has been changed to VERTEX_PROGRAM_POINT_SIZE.
+    <task name="GS61" specref="GL 3.2 3.4" piglit="N/A">
+      VERTEX_PROGRAM_POINT_SIZE has been changed to PROGRAM_POINT_SIZE.
+
+      Piglit N/A because the enum value is the same.
     </task>
     <task name="GS62" specref="GL 3.2 3.9.2" piglit="done" mesa="on branch">
       If a geometry shader is active, gl_PrimitiveID contains the value
@@ -600,8 +612,10 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
-    <task name="GS63" specref="GL 3.2 3.9.2">
+    <task name="GS63" specref="GL 3.2 3.9.2" piglit="done">
       MAX_FRAGMENT_INPUT_COMPONENTS is added.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
     <task name="GS64" specref="GL 3.2 6.1.10">
       GetProgramiv() generates an INVALID_OPERATION error if it is
@@ -622,45 +636,55 @@
       GetShaderiv() may now return GEOMETRY_SHADER if pname is
       SHADER_TYPE.
     </task>
-    <task name="GS69" specref="GL 3.2 6.2">
+    <task name="GS69" specref="GL 3.2 6.2" piglit="done">
       Implementation dependent geometry shader limits (table 6.42) is
       new.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
     <task name="GS70" specref="GL 3.2 6.2">
       In implementation dependent aggregate shader limits (table 6.44),
       MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS is added.
     </task>
-    <task name="GS71" specref="GL 3.2 6.2">
+    <task name="GS71" specref="GL 3.2 6.2" piglit="done">
       In implementation dependent aggregate shader limits (table 6.44),
       MAX_COMBINED_TEXTURE_IMAGE_UNITS has increased from 32 to 48.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS72" specref="GL 3.2 6.2">
+    <task name="GS72" specref="GL 3.2 6.2" piglit="done">
       In implementation dependent aggregate shader limits (table 6.44),
       MAX_COMBINED_UNIFORM_BLOCKS has increased from 24 to 36.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS73" specref="GL 3.2 6.2">
+    <task name="GS73" specref="GL 3.2 6.2" piglit="done">
       In implementation dependent aggregate shader limits (table 6.44),
       MAX_UNIFORM_BUFFER_BINDINGS has increased from 24 to 36.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS74" specref="GL 3.2 6.2">
+    <task name="GS74" specref="GL 3.2 6.2" piglit="done">
       In implementation dependent fragment processing limits (table
       6.43), MAX_FRAGMENT_INPUT_COMPONENTS is new.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS75" specref="GL 3.2 6.2">
+    <task name="GS75" specref="GL 3.2 6.2" piglit="done">
       In implementation dependent vertex shader limits (table 6.41),
       MAX_VERTEX_OUTPUT_COMPONENTS is new.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
     <task name="GS76" specref="GL 3.2 6.2">
       In program object state (table 6.29), GEOMETRY_VERTICES_OUT,
       GEOMETRY_INPUT_TYPE, and GEOMETRY_OUTPUT_TYPE are added.
     </task>
-    <task name="GS77" specref="GL 3.2 6.2">
-      In program object state (table 6.31),
-      UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER is added.
-    </task>
-    <task name="GS78" specref="GL 3.2 6.2">
+    <task name="GS78" specref="GL 3.2 6.2" pigilt="N/A">
       In program object state (table 6.32), VERTEX_PROGRAM_POINT_SIZE
       changes to PROGRAM_POINT_SIZE.
+
+      Piglit N/A because the enum value is the same.
     </task>
     <task name="GS79" specref="GL 3.2 6.2">
       In shader object state (table 6.25), SHADER_TYPE is now Z3
@@ -758,16 +782,27 @@
       Not necessary to test since this is what happens prior to GLSL
       1.50.
     </task>
-    <task name="GS96" specref="GLSL 1.50 4.3.4" mesa="done">
+    <task name="GS96" specref="GLSL 1.50 4.3.4" mesa="done" piglit="done">
       Integral fragment shader inputs must be qualified with "flat".
+
+      Tested by
+      spec/glsl-1.30/compiler/interpolation-qualifiers/nonflat-int.frag
+      and related.
     </task>
-    <task name="GS97" specref="GLSL 1.50 4.3.6" mesa="done">
-      Integral vertex shader inputs need no longer be qualified with
+    <task name="GS97" specref="GLSL 1.50 4.3.6" mesa="done" piglit="done">
+      Integral vertex shader outputs need no longer be qualified with
       "flat".
+
+      Tested by
+      spec/glsl-1.30/compiler/interpolation-qualifiers/vs-flat-int-05.vert
+      and related.
     </task>
-    <task name="GS98" specref="GLSL 1.50 4.3.8" mesa="on branch">
+    <task name="GS98" specref="GLSL 1.50 4.3.8" mesa="on branch" piglit="done">
       Layout qualifiers can appear with just an interface qualifier
       ("in", "out", or "uniform").
+
+      Implicitly tested by the piglit tests that exercise the
+      individual layout qualifiers.
     </task>
     <task name="GS99" specref="GLSL 1.50 4.3.8.1" piglit="done" mesa="on branch">
       All geometry shader input unsized array declarations will be sized
@@ -865,9 +900,12 @@
       It is an error if max_vertices is declared to be a value greater
       than gl_MaxGeometryOutputVertices.
     </task>
-    <task name="GS114" specref="GLSL 1.50 4.3.8.2">
+    <task name="GS114" specref="GLSL 1.50 4.3.8.2" piglit="done">
       Not all geometry shader compilation units need to declare an
       output layout declaration.
+
+      Implicitly covered by tests
+      piglit/tests/spec/glsl-1.50/execution/gs-input-sizing-*.
     </task>
     <task name="GS115" specref="GLSL 1.50 4.3.8.2">
       One declaration can declare either a primitive type (points,
@@ -886,10 +924,6 @@
       The geometry shader output layout qualifiers of "points",
       "line_strip", or "triangle_strip" are used to declare the
       primitive type used for geometry shader output.
-    </task>
-    <task name="GS118" specref="GLSL 1.50 4.3.8.2">
-      There must be at least one geometry output layout declaration
-      somewhere in a program.
     </task>
     <task name="GS119" specref="GLSL 1.50 4.3.9.1" piglit="N/A" mesa="N/A">
       The variables gl_FrontColor, gl_BackColor, gl_FrontSecondaryColor,
@@ -1082,17 +1116,17 @@
     <task name="GS154" specref="GLSL 1.50 8.9" mesa="on branch">
       Noise functions are now available to geometry shaders.
     </task>
-    <task name="GS155" specref="GLSL 1.50 9">
+    <task name="GS155" specref="GLSL 1.50 9" piglit="N/A">
       "layout_list" is renamed to "layout_qualifier_id_list", and rules
       are reworked so that it is a list of comma-separated
       layout_qualifier_id's instead of a list of comma-separated
       IDENTIFIER's.
     </task>
-    <task name="GS156" specref="GLSL 1.50 9">
+    <task name="GS156" specref="GLSL 1.50 9" piglit="N/A">
       "layout_qualifier_id" has two rules: IDENTIFIER (to match previous
       behvaiour), and IDENTIFIER EQUAL INTCONSTANT.
     </task>
-    <task name="GS157" specref="GLSL 1.50 9">
+    <task name="GS157" specref="GLSL 1.50 9" piglit="N/A">
       New rule for "struct_declarator": IDENTIFIER LEFT_BRACKET
       RIGHT_BRACKET.
     </task>
