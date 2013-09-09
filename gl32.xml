@@ -266,53 +266,53 @@
       The specification of gl_FragCoord is expanded to account for
       pixel-center and origin conventions.
     </task>
-    <task name="FCC2" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC2" specref="GLSL 1.50 4.3.8.1" piglit="done">
       All redeclarations of gl_FragCoord must use the same set of
       qualifiers.
     </task>
-    <task name="FCC3" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC3" specref="GLSL 1.50 4.3.8.1" piglit="done">
       Fragment shaders can have an input layout only for redeclaring
       gl_FragCoord.
     </task>
-    <task name="FCC4" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC4" specref="GLSL 1.50 4.3.8.1" piglit="done">
       If gl_FragCoord is redeclared in any fragment shader compilation
       unit, it must be redeclared in all fragment shader compilation
       units that have a static use of gl_FragCoord.
     </task>
-    <task name="FCC5" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC5" specref="GLSL 1.50 4.3.8.1" piglit="done">
       Redeclaring gl_FragCoord does not affect rasterization,
       transformation, or any other part of the OpenGL pipeline or
       language features.
     </task>
-    <task name="FCC6" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC6" specref="GLSL 1.50 4.3.8.1" piglit="done">
       Redeclaring gl_FragCoord in any shader other than a fragment
       shader is illegal.
     </task>
-    <task name="FCC7" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC7" specref="GLSL 1.50 4.3.8.1" piglit="done">
       The layout qualifier identifiers for gl_FragCoord are
       "origin_upper_left" and "pixel_center_integer".
     </task>
-    <task name="FCC8" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC8" specref="GLSL 1.50 4.3.8.1" piglit="done">
       Within a fragment shader compilation unit, the first redeclartion
       of gl_FragCoord (if any) must appear before the first use of
       gl_FragCoord.
     </task>
-    <task name="FCC9" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC9" specref="GLSL 1.50 4.3.8.1" piglit="done">
       gl_FragCoord may be redeclared as "layout(origin_upper_left) in
       vec4 gl_FragCoord;", causing (0.5, 0.5) to be used for the upper
       left pixel of the window.
     </task>
-    <task name="FCC10" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC10" specref="GLSL 1.50 4.3.8.1" piglit="done">
       gl_FragCoord may be redeclared as "layout(origin_upper_left,
       pixel_center_integer) in vec4 gl_FragCoord;", causing (0.0, 0.0)
       to be used for the upper left pixel of the window.
     </task>
-    <task name="FCC11" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC11" specref="GLSL 1.50 4.3.8.1" piglit="done">
       gl_FragCoord may be redeclared as "layout(pixel_center_integer) in
       vec4 gl_FragCoord;", causing (0.0, 0.0) to be used for the lower
       left pixel of the window.
     </task>
-    <task name="FCC12" specref="GLSL 1.50 4.3.8.1" piglit="no">
+    <task name="FCC12" specref="GLSL 1.50 4.3.8.1" piglit="done">
       gl_FragCoord may be redeclared in a way that changes nothing
       (i.e. "in vec4 gl_FragCoord;"), causing (0.5, 0.5) to be used for
       the lower left pixel of the window.
@@ -752,13 +752,17 @@
       TEXTURE_BINDING_RECTANGLE, TEXTURE_BINDING_BUFFER, and
       TEXTURE_BINDING_CUBE_MAP are now replicated by 48 instead of 32.
     </task>
-    <task name="GS82" specref="GL 3.2 6.2">
+    <task name="GS82" specref="GL 3.2 6.2" piglit="done">
       Note: MAX_FRAGMENT_INPUT_COMPONENTS is 128 (double the old value
       of MAX_VARYING_COMPONENTS).
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c
     </task>
-    <task name="GS83" specref="GL 3.2 6.2">
+    <task name="GS83" specref="GL 3.2 6.2" piglit="done">
       Note: MAX_GEOMETRY_OUTPUT_COMPONENTS is 128 (double the old value
       of MAX_VARYING_COMPONENTS).
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c
     </task>
     <task name="GS84" specref="GL 3.2 E.2.1">
       MAX_VARYING_COMPONENTS and MAX_VARYING_FLOATS are deprecated
@@ -931,10 +935,14 @@
       The intrinsically declared geometry shader input array gl_in[]
       will be sized by any input layout declaration.
     </task>
-    <task name="GS109" specref="GLSL 1.50 4.3.8.1" mesa="on branch">
+    <task name="GS109" specref="GLSL 1.50 4.3.8.1" mesa="on branch"
+          piglit="done">
       The layout qualifier identifiers for geometry shader inputs are
       "points", "lines", "lines_adjacency", "triangles", and
       "triangles_adjacency".
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
     <task name="GS110" specref="GLSL 1.50 4.3.8.2">
       All geometry shader output layout declarations in a program must
@@ -1384,7 +1392,7 @@
     </task>
   </category>
   <category name="layered rendering">
-    <task name="Layer1" specref="GL 3.2 2.12.4" piglit="no">
+    <task name="Layer1" specref="GL 3.2 2.12.4" piglit="N/A">
       Layered rendering requires the use of framebuffer objects.
     </task>
     <task name="Layer2" specref="GL 3.2 2.12.4" piglit="no">
@@ -1392,17 +1400,23 @@
       to arbitrary layers of a cube-map texture, 3D texture, or 1D or 2D
       texture array.
     </task>
-    <task name="Layer3" specref="GL 3.2 4.3.2" piglit="no">
+    <task name="Layer3" specref="GL 3.2 4.3.2" piglit="done">
       Blit operations: If both read and draw framebuffers are layered,
       the blit operation is still performed only on layer zero.
+
+      Tested by piglit/tests/spec/gl-3.2/layered-rendering/blit.c
     </task>
-    <task name="Layer4" specref="GL 3.2 4.3.2" piglit="no">
+    <task name="Layer4" specref="GL 3.2 4.3.2" piglit="done">
       Blit operations: If the draw framebuffer is layered, pixel values
       are written to layer zero.
+
+      Tested by piglit/tests/spec/gl-3.2/layered-rendering/blit.c
     </task>
-    <task name="Layer5" specref="GL 3.2 4.3.2" piglit="no">
+    <task name="Layer5" specref="GL 3.2 4.3.2" piglit="done">
       Blit operations: If the read framebuffer is layered, pixel values
       are read from layer zero.
+
+      Tested by piglit/tests/spec/gl-3.2/layered-rendering/blit.c
     </task>
     <task name="Layer6" specref="GL 3.2 4.4.1" piglit="no">
       If the number of layers of each attachment are not all identical,
@@ -1416,9 +1430,12 @@
       one- or two-dimensional array texture.  Otherwise it is set to
       FALSE.
     </task>
-    <task name="Layer8" specref="GL 3.2 4.4.2" piglit="no">
+    <task name="Layer8" specref="GL 3.2 4.4.2" piglit="done">
       FramebufferTexture() generates INVALID_OPERATION for buffer
       textures.
+
+      Tested by
+      piglit/tests/spec/gl-3.2/layered-rendering/framebuffertexture-buffer-textures.c
     </task>
     <task name="Layer9" specref="GL 3.2 4.4.2" piglit="no">
       FramebufferTexture() is added.
@@ -1464,10 +1481,13 @@
     <task name="Layer18" specref="GL 3.2 4.4.7">
       ClearBuffer() clears all layers.
     </task>
-    <task name="Layer19" specref="GL 3.2 4.4.7">
+    <task name="Layer19" specref="GL 3.2 4.4.7" piglit="done">
       Commands such as ReadPixels() always read from layer zero.
+
+      Tested by
+      piglit/tests/spec/gl-3.2/layered-rendering/readpixels.c
     </task>
-    <task name="Layer20" specref="GL 3.2 4.4.7">
+    <task name="Layer20" specref="GL 3.2 4.4.7" piglit="N/A">
       If a layer number is out of range (negative or greater than the
       number of layers of any attachment), the effect is undefined.
     </task>
@@ -1484,7 +1504,7 @@
       The layer number selects an image for use by stencil test, depth
       buffer test, blending, and color buffer writes.
     </task>
-    <task name="Layer24" specref="GL 3.2 4.4.7">
+    <task name="Layer24" specref="GL 3.2 4.4.7" piglit="N/A">
       The vertex used to determine the layer is
       implementation-dependent.
     </task>
@@ -1522,21 +1542,21 @@
       The geometry shader output gl_Layer is used to select a layer of a
       multi-layer framebuffer attachment.
     </task>
-    <task name="Layer33" specref="GLSL 1.50 7.1">
+    <task name="Layer33" specref="GLSL 1.50 7.1" piglit="N/A">
       The value of gl_Layer which is used for rendering comes from one
       of the vertices of the primitive being shaded; which vertex it
       comes from is undefined.
     </task>
   </category>
   <category name="GL_ARB_provoking_vertex">
-    <task name="PV1" specref="GL 3.2 2.11.7">
+    <task name="PV1" specref="GL 3.2 2.11.7" piglit="N/A">
       Flatshading is added to the list of operations applied to vertices
       processed by the vertex shader.
     </task>
     <task name="PV2" specref="GL 3.2 2.16" piglit="done" mesa="done">
       Transform feedback occurs before flatshading.
     </task>
-    <task name="PV3" specref="GL 3.2 2.18">
+    <task name="PV3" specref="GL 3.2 2.18" piglit="N/A">
       Flatshading selects the varying output corresponding to the
       provoking vertex of the primitive.
     </task>
@@ -1564,7 +1584,7 @@
     <task name="FSStructIn" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Fragment shader inputs may be structures.
     </task>
-    <task name="VSGSStructOut" specref="GLSL 1.50 4.3.6" piglit="VS only">
+    <task name="VSGSStructOut" specref="GLSL 1.50 4.3.6" piglit="done">
       Vertex and geometry shader outputs may be structures.
     </task>
   </category>
