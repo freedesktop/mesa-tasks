@@ -447,13 +447,6 @@
       Tested by
       piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-no-input-layout-declared.shader_test
     </task>
-    <task name="GS22" specref="GL 3.2 2.12.1">
-      It is a link error, not a compile error, for a geometry shader to
-      access more input vertices than are available for the input
-      primitive type, since the input primitive type is not part of the
-      shader object (probably incorrect--seems like this is only true of
-      ARB_geometry_shader4).
-    </task>
     <task name="GS23" specref="GL 3.2 2.12.1">
       The input primitive type may be queried using
       GetProgramiv(GEOMETRY_INPUT_TYPE).
