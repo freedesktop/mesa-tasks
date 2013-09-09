@@ -344,12 +344,14 @@
       Tested by
       piglit/tests/spec/glsl-1.50/linker/gs-without-vs.shader_test.
     </task>
-    <task name="GS4" specref="GL 3.2 2.11.4" piglit="no">
+    <task name="GS4" specref="GL 3.2 2.11.4" piglit="ML">
       GetActiveUniformBlockiv() now accepts a pname of
       UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER.
     </task>
-    <task name="GS5" specref="GL 3.2 2.11.4" piglit="no">
+    <task name="GS5" specref="GL 3.2 2.11.4" piglit="done">
       GetIntegerv() now accepts MAX_GEOMETRY_UNIFORM_BLOCKS.
+
+      Tested by piglit/tests/spec/gl-3.2/minmax.c
     </task>
     <task name="GS6" specref="GL 3.2 2.11.6" piglit="no">
       MAX_VARYING_COMPONENTS now only applies when linking a program
@@ -393,28 +395,43 @@
       Tested by
       piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS15" specref="GL 3.2 2.12.1">
+    <task name="GS15" specref="GL 3.2 2.12.1" piglit="done">
       Geometry shaders with input type "lines" may only be used with the
       GL_LINES, GL_LINE_STRIP, and GL_LINE_LOOP primitive types.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS16" specref="GL 3.2 2.12.1">
+    <task name="GS16" specref="GL 3.2 2.12.1" piglit="done">
       Geometry shaders with input type "lines_adjacency" may only be
       used with the GL_LINES_ADJACENCY and GL_LINE_STRIP_ADJACENCY
       primitive types.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS17" specref="GL 3.2 2.12.1">
+    <task name="GS17" specref="GL 3.2 2.12.1" piglit="done">
       Geometry shaders with input type "points" may only be used with
       the GL_POINTS primitive type.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS18" specref="GL 3.2 2.12.1">
+    <task name="GS18" specref="GL 3.2 2.12.1" piglit="done">
       Geometry shaders with input type "triangles" may only be used with
       the GL_TRIANGLES, GL_TRIANGLE_STRIP, and GL_TRIANGLE_FAN primitive
       types.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS19" specref="GL 3.2 2.12.1">
+    <task name="GS19" specref="GL 3.2 2.12.1" piglit="done">
       Geometry shaders with input type "triangles_adjacency" may only be
       used with the GL_TRIANGLES_ADJACENCY and
       GL_TRIANGLE_STRIP_ADJACENCY primitive types.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
     <task name="GS20" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
       It is a link error if multiple geometry shader objects specify
@@ -466,11 +483,14 @@
     <task name="GS31" specref="GL 3.2 2.12.4">
       GEOMTERY_VERTICES_OUT may not exceed MAX_GEOMETRY_OUTPUT_VERTICES.
     </task>
-    <task name="GS32" specref="GL 3.2 2.12.4">
+    <task name="GS32" specref="GL 3.2 2.12.4" piglit="done">
       If a drawing operation is performed while a geometry shader is
       active, and the primitive mode is incompatible with the geometry
       shader's input primitive type, INVALID_OPERATION will result and
       nothing will be drawn.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
     <task name="GS33" specref="GL 3.2 2.12.4" piglit="N/A" mesa="on branch">
       If a geometry shader outputs more than its declared maximum number
