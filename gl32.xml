@@ -556,69 +556,105 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS45" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS45" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       "Line Strips with Adjacency" is added.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS46" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS46" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       "Lines with Adjacency" is added.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS47" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS47" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       "Triangle Strips with Adjacency" is added.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS48" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS48" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       "Triangles with Adjacency" is added.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS49" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS49" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Line Strips with Adjacency" mode, if the number of vertices is
       less than 4, all vertices are ignored.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
     <task name="GS50" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Line Strips with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
-    <task name="GS51" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS51" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Line Strips with Adjacency" mode, line segments are drawn
       between vertex i+2 and i+3 (i counts from 0 to n-1, vertices count
       from 1 to n+3).
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS52" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS52" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Lines with Adjacency" mode, if the number of vertices is 4n+k
       and k != 0, the final k vertices are ignored.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
     <task name="GS53" specref="GL 3.2 2.6.1" piglit="done">
       In "Lines with Adjacency" mode, if there is no geometry shader,
       adjacent vertices are ignored.
     </task>
-    <task name="GS54" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS54" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Lines with Adjacency" mode, line segments are drawn between
       vertex 4*i+2 and 4*i+3 (i counts from 0 to n-1, vertices count
       from 1 to 4n+k).
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS55" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS55" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Triangle Strips with Adjacency" mode, if the number of
       vertices is 2(n+2)+k and k == 1, the final vertex is ignored.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
     <task name="GS56" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Triangle Strips with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
-    <task name="GS57" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS57" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Triangle Strips with Adjacency" mode, n triangles are drawn
       when there are 2(n+2)+k vertices (the exact set of triangles drawn
       is specified in table 2.4).
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS58" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS58" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Triangles with Adjacency" mode, if the number of vertices is
       6n+k and k != 0, the final k verties are ignored.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
     <task name="GS59" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Triangles with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
-    <task name="GS60" specref="GL 3.2 2.6.1" mesa="on branch">
+    <task name="GS60" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
       In "Triangles with Adjacency" mode, triangles are drawn using
       vertex 6*i+1, 6*i+3, and 6*i+5 (i counts from 0 to n-1, vertices
       count from 1 to 6n+k).
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
     <task name="GS61" specref="GL 3.2 3.4" piglit="N/A">
       VERTEX_PROGRAM_POINT_SIZE has been changed to PROGRAM_POINT_SIZE.
