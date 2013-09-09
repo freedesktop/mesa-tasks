@@ -503,9 +503,12 @@
 
       Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS36" specref="GL 3.2 2.12.4" mesa="on branch">
+    <task name="GS36" specref="GL 3.2 2.12.4" piglit="done" mesa="on branch">
       Restarting a primitive topology using the primitive restart index
       has no effect on the primitive ID counter.
+
+      Tested by
+      piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-restart.c
     </task>
     <task name="GS37" specref="GL 3.2 2.12.4">
       The product of the total number of vertices and the sum of all
