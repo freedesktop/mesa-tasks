@@ -319,7 +319,7 @@
     </task>
   </category>
   <category name="GL_ARB_geometry_shader4">
-    <task name="GS1" specref="GL 3.2 2.11.2" piglit="done" mesa="on branch">
+    <task name="GS1" specref="GL 3.2 2.11.2" piglit="done" mesa="done">
       Linking will now fail if a geometry shader fails to specify input
       primitive type, output primitive type, or maximum output vertex
       count.
@@ -327,7 +327,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/linker/gs-must-specify-*.shader_test.
     </task>
-    <task name="GS2" specref="GL 3.2 2.11.2" piglit="done" mesa="on branch">
+    <task name="GS2" specref="GL 3.2 2.11.2" piglit="done" mesa="done">
       Linking will now fail if input primitive type, output primitive
       type, or maximum output vertex count is specified differently in
       multiple geometry shader objects.
@@ -337,7 +337,7 @@
       and
       piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-conflicting-input-layouts.shader_test.
     </task>
-    <task name="GS3" specref="GL 3.2 2.11.2" piglit="done" mesa="on branch">
+    <task name="GS3" specref="GL 3.2 2.11.2" piglit="done" mesa="done">
       Linking will now fail if there is a geometry shader but no vertex
       shader.
 
@@ -369,18 +369,18 @@
       Tested by
       piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS9" specref="GL 3.2 2.11.7" piglit="no" mesa="on branch">
+    <task name="GS9" specref="GL 3.2 2.11.7" piglit="no" mesa="done">
       Geometry shaders handle incomplete textures in the same way as
       vertex shaders.
     </task>
-    <task name="GS10" specref="GL 3.2 2.11.7" piglit="done" mesa="on branch">
+    <task name="GS10" specref="GL 3.2 2.11.7" piglit="done" mesa="done">
       If a geometry shader is active, vertices processed by the vertex
       shader are passed to the geometry shader.
 
       Tested by
       piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS11" specref="GL 3.2 2.11.7" piglit="no" mesa="on branch">
+    <task name="GS11" specref="GL 3.2 2.11.7" piglit="no" mesa="done">
       Shader-only texturing is now available to geometry shaders.
     </task>
     <task name="GS12" specref="GL 3.2 2.11.7" piglit="done">
@@ -395,7 +395,7 @@
       Tested by
       piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS15" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS15" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       Geometry shaders with input type "lines" may only be used with the
       GL_LINES, GL_LINE_STRIP, and GL_LINE_LOOP primitive types.
 
@@ -410,14 +410,14 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS17" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS17" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       Geometry shaders with input type "points" may only be used with
       the GL_POINTS primitive type.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS18" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS18" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       Geometry shaders with input type "triangles" may only be used with
       the GL_TRIANGLES, GL_TRIANGLE_STRIP, and GL_TRIANGLE_FAN primitive
       types.
@@ -433,14 +433,14 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS20" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS20" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       It is a link error if multiple geometry shader objects specify
       different input primitive types.
 
       Tested by
       piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-conflicting-input-layouts.shader_test
     </task>
-    <task name="GS21" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS21" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       It is a link error if no geometry shader object specifies an input
       primitive type.
 
@@ -451,7 +451,7 @@
       The input primitive type may be queried using
       GetProgramiv(GEOMETRY_INPUT_TYPE).
     </task>
-    <task name="GS24" specref="GL 3.2 2.12.2" mesa="on branch">
+    <task name="GS24" specref="GL 3.2 2.12.2" mesa="done">
       If the number of vertices emitted by the geometry shader is not
       sufficient to produce a single primitive, nothing is drawn.
     </task>
@@ -468,7 +468,7 @@
 
       Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS30" specref="GL 3.2 2.12.4" mesa="on branch">
+    <task name="GS30" specref="GL 3.2 2.12.4" mesa="done">
       For triangles drawn in point or line mode, gl_PrimitiveIDIn is
       incremented only once per triangle, even though multiple
       points/lines may eventually be drawn.
@@ -476,7 +476,7 @@
     <task name="GS31" specref="GL 3.2 2.12.4">
       GEOMTERY_VERTICES_OUT may not exceed MAX_GEOMETRY_OUTPUT_VERTICES.
     </task>
-    <task name="GS32" specref="GL 3.2 2.12.4" piglit="done" mesa="on branch">
+    <task name="GS32" specref="GL 3.2 2.12.4" piglit="done" mesa="done">
       If a drawing operation is performed while a geometry shader is
       active, and the primitive mode is incompatible with the geometry
       shader's input primitive type, INVALID_OPERATION will result and
@@ -485,7 +485,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS33" specref="GL 3.2 2.12.4" piglit="N/A" mesa="on branch">
+    <task name="GS33" specref="GL 3.2 2.12.4" piglit="N/A" mesa="done">
       If a geometry shader outputs more than its declared maximum number
       of output vertices, then the emitted vertices *may* have no
       effect.
@@ -515,7 +515,7 @@
       components of all active varying variables may not exceed
       MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS.
     </task>
-    <task name="GS38" specref="GL 3.2 2.12.4" mesa="on branch">
+    <task name="GS38" specref="GL 3.2 2.12.4" mesa="done">
       Writing to gl_Position from either the vertex or geometry shader
       is optional.
     </task>
@@ -523,7 +523,7 @@
       gl_in[] receives values from built-in output variables written by
       the vertex shader.
     </task>
-    <task name="GS40" specref="GL 3.2 2.16" mesa="on branch">
+    <task name="GS40" specref="GL 3.2 2.16" mesa="done">
       For the purpose of error checking the primitiveMode parameter of
       BeginTransformFeedback(), if a geometry shader is present, its
       output primitive type is used instead of the mode parameter passed
@@ -535,18 +535,18 @@
       Tested by
       piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS42" specref="GL 3.2 2.17" piglit="done" mesa="on branch">
+    <task name="GS42" specref="GL 3.2 2.17" piglit="done" mesa="done">
       If a geometry shader is active, PRIMITIVES_GENERATED counts the
       number of primitives it emits.
 
       Tested by
       piglit/tests/spec/ext_transform_feedback/geometry-shaders-basic.c
     </task>
-    <task name="GS43" specref="GL 3.2 2.18" mesa="on branch">
+    <task name="GS43" specref="GL 3.2 2.18" mesa="done">
       Table 2.12 describes the behaviour of the provoking vertex for all
       primitive types, including the new "adjacency" types.
     </task>
-    <task name="GS44" specref="GL 3.2 2.4" piglit="done" mesa="on branch">
+    <task name="GS44" specref="GL 3.2 2.4" piglit="done" mesa="done">
       Geometry shading is added to the pipeline.
 
       Tested by
@@ -657,7 +657,7 @@
 
       Piglit N/A because the enum value is the same.
     </task>
-    <task name="GS62" specref="GL 3.2 3.9.2" piglit="done" mesa="on branch">
+    <task name="GS62" specref="GL 3.2 3.9.2" piglit="done" mesa="done">
       If a geometry shader is active, gl_PrimitiveID contains the value
       emitted by the geometry shader for the provoking vertex.
 
@@ -738,7 +738,7 @@
 
       Piglit N/A because the enum value is the same.
     </task>
-    <task name="GS79" specref="GL 3.2 6.2" mesa="on branch">
+    <task name="GS79" specref="GL 3.2 6.2" mesa="done">
       In shader object state (table 6.25), SHADER_TYPE is now Z3
       (previously was Z2).
     </task>
@@ -767,30 +767,30 @@
     <task name="GS84" specref="GL 3.2 E.2.1">
       MAX_VARYING_COMPONENTS and MAX_VARYING_FLOATS are deprecated
     </task>
-    <task name="GS85" specref="GLSL 1.50 2" piglit="done" mesa="on branch">
+    <task name="GS85" specref="GLSL 1.50 2" piglit="done" mesa="done">
       Geometry shaders are added.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS86" specref="GLSL 1.50 2.1" mesa="on branch">
+    <task name="GS86" specref="GLSL 1.50 2.1" mesa="done">
       Vertex shaders no longer need to compute the homogeneous position
       of the incoming vertex.
     </task>
-    <task name="GS87" specref="GLSL 1.50 4.3" mesa="on branch">
+    <task name="GS87" specref="GLSL 1.50 4.3" mesa="done">
       The qualifiers "smooth", "flat", and "noperspective" are no longer
       limited just to vertex shader outs and fragment shader ins.
 
       They can appear on geometry shader ins and geometry shader outs.
     </task>
-    <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
+    <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Each geometry shader input (or input block) needs to be declared
       as an array.
 
       Tested by
       piglit/tests/spec/glsl-1.50/compiler/gs-input-nonarray*.geom
     </task>
-    <task name="GS89" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
+    <task name="GS89" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Each geometry shader input array can optionally have a size
       declared.
 
@@ -798,23 +798,23 @@
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-length-after-other-size-blocks.geom
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-length-after-other-size.geom
     </task>
-    <task name="GS90" specref="GLSL 1.50 4.3.4" mesa="on branch">
+    <task name="GS90" specref="GLSL 1.50 4.3.4" mesa="done">
       For the vertex/geometry interface, if the vertex output is an
       array, it must appear in an output block (2D arrays are not
       supported).
     </task>
-    <task name="GS91" specref="GLSL 1.50 4.3.4" mesa="on branch">
+    <task name="GS91" specref="GLSL 1.50 4.3.4" mesa="done">
       For the vertex/geometry interface, variables of the same name must
       match in type and qualification (except that geometry variable
       must be an array, and vertex variable must not).
     </task>
-    <task name="GS92" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
+    <task name="GS92" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Geometry shader inputs receive values from vertex outputs.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS93" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
+    <task name="GS93" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       If a geometry shader input array does not have a size provided,
       the array size will be set by the input layout declaration(s)
       establishing the type of input primitive.
@@ -822,7 +822,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
-    <task name="GS94" specref="GLSL 1.50 4.3.4" piglit="done" mesa="on branch">
+    <task name="GS94" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       If a geometry shader input array has a size provided, it must be
       consistent with the input layout declaration(s) establishing the
       type of input primitive.
@@ -830,7 +830,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
-    <task name="GS95" specref="GLSL 1.50 4.3.4" piglit="N/A" mesa="on branch">
+    <task name="GS95" specref="GLSL 1.50 4.3.4" piglit="N/A" mesa="done">
       If a program contains vertex and fragment shaders but no geometry
       shader, then there is a vertex/fragment interface (as in GLSL
       1.40).
@@ -853,7 +853,7 @@
       spec/glsl-1.30/compiler/interpolation-qualifiers/vs-flat-int-05.vert
       and related.
     </task>
-    <task name="GS98" specref="GLSL 1.50 4.3.8" mesa="on branch" piglit="done">
+    <task name="GS98" specref="GLSL 1.50 4.3.8" mesa="done" piglit="done">
       Layout qualifiers can appear with just an interface qualifier
       ("in", "out", or "uniform").
 
@@ -870,7 +870,7 @@
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
     <task name="GS100" specref="GLSL 1.50 4.3.8.1" piglit="done"
-          mesa="on branch">
+          mesa="done">
       All input layouts specified in geometry shader compilation units
       must declare the same layout.
 
@@ -880,7 +880,7 @@
       piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-conflicting-input-layouts.shader_test
     </task>
     <task name="GS101" specref="GLSL 1.50 4.3.8.1" piglit="done"
-          mesa="on branch">
+          mesa="done">
       At least one compilation unit in a geometry shader must declare an
       input layout.
 
@@ -902,14 +902,14 @@
       interface qualifier "in" (i.e. "layout(...) in;").
     </task>
     <task name="GS104" specref="GLSL 1.50 4.3.8.1" piglit="done"
-          mesa="on branch">
+          mesa="done">
       If a geometry shader input is declared with an array size, it must
       match the length implied by the geometry shader input layout.
 
       Tested by tests/spec/glsl-1.50/compiler/gs-input-sizing-*.geom
     </task>
     <task name="GS105" specref="GLSL 1.50 4.3.8.1" piglit="done"
-          mesa="on branch">
+          mesa="done">
       It is a link-time error if not all geometry shader input sizes
       match (including both declared array sizes and the length implied
       by the geometry shader input layout).
@@ -920,7 +920,7 @@
       piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-layout-*.shader_test
     </task>
     <task name="GS106" specref="GLSL 1.50 4.3.8.1" piglit="done"
-          mesa="on branch">
+          mesa="done">
       Not all geometry shader compilation units need to declare an input
       layout.
 
@@ -944,7 +944,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS110" specref="GLSL 1.50 4.3.8.2" mesa="on branch">
+    <task name="GS110" specref="GLSL 1.50 4.3.8.2" mesa="done">
       All geometry shader output layout declarations in a program must
       declare the same layout and the same value for max_vertices.
     </task>
@@ -972,7 +972,7 @@
       line_strip, or triangle_strip), or max_vertices, or both.
     </task>
     <task name="GS116" specref="GLSL 1.50 4.3.8.2" piglit="done"
-          mesa="on branch">
+          mesa="done">
       The geometry shader output layout qualifier "max_vertices =
       &lt;integer-constant&gt;" is used to declare the maximum number of
       vertices the shader will ever emit in a single execution.
@@ -980,7 +980,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS117" specref="GLSL 1.50 4.3.8.2" mesa="on branch">
+    <task name="GS117" specref="GLSL 1.50 4.3.8.2" mesa="done">
       The geometry shader output layout qualifiers of "points",
       "line_strip", or "triangle_strip" are used to declare the
       primitive type used for geometry shader output.
@@ -1003,7 +1003,7 @@
       previously defined to 1 in vertex and fragment shaders, is now
       available in geometry shaders as well.
     </task>
-    <task name="GS122" specref="GLSL 1.50 7.1" piglit="done" mesa="on branch">
+    <task name="GS122" specref="GLSL 1.50 7.1" piglit="done" mesa="done">
       Fragment shaders will select the value of gl_PrimitiveID that is
       written by the geometry shader for the provoking vertex.
 
@@ -1019,27 +1019,27 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-in.shader_test
     </task>
-    <task name="GS124" specref="GLSL 1.50 7.1" piglit="done" mesa="on branch">
+    <task name="GS124" specref="GLSL 1.50 7.1" piglit="done" mesa="done">
       Geometry shaders also contain the special output variable "out int
       gl_PrimitiveID", which is communicated to fragment shaders.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
-    <task name="GS125" specref="GLSL 1.50 7.1" piglit="N/A" mesa="on branch">
+    <task name="GS125" specref="GLSL 1.50 7.1" piglit="N/A" mesa="done">
       If a geometry shader fails to write to gl_PrimitiveID, the value
       of gl_PrimitiveID within the fragment shader is undefined.
 
       Not necessary to test since the value is undefined.
     </task>
-    <task name="GS126" specref="GLSL 1.50 7.1" piglit="N/A" mesa="on branch">
+    <task name="GS126" specref="GLSL 1.50 7.1" piglit="N/A" mesa="done">
       If the geometry shader does not write gl_Position before its first
       call to EmitVertex(), or between calls to EmitVertex(), its value
       is undefined.
 
       Not necessary to test since the value is undefined.
     </task>
-    <task name="GS127" specref="GLSL 1.50 7.1" piglit="N/A" mesa="on branch">
+    <task name="GS127" specref="GLSL 1.50 7.1" piglit="N/A" mesa="done">
       If the vertex shader does not write gl_Position, its value is
       undefined.
 
@@ -1062,7 +1062,7 @@
       Not necessary to test since this only affects compatibility
       profiles.
     </task>
-    <task name="GS131" specref="GLSL 1.50 7.2" piglit="done" mesa="on branch">
+    <task name="GS131" specref="GLSL 1.50 7.2" piglit="done" mesa="done">
       If a geometry shader is present, the value in gl_PrimitiveID comes
       from the geometry shader's gl_PrimitiveID output.
 
@@ -1074,7 +1074,7 @@
       the number of primitives processed by the vertex shader since the
       current set of rendering primitives was started.
     </task>
-    <task name="GS133" specref="GLSL 1.50 7.2" piglit="done" mesa="on branch">
+    <task name="GS133" specref="GLSL 1.50 7.2" piglit="done" mesa="done">
       The built-in input variable "in int gl_PrimitiveID" is added.
 
       Tested by
@@ -1085,7 +1085,7 @@
       the same size in all shaders (previously the size needed to match
       between vertex and fragment shaders).
     </task>
-    <task name="GS135" specref="GLSL 1.50 7.4" piglit="done" mesa="on branch">
+    <task name="GS135" specref="GLSL 1.50 7.4" piglit="done" mesa="done">
       The built-in constants in this section are also provided to
       geometry shaders (previously they were available only to vertex
       and fragment shaders).
@@ -1127,53 +1127,53 @@
       Not necessary to test since this only affects compatibility
       profiles.
     </task>
-    <task name="GS146" specref="GLSL 1.50 8.10" piglit="done" mesa="on branch">
+    <task name="GS146" specref="GLSL 1.50 8.10" piglit="done" mesa="done">
       EmitVertex() is added.  This emits the current values of output
       variables to the current output primitive.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS147" specref="GLSL 1.50 8.10" piglit="done" mesa="on branch">
+    <task name="GS147" specref="GLSL 1.50 8.10" piglit="done" mesa="done">
       EndPrimitive() is added.  This completes the current output
       primitive and starts a new one, without emitting any vertices.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/end-primitive.c
     </task>
-    <task name="GS148" specref="GLSL 1.50 8.10" mesa="on branch">
+    <task name="GS148" specref="GLSL 1.50 8.10" mesa="done">
       EndPrimitive() is optional when the output layout is "points".
     </task>
-    <task name="GS149" specref="GLSL 1.50 8.10" piglit="N/A" mesa="on branch">
+    <task name="GS149" specref="GLSL 1.50 8.10" piglit="N/A" mesa="done">
       If a geometry shader calls EmitVertex() more times than it has
       declared with max_vertices, the results are undefined.
 
       Not necessary to test since the results are undefined.
     </task>
-    <task name="GS150" specref="GLSL 1.50 8.10" piglit="done" mesa="on branch">
+    <task name="GS150" specref="GLSL 1.50 8.10" piglit="done" mesa="done">
       It is not necessary to call EndPrimitive() if the geometry shader
       writes only a single primitive.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS151" specref="GLSL 1.50 8.10" piglit="N/A" mesa="on branch">
+    <task name="GS151" specref="GLSL 1.50 8.10" piglit="N/A" mesa="done">
       On return from EmitVertex(), the values of output variables are
       undefined.
 
       Not necessary to test since the values are undefined.
     </task>
-    <task name="GS152" specref="GLSL 1.50 8.10" piglit="done" mesa="on branch">
+    <task name="GS152" specref="GLSL 1.50 8.10" piglit="done" mesa="done">
       When a geometry shader terminates, the current output primitive is
       automatically completed.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS153" specref="GLSL 1.50 8.7" mesa="on branch">
+    <task name="GS153" specref="GLSL 1.50 8.7" mesa="done">
       Texture lookup functions are now available to geometry shaders.
     </task>
-    <task name="GS154" specref="GLSL 1.50 8.9" mesa="on branch">
+    <task name="GS154" specref="GLSL 1.50 8.9" mesa="done">
       Noise functions are now available to geometry shaders.
     </task>
     <task name="GS155" specref="GLSL 1.50 9" piglit="N/A">
