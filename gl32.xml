@@ -447,21 +447,30 @@
       Tested by
       piglit/tests/spec/glsl-1.50/linker/gs-input-sizing-no-input-layout-declared.shader_test
     </task>
-    <task name="GS23" specref="GL 3.2 2.12.1">
+    <task name="GS23" specref="GL 3.2 2.12.1" piglit="done">
       The input primitive type may be queried using
       GetProgramiv(GEOMETRY_INPUT_TYPE).
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
     <task name="GS24" specref="GL 3.2 2.12.2" mesa="done">
       If the number of vertices emitted by the geometry shader is not
       sufficient to produce a single primitive, nothing is drawn.
     </task>
-    <task name="GS27" specref="GL 3.2 2.12.2">
+    <task name="GS27" specref="GL 3.2 2.12.2" piglit="done">
       The maximum number of output vertices can be queried using
       GetProgramiv(GEOMETRY_VERTICES_OUT).
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
-    <task name="GS28" specref="GL 3.2 2.12.2">
+    <task name="GS28" specref="GL 3.2 2.12.2" piglit="done">
       The output primitve type can be queried using
       GetProgramiv(GEOMETRY_OUTPUT_TYPE)
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
     <task name="GS29" specref="GL 3.2 2.12.3" piglit="done">
       MAX_GEOMETRY_UNIFORM_COMPONENTS is added.
@@ -669,20 +678,32 @@
 
       Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS64" specref="GL 3.2 6.1.10">
+    <task name="GS64" specref="GL 3.2 6.1.10" piglit="done">
       GetProgramiv() generates an INVALID_OPERATION error if it is
       passed GEOMETRY_VERTICES_OUT, GEOMETRY_INPUT_TYPE, or
       GEOMETRY_OUTPUT_TYPE for a program which has not been linked
       successfully or which does not contain a geometry shader.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
-    <task name="GS65" specref="GL 3.2 6.1.10">
+    <task name="GS65" specref="GL 3.2 6.1.10" piglit="done">
       GetProgramiv() may now be passed GEOMETRY_INPUT_TYPE.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
-    <task name="GS66" specref="GL 3.2 6.1.10">
+    <task name="GS66" specref="GL 3.2 6.1.10" piglit="done">
       GetProgramiv() may now be passed GEOMETRY_OUTPUT_TYPE.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
-    <task name="GS67" specref="GL 3.2 6.1.10">
+    <task name="GS67" specref="GL 3.2 6.1.10" piglit="done">
       GetProgramiv() may now be passed GEOMETRY_VERTICES_OUT.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
     <task name="GS68" specref="GL 3.2 6.1.10">
       GetShaderiv() may now return GEOMETRY_SHADER if pname is
@@ -728,9 +749,12 @@
 
       Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS76" specref="GL 3.2 6.2">
+    <task name="GS76" specref="GL 3.2 6.2" piglit="done">
       In program object state (table 6.29), GEOMETRY_VERTICES_OUT,
       GEOMETRY_INPUT_TYPE, and GEOMETRY_OUTPUT_TYPE are added.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
     <task name="GS78" specref="GL 3.2 6.2" pigilt="N/A">
       In program object state (table 6.32), VERTEX_PROGRAM_POINT_SIZE
