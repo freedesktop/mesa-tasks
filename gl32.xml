@@ -752,13 +752,13 @@
       TEXTURE_BINDING_RECTANGLE, TEXTURE_BINDING_BUFFER, and
       TEXTURE_BINDING_CUBE_MAP are now replicated by 48 instead of 32.
     </task>
-    <task name="GS82" specref="GL 3.2 6.2" piglit="done" mesa="on branch">
+    <task name="GS82" specref="GL 3.2 6.2" piglit="done" mesa="done">
       Note: MAX_FRAGMENT_INPUT_COMPONENTS is 128 (double the old value
       of MAX_VARYING_COMPONENTS).
 
       Tested by piglit/tests/spec/gl-3.2/minmax.c
     </task>
-    <task name="GS83" specref="GL 3.2 6.2" piglit="done" mesa="on branch">
+    <task name="GS83" specref="GL 3.2 6.2" piglit="done" mesa="done">
       Note: MAX_GEOMETRY_OUTPUT_COMPONENTS is 128 (double the old value
       of MAX_VARYING_COMPONENTS).
 
