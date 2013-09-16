@@ -1534,13 +1534,17 @@
       is still enabled, and gl_Layer is undefined in those execution
       paths where no value was assigned.
     </task>
-    <task name="Layer31" specref="GLSL 1.50 7.1">
+    <task name="Layer31" specref="GLSL 1.50 7.1" piglit="done">
       If a geometry shader statically assigns a value to gl_Layer,
       layered rendering mode is enabled.
+
+      Tested by other piglit tests.
     </task>
-    <task name="Layer32" specref="GLSL 1.50 7.1">
+    <task name="Layer32" specref="GLSL 1.50 7.1" piglit="done">
       The geometry shader output gl_Layer is used to select a layer of a
       multi-layer framebuffer attachment.
+
+      Tested by other piglit tests.
     </task>
     <task name="Layer33" specref="GLSL 1.50 7.1" piglit="N/A">
       The value of gl_Layer which is used for rendering comes from one
