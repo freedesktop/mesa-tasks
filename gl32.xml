@@ -402,7 +402,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS16" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS16" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       Geometry shaders with input type "lines_adjacency" may only be
       used with the GL_LINES_ADJACENCY and GL_LINE_STRIP_ADJACENCY
       primitive types.
@@ -425,7 +425,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS19" specref="GL 3.2 2.12.1" piglit="done" mesa="on branch">
+    <task name="GS19" specref="GL 3.2 2.12.1" piglit="done" mesa="done">
       Geometry shaders with input type "triangles_adjacency" may only be
       used with the GL_TRIANGLES_ADJACENCY and
       GL_TRIANGLE_STRIP_ADJACENCY primitive types.
@@ -561,42 +561,42 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS45" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS45" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       "Line Strips with Adjacency" is added.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS46" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS46" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       "Lines with Adjacency" is added.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS47" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS47" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       "Triangle Strips with Adjacency" is added.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS48" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS48" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       "Triangles with Adjacency" is added.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS49" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS49" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Line Strips with Adjacency" mode, if the number of vertices is
       less than 4, all vertices are ignored.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS50" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS50" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Line Strips with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
-    <task name="GS51" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS51" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Line Strips with Adjacency" mode, line segments are drawn
       between vertex i+2 and i+3 (i counts from 0 to n-1, vertices count
       from 1 to n+3).
@@ -604,7 +604,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS52" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS52" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Lines with Adjacency" mode, if the number of vertices is 4n+k
       and k != 0, the final k vertices are ignored.
 
@@ -615,7 +615,7 @@
       In "Lines with Adjacency" mode, if there is no geometry shader,
       adjacent vertices are ignored.
     </task>
-    <task name="GS54" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS54" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Lines with Adjacency" mode, line segments are drawn between
       vertex 4*i+2 and 4*i+3 (i counts from 0 to n-1, vertices count
       from 1 to 4n+k).
@@ -623,18 +623,18 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS55" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS55" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Triangle Strips with Adjacency" mode, if the number of
       vertices is 2(n+2)+k and k == 1, the final vertex is ignored.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS56" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS56" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Triangle Strips with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
-    <task name="GS57" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS57" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Triangle Strips with Adjacency" mode, n triangles are drawn
       when there are 2(n+2)+k vertices (the exact set of triangles drawn
       is specified in table 2.4).
@@ -642,18 +642,18 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS58" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS58" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Triangles with Adjacency" mode, if the number of vertices is
       6n+k and k != 0, the final k verties are ignored.
 
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
-    <task name="GS59" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS59" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Triangles with Adjacency" mode, if there is no geometry
       shader, adjacent vertices are ignored.
     </task>
-    <task name="GS60" specref="GL 3.2 2.6.1" piglit="done" mesa="on branch">
+    <task name="GS60" specref="GL 3.2 2.6.1" piglit="done" mesa="done">
       In "Triangles with Adjacency" mode, triangles are drawn using
       vertex 6*i+1, 6*i+3, and 6*i+5 (i counts from 0 to n-1, vertices
       count from 1 to 6n+k).
@@ -884,7 +884,7 @@
       Implicitly tested by the piglit tests that exercise the
       individual layout qualifiers.
     </task>
-    <task name="GS99" specref="GLSL 1.50 4.3.8.1" piglit="done" mesa="on branch">
+    <task name="GS99" specref="GLSL 1.50 4.3.8.1" piglit="done" mesa="done">
       All geometry shader input unsized array declarations will be sized
       by an *earlier* input layout qualifier (when present) according
       to: points=1, lines=2, lines_adjacency=4, triangles=3,
@@ -959,7 +959,7 @@
       The intrinsically declared geometry shader input array gl_in[]
       will be sized by any input layout declaration.
     </task>
-    <task name="GS109" specref="GLSL 1.50 4.3.8.1" mesa="on branch"
+    <task name="GS109" specref="GLSL 1.50 4.3.8.1" mesa="done"
           piglit="done">
       The layout qualifier identifiers for geometry shader inputs are
       "points", "lines", "lines_adjacency", "triangles", and
