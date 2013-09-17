@@ -1034,7 +1034,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
-    <task name="GS123" specref="GLSL 1.50 7.1" piglit="done" mesa="on branch">
+    <task name="GS123" specref="GLSL 1.50 7.1" piglit="done" mesa="done">
       Geometry shaders also contain the special input variable "in int
       gl_PrimitiveIDIn", which is filled with the number of primitives
       processed by the geometry shader since the current set of
