@@ -1315,7 +1315,7 @@
       Indices used to index a uniform block array must be integral
       constant expressions.
     </task>
-    <task name="IB20" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB20" specref="GLSL 1.50 4.3.7" piglit="done">
       Input variables may only appear in input blocks.
     </task>
     <task name="IB21" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
@@ -1340,7 +1340,7 @@
       Output blocks in one stage are matched up to input blocks in the
       subsequent stage.
     </task>
-    <task name="IB27" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB27" specref="GLSL 1.50 4.3.7" piglit="done">
       Output variables may only appear in output blocks.
     </task>
     <task name="IB28" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
