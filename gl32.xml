@@ -1366,11 +1366,11 @@
     <task name="IB34" specref="GLSL 1.50 4.3.7">
       Within interface blocks, sampler types are not allowed.
     </task>
-    <task name="IB35" specref="GLSL 1.50 4.3.8" piglit="no">
+    <task name="IB35" specref="GLSL 1.50 4.3.8" piglit="done">
       Layout qualifiers can appear as part of an interface block
       definition.
     </task>
-    <task name="IB36" specref="GLSL 1.50 4.3.8" piglit="no">
+    <task name="IB36" specref="GLSL 1.50 4.3.8" piglit="done">
       Layout qualifiers can appear as part of an interface block member.
     </task>
     <task name="IB37" specref="GLSL 1.50 4.3.9.1" piglit="no">
