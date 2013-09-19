@@ -454,9 +454,12 @@
       Tested by
       tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
-    <task name="GS24" specref="GL 3.2 2.12.2" mesa="done">
+    <task name="GS24" specref="GL 3.2 2.12.2" mesa="done" piglit="done">
       If the number of vertices emitted by the geometry shader is not
       sufficient to produce a single primitive, nothing is drawn.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/gs-emits-too-few-verts.c
     </task>
     <task name="GS27" specref="GL 3.2 2.12.2" piglit="done">
       The maximum number of output vertices can be queried using
@@ -705,9 +708,12 @@
       Tested by
       tests/spec/glsl-1.50/execution/geometry/query-gs-prim-types.c
     </task>
-    <task name="GS68" specref="GL 3.2 6.1.10">
+    <task name="GS68" specref="GL 3.2 6.1.10" piglit="done">
       GetShaderiv() may now return GEOMETRY_SHADER if pname is
       SHADER_TYPE.
+
+      Tested by
+      tests/spec/glsl-1.50/execution/geometry/getshaderiv-may-return-GS.c
     </task>
     <task name="GS69" specref="GL 3.2 6.2" piglit="done">
       Implementation dependent geometry shader limits (table 6.42) is
