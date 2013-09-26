@@ -87,10 +87,6 @@
       6.40), MAJOR_VERSION now has a minimum value of 3 (presumably it's
       just an oversight that this wasn't included in OpenGL 3.1).
     </task>
-    <task name="TBRemoved" specref="GL 3.2 6.2" piglit="no">
-      In miscellaneous (table 6.47), TEXTURE_BUFFER is removed
-      (presumably an oversight?)
-    </task>
     <task name="UBSState" specref="GL 3.2 6.2" piglit="done">
       In program object state (table 6.30), UNIFORM_BUFFER_START and
       UNIFORM_BUFFER_SIZE are added.
