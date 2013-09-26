@@ -17,11 +17,6 @@
       Uniform* commands.  (Previously the spec said they may be
       modified, however this was likely a typographical error).
     </task>
-    <task name="XFBVaryingBadProg" specref="GL 3.2 2.11.6" piglit="no">
-      TransformFeedbackVaryings() no longer generates INVALID_VALUE if
-      "program" is not the name of a program object (presumably an
-      oversight).
-    </task>
     <task name="NoRestartVertexID" specref="GL 3.2 2.8.1">
       Though is not explicitly stated, it appears that primitive restart
       should *not* restart the gl_VertexID index.
