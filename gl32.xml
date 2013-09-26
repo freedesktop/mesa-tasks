@@ -215,6 +215,9 @@
     </task>
     <task name="NoBorder4" specref="GL 3.2 6.1.3">
       TEXTURE_BORDER queries are removed.
+
+      Need to test that glGetTexLevelParameterfv() generates an error
+      if TEXTURE_BORDER queried.
     </task>
   </category>
   <category name="GL_ARB_draw_elements_base_vertex">
