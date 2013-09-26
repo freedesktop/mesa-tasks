@@ -21,12 +21,12 @@
       Though is not explicitly stated, it appears that primitive restart
       should *not* restart the gl_VertexID index.
     </task>
-    <task name="UndefinedMapRead" specref="GL 3.2 2.8.3">
+    <task name="UndefinedMapRead" specref="GL 3.2 2.9.3" piglit="N/A">
       An undetected attempt to read data from a mapped buffer object has
       undefined results, and may result in GL interruption or
       termination.
     </task>
-    <task name="SkipDetectingMaps" specref="GL 3.2 2.8.3">
+    <task name="SkipDetectingMaps" specref="GL 3.2 2.9.3" piglit="N/A">
       Most, but not all GL commands will detect attempts to read data
       from a mapped buffer object.  (Previously all commands did so.)
     </task>
@@ -195,18 +195,18 @@
     </task>
   </category>
   <category name="texture borders">
-    <task name="NoBorders1" specref="GL 3.2 2.11.7" piglit="no">
+    <task name="NoBorders1" specref="GL 3.2 2.11.7" piglit="N/A">
       Texture border size ("bs") is replaced with 0 in the texel fetch
       equations.
     </task>
-    <task name="NoBorders2" specref="GL 3.2 3.8.3" piglit="no">
+    <task name="NoBorders2" specref="GL 3.2 3.8.3" piglit="N/A">
       Reference to TEXTURE_BORDER is dropped from the list of
       requirements in order to guarantee that a call to
       CompressedTexSubImage1D, CompressedTexSubImage2D,
       CompressedTexSubImage3D will not result in an INVALID_OPERATION
       error.
     </task>
-    <task name="NoBorders3" specref="GL 3.2 3.8.3" piglit="no">
+    <task name="NoBorders3" specref="GL 3.2 3.8.3" piglit="N/A">
       Reference to border/TEXTURE_BORDER is dropped from the list of
       values which must match in order to guarantee that a call to
       CompressedTexImage1D, CompressedTexImage2D, or
