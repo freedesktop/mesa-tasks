@@ -1194,8 +1194,10 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS153" specref="GLSL 1.50 8.7" mesa="done">
+    <task name="GS153" specref="GLSL 1.50 8.7" mesa="done" piglit="done">
       Texture lookup functions are now available to geometry shaders.
+
+      Adequately tested by the texelFetch tests.
     </task>
     <task name="GS154" specref="GLSL 1.50 8.9" mesa="done">
       Noise functions are now available to geometry shaders.
