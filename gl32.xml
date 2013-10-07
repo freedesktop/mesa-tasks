@@ -12,10 +12,13 @@
       INT_SAMPLER_2D_RECT, UNSIGNED_INT_SAMPLER_BUFFER, and
       UNSIGNED_INT_SAMPLER_2D_RECT
     </task>
-    <task name="NamedBlockNoModify" specref="GL 3.2 2.11.4" piglit="no">
+    <task name="NamedBlockNoModify" specref="GL 3.2 2.11.4" piglit="done">
       Uniforms in a named uniform block may <b>not</b> be modified using the
       Uniform* commands.  (Previously the spec said they may be
       modified, however this was likely a typographical error).
+
+      Tested by
+      tests/spec/glsl-1.50/execution/vs-named-block-no-modify.c.
     </task>
     <task name="NoRestartVertexID" specref="GL 3.2 2.8.1">
       Though is not explicitly stated, it appears that primitive restart
@@ -189,9 +192,12 @@
     <task name="Determinant" specref="GLSL 1.50 8.5" piglit="done" mesa="done">
       The function determinant() is added.
     </task>
-    <task name="InvariantEverywhere" specref="GLSL 1.50 9" piglit="no">
+    <task name="InvariantEverywhere" specref="GLSL 1.50 9" piglit="done">
       Rule "INVARIANT IDENTIFIER" for "single_declaration" is no longer
       vertex only.
+
+      Tested by
+      tests/spec/glsl-1.50/{execution,linker}/invariant-qualifier-everywhere*.shader_test
     </task>
   </category>
   <category name="texture borders">
