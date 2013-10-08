@@ -531,7 +531,7 @@
       Writing to gl_Position from either the vertex or geometry shader
       is optional.
     </task>
-    <task name="GS39" specref="GL 3.2 2.12.4">
+    <task name="GS39" specref="GL 3.2 2.12.4" piglit="done">
       gl_in[] receives values from built-in output variables written by
       the vertex shader.
     </task>
@@ -1075,12 +1075,12 @@
 
       Not necessary to test since the value is undefined.
     </task>
-    <task name="GS128" specref="GLSL 1.50 7.1">
+    <task name="GS128" specref="GLSL 1.50 7.1" piglit="done">
       The gl_PerVertex interface block also appears as a geometry shader
       input interface block, having block-name gl_PerVertex,
       instance_name gl_in, and an implicit array size.
     </task>
-    <task name="GS129" specref="GLSL 1.50 7.1">
+    <task name="GS129" specref="GLSL 1.50 7.1" piglit="done">
       The gl_PerVertex interface block also appears as a geometry shader
       output interface block, declared identically to the gl_PerVertex
       vertex shader output interface block.
@@ -1388,7 +1388,7 @@
       is redeclared as e.g. "flat in vec4 gl_FrontColor".  No "gl_in[]"
       is used.
     </task>
-    <task name="IB38" specref="GLSL 1.50 7.1" piglit="no">
+    <task name="IB38" specref="GLSL 1.50 7.1" piglit="done">
       The output variables gl_Position, gl_PointSize, and
       gl_ClipDistance are now considered to be nested within an
       interface block having block-name gl_PerVertex and no
