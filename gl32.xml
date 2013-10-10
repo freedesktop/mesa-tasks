@@ -961,7 +961,7 @@
       Only one layout qualifier identifier may appear for geometry
       shader inputs.
     </task>
-    <task name="GS108" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS108" specref="GLSL 1.50 4.3.8.1" mesa="done">
       The intrinsically declared geometry shader input array gl_in[]
       will be sized by any input layout declaration.
     </task>
@@ -1080,12 +1080,12 @@
       input interface block, having block-name gl_PerVertex,
       instance_name gl_in, and an implicit array size.
     </task>
-    <task name="GS129" specref="GLSL 1.50 7.1" piglit="done">
+    <task name="GS129" specref="GLSL 1.50 7.1" piglit="done" mesa="done">
       The gl_PerVertex interface block also appears as a geometry shader
       output interface block, declared identically to the gl_PerVertex
       vertex shader output interface block.
     </task>
-    <task name="GS130" specref="GLSL 1.50 7.1.1" piglit="N/A">
+    <task name="GS130" specref="GLSL 1.50 7.1.1" piglit="N/A" mesa="done">
       gl_ClipVertex is also added to the gl_PerVertex output and input
       interface blocks in the geometry shader.
 
@@ -1149,7 +1149,7 @@
     <task name="GS144" specref="GLSL 1.50 7.4">
       gl_MaxVertexOutputComponents (min: 64) is added.
     </task>
-    <task name="GS145" specref="GLSL 1.50 7.6" piglit="N/A">
+    <task name="GS145" specref="GLSL 1.50 7.6" piglit="N/A" mesa="done">
       These variables are also added to the gl_PerVertex output and
       input interface blocks in the geometry shader (in the
       compatibility profile only).
@@ -1394,7 +1394,7 @@
       interface block having block-name gl_PerVertex and no
       instance-name.
     </task>
-    <task name="IB39" specref="GLSL 1.50 7.1.1" piglit="no">
+    <task name="IB39" specref="GLSL 1.50 7.1.1" piglit="no" mesa="done">
       The vertex shader output variable gl_ClipVertex is now considered
       to be nested within the gl_PerVertex output interface block.
     </task>
