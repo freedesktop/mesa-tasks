@@ -1135,7 +1135,7 @@
       gl_MaxGeometryOutputVertices (min: 256) is added.
     </task>
     <task name="GS140" specref="GLSL 1.50 7.4">
-      gl_MaxGeometryTextureInputUnits (min: 16) is added.
+      gl_MaxGeometryTextureImageUnits (min: 16) is added.
     </task>
     <task name="GS141" specref="GLSL 1.50 7.4">
       gl_MaxGeometryTotalOutputComponents (min: 1024) is added.
