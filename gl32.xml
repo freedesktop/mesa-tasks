@@ -362,7 +362,7 @@
       that can be written by the vertex shader is
       MAX_VERTEX_OUTPUT_COMPONENTS.
     </task>
-    <task name="GS8" specref="GL 3.2 2.11.6" piglit="done">
+    <task name="GS8" specref="GL 3.2 2.11.6" piglit="done" mesa="done">
       When a geometry shader is active, transform feedback records
       geometry shader outputs.
 
@@ -388,7 +388,7 @@
 
       Tested by piglit/tests/spec/gl-3.2/minmax.c.
     </task>
-    <task name="GS14" specref="GL 3.2 2.12" piglit="done">
+    <task name="GS14" specref="GL 3.2 2.12" piglit="done" mesa="done">
       The geometry shader pipeline stage is after primitive assembly,
       prior to transform feedback.
 
@@ -541,7 +541,7 @@
       output primitive type is used instead of the mode parameter passed
       to drawing commands.
     </task>
-    <task name="GS41" specref="GL 3.2 2.16" piglit="done">
+    <task name="GS41" specref="GL 3.2 2.16" piglit="done" mesa="done">
       Transform feedback occurs after geometry shading.
 
       Tested by
@@ -1122,31 +1122,31 @@
 
       Tested by piglit/tests/spec/glsl-1.50/compiler/constants.geom
     </task>
-    <task name="GS136" specref="GLSL 1.50 7.4">
+    <task name="GS136" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxFragmentInputComponents (min: 128) is added.
     </task>
-    <task name="GS137" specref="GLSL 1.50 7.4">
+    <task name="GS137" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryInputComponents (min: 64) is added.
     </task>
-    <task name="GS138" specref="GLSL 1.50 7.4">
+    <task name="GS138" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryOutputComponents (min: 128) is added.
     </task>
-    <task name="GS139" specref="GLSL 1.50 7.4">
+    <task name="GS139" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryOutputVertices (min: 256) is added.
     </task>
-    <task name="GS140" specref="GLSL 1.50 7.4">
+    <task name="GS140" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryTextureImageUnits (min: 16) is added.
     </task>
-    <task name="GS141" specref="GLSL 1.50 7.4">
+    <task name="GS141" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryTotalOutputComponents (min: 1024) is added.
     </task>
-    <task name="GS142" specref="GLSL 1.50 7.4">
+    <task name="GS142" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryUniformComponents (min: 1024) is added.
     </task>
-    <task name="GS143" specref="GLSL 1.50 7.4">
+    <task name="GS143" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxGeometryVaryingComponents (min: 64) is added.
     </task>
-    <task name="GS144" specref="GLSL 1.50 7.4">
+    <task name="GS144" specref="GLSL 1.50 7.4" mesa="done">
       gl_MaxVertexOutputComponents (min: 64) is added.
     </task>
     <task name="GS145" specref="GLSL 1.50 7.6" piglit="N/A" mesa="done">
