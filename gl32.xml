@@ -141,7 +141,7 @@
       The tokens in a layout-qualifier-id-list are identifiers, not
       keywords.
     </task>
-    <task name="LayoutNoCase" specref="GLSL 1.50 4.3.8" piglit="done" mesa="no">
+    <task name="LayoutNoCase" specref="GLSL 1.50 4.3.8" piglit="done" mesa="done">
       The tokens in a layout-qualifier-id-list are not case-sensitive
       (with certain exceptions).
     </task>
