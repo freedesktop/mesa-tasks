@@ -1231,7 +1231,8 @@
     <task name="VersionMacro" specref="GLSL 1.50 3" piglit="done" mesa="done">
       __VERSION__ should substitute 150.
     </task>
-    <task name="Link140And150" specref="GLSL 1.50 3.3">
+    <task name="Link140And150" specref="GLSL 1.50 3.3" piglit="done"
+          mesa="done">
       GLSL 1.40 and GLSL 1.50 shaders may be linked together.
     </task>
   </category>
