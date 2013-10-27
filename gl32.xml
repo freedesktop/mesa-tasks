@@ -1100,7 +1100,7 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/primitive-id-out.shader_test
     </task>
-    <task name="GS132" specref="GLSL 1.50 7.2">
+    <task name="GS132" specref="GLSL 1.50 7.2" mesa="done">
       If no geometry shader is present, the value in gl_PrimitiveID is
       the number of primitives processed by the vertex shader since the
       current set of rendering primitives was started.
