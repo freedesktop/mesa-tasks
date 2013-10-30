@@ -220,11 +220,13 @@
       CompressedTexImage3D will not result in an INVALID_OPERATION
       error.
     </task>
-    <task name="NoBorder4" specref="GL 3.2 6.1.3">
+    <task name="NoBorder4" specref="GL 3.2 6.1.3" piglit="done">
       TEXTURE_BORDER queries are removed.
 
       Need to test that glGetTexLevelParameterfv() generates an error
       if TEXTURE_BORDER queried.
+
+      Tested by spec/gl-3.2/texture-border-deprecated.c
     </task>
   </category>
   <category name="GL_ARB_draw_elements_base_vertex">
@@ -345,9 +347,11 @@
       Tested by
       piglit/tests/spec/glsl-1.50/linker/gs-without-vs.shader_test.
     </task>
-    <task name="GS4" specref="GL 3.2 2.11.4" piglit="ML">
+    <task name="GS4" specref="GL 3.2 2.11.4" piglit="done">
       GetActiveUniformBlockiv() now accepts a pname of
       UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER.
+
+      Tested by spec/arb_uniform_buffer_object/referenced-by-shader.c
     </task>
     <task name="GS5" specref="GL 3.2 2.11.4" piglit="done">
       GetIntegerv() now accepts MAX_GEOMETRY_UNIFORM_BLOCKS.
@@ -808,11 +812,15 @@
       Vertex shaders no longer need to compute the homogeneous position
       of the incoming vertex.
     </task>
-    <task name="GS87" specref="GLSL 1.50 4.3" mesa="done">
+    <task name="GS87" specref="GLSL 1.50 4.3" mesa="done" piglit="done">
       The qualifiers "smooth", "flat", and "noperspective" are no longer
       limited just to vertex shader outs and fragment shader ins.
 
       They can appear on geometry shader ins and geometry shader outs.
+
+      Tested by:
+      spec/glsl-1.50/compiler/gs-also-uses-smooth-flat-noperspective.geom
+      spec/glsl-1.50/execution/gs-also-uses-smooth-flat-noperspective.shader_test
     </task>
     <task name="GS88" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Each geometry shader input (or input block) needs to be declared
@@ -829,15 +837,21 @@
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-length-after-other-size-blocks.geom
       piglit/tests/spec/glsl-1.50/compiler/gs-input-sizing-length-after-other-size.geom
     </task>
-    <task name="GS90" specref="GLSL 1.50 4.3.4" mesa="done">
+    <task name="GS90" specref="GLSL 1.50 4.3.4" mesa="done" piglit="done">
       For the vertex/geometry interface, if the vertex output is an
       array, it must appear in an output block (2D arrays are not
       supported).
+
+      Tested by:
+      spec/glsl-1.50/execution/vs-gs-arrays-within-blocks-pass.shader_test
+      spec/glsl-1.50/execution/vs-gs-arrays-fail.shader_test
     </task>
-    <task name="GS91" specref="GLSL 1.50 4.3.4" mesa="done">
+    <task name="GS91" specref="GLSL 1.50 4.3.4" mesa="done" piglit="done">
       For the vertex/geometry interface, variables of the same name must
       match in type and qualification (except that geometry variable
       must be an array, and vertex variable must not).
+
+      Tested by spec/glsl-1.50/execution/vs-gs-varyings-match-types.shader_test
     </task>
     <task name="GS92" specref="GLSL 1.50 4.3.4" piglit="done" mesa="done">
       Geometry shader inputs receive values from vertex outputs.
@@ -928,9 +942,11 @@
 
       Tests for gl_in still need to be written.
     </task>
-    <task name="GS103" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS103" specref="GLSL 1.50 4.3.8.1" piglit="done">
       Geometry shaders allow input layout qualifiers *only* on the
       interface qualifier "in" (i.e. "layout(...) in;").
+
+      Tested by spec/glsl-1.50/execution/geometry/gs-input-layout-qualifiers.c
     </task>
     <task name="GS104" specref="GLSL 1.50 4.3.8.1" piglit="done"
           mesa="done">
@@ -958,9 +974,12 @@
       Tested by
       tests/spec/glsl-1.50/linker/gs-input-sizing-layout-*.shader_test
     </task>
-    <task name="GS107" specref="GLSL 1.50 4.3.8.1">
+    <task name="GS107" specref="GLSL 1.50 4.3.8.1" piglit="done">
       Only one layout qualifier identifier may appear for geometry
       shader inputs.
+
+      Tested by
+      spec/glsl-1.50/compiler/layout-in-only-one-qualifier-id.geom
     </task>
     <task name="GS108" specref="GLSL 1.50 4.3.8.1" mesa="done">
       The intrinsically declared geometry shader input array gl_in[]
@@ -975,21 +994,31 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/gs-mismatch-prim-type.c
     </task>
-    <task name="GS110" specref="GLSL 1.50 4.3.8.2" mesa="done">
+    <task name="GS110" specref="GLSL 1.50 4.3.8.2" mesa="done" piglit="done">
       All geometry shader output layout declarations in a program must
       declare the same layout and the same value for max_vertices.
+
+      Tested by:
+      spec/glsl-1.50/compiler/layout-only-one-out-declaration-per-program-max-verts.geom
+      spec/glsl-1.50/compiler/layout-only-one-out-declaration-per-program-prim-type.geom
     </task>
-    <task name="GS111" specref="GLSL 1.50 4.3.8.2">
+    <task name="GS111" specref="GLSL 1.50 4.3.8.2" piglit="done">
       Geometry shaders can have output layout qualifiers *only* on the
       interface qualifier "out" (i.e. "layout(...) out;").
+
+      Tested by spec/glsl-1.50/execution/geometry/gs-output-layout-qualifiers.c
     </task>
-    <task name="GS112" specref="GLSL 1.50 4.3.8.2">
+    <task name="GS112" specref="GLSL 1.50 4.3.8.2" piglit="done">
       If one declaration declares both primitive type and max_vertices,
       order is irrelevant.
+
+      Tested by spec/glsl-1.50/compiler/layout-out-order-irrelevant.geom
     </task>
-    <task name="GS113" specref="GLSL 1.50 4.3.8.2">
+    <task name="GS113" specref="GLSL 1.50 4.3.8.2" piglit="done">
       It is an error if max_vertices is declared to be a value greater
       than gl_MaxGeometryOutputVertices.
+
+      Tested by spec/glsl-1.50/compiler/layout-max-verts-limited.geom
     </task>
     <task name="GS114" specref="GLSL 1.50 4.3.8.2" piglit="done">
       Not all geometry shader compilation units need to declare an
@@ -998,9 +1027,11 @@
       Implicitly covered by tests
       piglit/tests/spec/glsl-1.50/execution/gs-input-sizing-*.
     </task>
-    <task name="GS115" specref="GLSL 1.50 4.3.8.2">
+    <task name="GS115" specref="GLSL 1.50 4.3.8.2" piglit="done">
       One declaration can declare either a primitive type (points,
       line_strip, or triangle_strip), or max_vertices, or both.
+
+      tested by other layout tests
     </task>
     <task name="GS116" specref="GLSL 1.50 4.3.8.2" piglit="done"
           mesa="done">
@@ -1011,10 +1042,12 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry-basic.shader_test
     </task>
-    <task name="GS117" specref="GLSL 1.50 4.3.8.2" mesa="done">
+    <task name="GS117" specref="GLSL 1.50 4.3.8.2" mesa="done" piglit="done">
       The geometry shader output layout qualifiers of "points",
       "line_strip", or "triangle_strip" are used to declare the
       primitive type used for geometry shader output.
+
+      Tested by spec/glsl-1.50/execution/geometry/gs-output-layout-qualifiers.c
     </task>
     <task name="GS119" specref="GLSL 1.50 4.3.9.1" piglit="N/A" mesa="N/A">
       The variables gl_FrontColor, gl_BackColor, gl_FrontSecondaryColor,
@@ -1172,8 +1205,11 @@
       Tested by
       piglit/tests/spec/glsl-1.50/execution/geometry/end-primitive.c
     </task>
-    <task name="GS148" specref="GLSL 1.50 8.10" mesa="done">
+    <task name="GS148" specref="GLSL 1.50 8.10" mesa="done" piglit="done">
       EndPrimitive() is optional when the output layout is "points".
+
+      Tested by
+      spec/glsl-1.50/execution/geometry/geometry-end-primitive-optional-with-points-out.c
     </task>
     <task name="GS149" specref="GLSL 1.50 8.10" piglit="N/A" mesa="done">
       If a geometry shader calls EmitVertex() more times than it has
@@ -1206,8 +1242,10 @@
 
       Adequately tested by the texelFetch tests.
     </task>
-    <task name="GS154" specref="GLSL 1.50 8.9" mesa="done">
+    <task name="GS154" specref="GLSL 1.50 8.9" mesa="done" piglit="done">
       Noise functions are now available to geometry shaders.
+
+      Tested by spec/glsl-1.50/compiler/gs-noise-functions.geom
     </task>
     <task name="GS155" specref="GLSL 1.50 9" piglit="N/A">
       "layout_list" is renamed to "layout_qualifier_id_list", and rules
@@ -1235,6 +1273,10 @@
     <task name="Link140And150" specref="GLSL 1.50 3.3" piglit="done"
           mesa="done">
       GLSL 1.40 and GLSL 1.50 shaders may be linked together.
+
+      Tested by:
+      spec/glsl-1.50/linker/versions-mingled.shader_test
+      spec/glsl-1.50/linker/versions-mingled-multiple-shader.shader_test
     </task>
   </category>
   <category name="interface blocks">
@@ -1285,10 +1327,14 @@
       querying a characteristic such as the offset of the member
       within the block.
     </task>
-    <task name="IB11" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB11" specref="GLSL 1.50 4.3.7" piglit="done">
       For interface blocks that are declared as arrays, in order to
       match, their array sizes must match (exception: between VS and GS,
       rules are different).
+
+      Tested by:
+      spec/glsl-1.50/linker/interface-blocks-vs-fs-array-size-mismatch.shader_test
+      spec/glsl-1.50/linker/interface-blocks-vs-gs-array-size-mismatch.shader_test
     </task>
     <task name="IB12" specref="GLSL 1.50 4.3.7" piglit="no">
       For uniform blocks, the application uses the block name to
@@ -1299,19 +1345,27 @@
       are in a scope with their own name space, accessed with "." (like
       structures).
     </task>
-    <task name="IB14" specref="GLSL 1.50 4.3.7" piglit="no" mesa="done">
+    <task name="IB14" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       If an interface block has an instance-name, then members of the
       block are accessed from the OpenGL API by the *block-name*,
       followed by ".", followed by the name of the member.
+
+      Tested by
+      spec/glsl-1.50/execution/interface-blocks-api-access-members.c
     </task>
-    <task name="IB15" specref="GLSL 1.50 4.3.7" piglit="no">
+    <task name="IB15" specref="GLSL 1.50 4.3.7" piglit="done">
       If an interface block has no instance-name (the optional name that
       appears after the "}") the names inside the block are scoped at
       the global level for purposes of access from within the shader.
+
+      covered by other tests
     </task>
-    <task name="IB16" specref="GLSL 1.50 4.3.7" piglit="no" mesa="done">
+    <task name="IB16" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       If an interface block has no instance-name, then members of the
       block are accessed from the OpenGL API by their bare name.
+
+      Tested by
+      spec/glsl-1.50/execution/interface-blocks-api-access-members.c
     </task>
     <task name="IB17" specref="GLSL 1.50 4.3.7" mesa="done" piglit="done">
       In order for interface blocks to match, their contents must be in
@@ -1371,11 +1425,17 @@
     <task name="IB32" specref="GLSL 1.50 4.3.7" piglit="done" mesa="done">
       Uniform variables may only appear in uniform blocks.
     </task>
-    <task name="IB33" specref="GLSL 1.50 4.3.7">
+    <task name="IB33" specref="GLSL 1.50 4.3.7" piglit="done">
       Within interface blocks, initializers are not allowed.
+
+      Tested by
+      spec/glsl-1.50/compiler/interface-blocks-no-initializer-within-block.vert
     </task>
-    <task name="IB34" specref="GLSL 1.50 4.3.7">
+    <task name="IB34" specref="GLSL 1.50 4.3.7" piglit="done">
       Within interface blocks, sampler types are not allowed.
+
+      Tested by
+      spec/glsl-1.50/compiler/interface-blocks-no-sampler-type-within-block.vert
     </task>
     <task name="IB35" specref="GLSL 1.50 4.3.8" piglit="done">
       Layout qualifiers can appear as part of an interface block
@@ -1430,10 +1490,12 @@
     <task name="Layer1" specref="GL 3.2 2.12.4" piglit="N/A">
       Layered rendering requires the use of framebuffer objects.
     </task>
-    <task name="Layer2" specref="GL 3.2 2.12.4" piglit="no">
+    <task name="Layer2" specref="GL 3.2 2.12.4" piglit="done">
       Through layered rendering, geometry shaders may render primitives
       to arbitrary layers of a cube-map texture, 3D texture, or 1D or 2D
       texture array.
+
+      Tested by spec/gl-3.2/layered-rendering/gl-layer-render.c
     </task>
     <task name="Layer3" specref="GL 3.2 4.3.2" piglit="done">
       Blit operations: If both read and draw framebuffers are layered,
@@ -1458,12 +1520,15 @@
       rendering will be limited to the smallest number of layers of any
       attachment.
     </task>
-    <task name="Layer7" specref="GL 3.2 4.4.2" piglit="no">
+    <task name="Layer7" specref="GL 3.2 4.4.2" piglit="done">
       FRAMEBUFFER_ATTACHMENT_LAYERED is set to TRUE if
       FramebufferTexture is called and texture is the name of a
       three-dimensional, cube map, two-dimensional multisample array, or
       one- or two-dimensional array texture.  Otherwise it is set to
       FALSE.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layered-attachments.c
     </task>
     <task name="Layer8" specref="GL 3.2 4.4.2" piglit="done">
       FramebufferTexture() generates INVALID_OPERATION for buffer
@@ -1472,49 +1537,79 @@
       Tested by
       piglit/tests/spec/gl-3.2/layered-rendering/framebuffertexture-buffer-textures.c
     </task>
-    <task name="Layer9" specref="GL 3.2 4.4.2" piglit="no">
+    <task name="Layer9" specref="GL 3.2 4.4.2" piglit="done">
       FramebufferTexture() is added.
+
+      Tested by spec/gl-3.2/layered-rendering/framebuffertexture.c
     </task>
-    <task name="Layer10" specref="GL 3.2 4.4.2">
+    <task name="Layer10" specref="GL 3.2 4.4.2" piglit="done">
       If FramebufferTexture() is supplied a three-dimensional texture,
       cube map texture, one- or two-dimensional array texture, or
       two-dimensional multisample array texture, the entire texture
       level is attached as a layered framebuffer attachment.
+
+      Tested by spec/gl-3.2/layered-rendering/framebuffertexture.c
     </task>
-    <task name="Layer11" specref="GL 3.2 4.4.2">
+    <task name="Layer11" specref="GL 3.2 4.4.2" piglit="done">
       If a texture of zero is passed to any FramebufferTexture*
       function, additional parameters (level, textarget, and/or layer)
       are ignored, and state values are set to their default values.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffertexture-defaults.c
     </task>
-    <task name="Layer12" specref="GL 3.2 4.4.2">
+    <task name="Layer12" specref="GL 3.2 4.4.2" piglit="done">
       The set of framebuffer-attachable images is clarified.  I *think*
       the only thing that's new is the ability to attach an entire level
       of a three-dimensional texture, cube map texture, or one- or
       two-dimensional array texture, creating a layered attachment
       point.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layered-attachments.c
     </task>
-    <task name="Layer13" specref="GL 3.2 4.4.4">
+    <task name="Layer13" specref="GL 3.2 4.4.4" piglit="done">
       If any framebuffer attachment is layered, all popelated color
       attachments must be from textures of the same target
       (FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS).
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layer-complete.c
     </task>
-    <task name="Layer14" specref="GL 3.2 4.4.4">
+    <task name="Layer14" specref="GL 3.2 4.4.4" piglit="done">
       If any framebuffer attachment is layered, all popuated attachments
       must be layered (FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS).
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layer-complete.c
     </task>
-    <task name="Layer15" specref="GL 3.2 4.4.7">
+    <task name="Layer15" specref="GL 3.2 4.4.7" piglit="done">
       A framebuffer is layered if it is complete and all of its
       populated attachments are layered.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layered-attachments.c
     </task>
-    <task name="Layer16" specref="GL 3.2 4.4.7">
+    <task name="Layer16" specref="GL 3.2 4.4.7" piglit="done">
       A layer number written by a geometry shader has no effect if the
       framebuffer is not layered.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/gl-layer-not-layered.c
     </task>
-    <task name="Layer17" specref="GL 3.2 4.4.7">
+    <task name="Layer17" specref="GL 3.2 4.4.7" piglit="done">
       Clear() clears all layers.
+
+      Tested by:
+      spec/gl-3.2/layered-rendering/clear-color.c
+      spec/gl-3.2/layered-rendering/clear-depth.c
     </task>
-    <task name="Layer18" specref="GL 3.2 4.4.7">
+    <task name="Layer18" specref="GL 3.2 4.4.7" piglit="done">
       ClearBuffer() clears all layers.
+
+      Tested by:
+      spec/gl-3.2/layered-rendering/clear-color.c
+      spec/gl-3.2/layered-rendering/clear-depth.c
     </task>
     <task name="Layer19" specref="GL 3.2 4.4.7" piglit="done">
       Commands such as ReadPixels() always read from layer zero.
@@ -1526,14 +1621,18 @@
       If a layer number is out of range (negative or greater than the
       number of layers of any attachment), the effect is undefined.
     </task>
-    <task name="Layer21" specref="GL 3.2 4.4.7">
+    <task name="Layer21" specref="GL 3.2 4.4.7" piglit="done">
       If there is a geometry shader and it statically assigns to
       gl_Layer, then all fragments are assigned a layer based on this
       value.
+
+      Tested by spec/gl-3.2/layered-rendering/gl-layer-render.c
     </task>
-    <task name="Layer22" specref="GL 3.2 4.4.7">
+    <task name="Layer22" specref="GL 3.2 4.4.7" piglit="done">
       Table 4.12 establishes a mapping between layer number and cube map
       face.
+
+      Tested by spec/gl-3.2/layered-rendering/gl-layer-cube-map.c
     </task>
     <task name="Layer23" specref="GL 3.2 4.4.7">
       The layer number selects an image for use by stencil test, depth
@@ -1543,25 +1642,37 @@
       The vertex used to determine the layer is
       implementation-dependent.
     </task>
-    <task name="Layer25" specref="GL 3.2 4.4.7">
+    <task name="Layer25" specref="GL 3.2 4.4.7" piglit="done">
       When the current geometry shader does not statically assign a
       value to gl_Layer, all fragments are assigned a layer of zero.
+
+      Tested by spec/gl-3.2/layered-rendering/gl-layer.c
     </task>
-    <task name="Layer26" specref="GL 3.2 4.4.7">
+    <task name="Layer26" specref="GL 3.2 4.4.7" piglit="done">
       When there is no geometry shader, all fragments are assigned layer
       of zero.
+
+      Tested by spec/gl-3.2/layered-rendering/gl-layer.c
     </task>
-    <task name="Layer27" specref="GL 3.2 6.1.11">
+    <task name="Layer27" specref="GL 3.2 6.1.11" piglit="done">
       GetFramebufferAttachmentParameteriv() may now be passed
       FRAMEBUFFER_ATTACHMENT_LAYERED.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layered-attachments.c
     </task>
-    <task name="Layer28" specref="GL 3.2 6.2">
+    <task name="Layer28" specref="GL 3.2 6.2" piglit="done">
       In framebuffer (table 6.23), FRAMEBUFFER_ATTACHMENT_LAYERED is
       added.
+
+      Tested by
+      spec/gl-3.2/layered-rendering/framebuffer-layered-attachments.c
     </task>
-    <task name="Layer29" specref="GLSL 1.50 7.1">
+    <task name="Layer29" specref="GLSL 1.50 7.1" piglit="done">
       Geometry shaders also contain the special output variable "out int
       gl_Layer".
+
+      Tested by spec/gl-3.2/layered-rendering/gl-layer-render.c
     </task>
     <task name="Layer30" specref="GLSL 1.50 7.1">
       If a geometry shader statically assigns a value to gl_Layer in
@@ -1631,56 +1742,74 @@
     <task name="Sync1" specref="GL 3.2 2.4" mesa="done" piglit="done">
       The "GL Data Types" table is expanded to include "sync".
     </task>
-    <task name="Sync2" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync2" specref="GL 3.2 5.2" mesa="done" piglit="done">
       DeleteSync() deletes sync objects.
+
+      Tested by spec/arb_sync/DeleteSync.c
     </task>
     <task name="Sync3" specref="GL 3.2 5.2" mesa="done">
       DeleteSync() does not block on a sync object that is not yet
       SIGNALED.
     </task>
-    <task name="Sync4" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync4" specref="GL 3.2 5.2" mesa="done" piglit="done">
       DeleteSync() generates INVALID_VALUE if the supplied sync
       parameter is neither zero nor the name of a sync object.
+
+      Tested by spec/arb_sync/DeleteSync.c
     </task>
     <task name="Sync5" specref="GL 3.2 5.2">
       DeleteSync() may be called on a sync object that currently has
       ClientWaitSync() or WaitSync() commands blocking on it.
     </task>
-    <task name="Sync6" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync6" specref="GL 3.2 5.2" mesa="done" piglit="done">
       DeleteSync() siglently ignores sync values of zero.
+
+      Tested by spec/arb_sync/DeleteSync.c
     </task>
     <task name="Sync7" specref="GL 3.2 5.2" mesa="done" piglit="done">
       FenceSync() creates a new fence sync object, inserts a fence
       command in the GL command stream, and associates it with the sync
       object.
     </task>
-    <task name="Sync8" specref="GL 3.2 5.2">
+    <task name="Sync8" specref="GL 3.2 5.2" piglit="done">
       Sync objects are initially UNSIGNALED.
+
+      Tested by spec/arb_sync/sync-initialize.c
     </task>
-    <task name="Sync9" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync9" specref="GL 3.2 5.2" mesa="done" piglit="done">
       Sync objects have a SYNC_CONDITION property which is the condition
       passed to FenceSync().
+
+      Tested by spec/arb_sync/sync-initialize.c
     </task>
-    <task name="Sync10" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync10" specref="GL 3.2 5.2" mesa="done" piglit="done">
       Sync objects have a SYNC_FLAGS property which is the flags value
       passed to FenceSync().
+
+      Tested by spec/arb_sync/sync-initialize.c
     </task>
     <task name="Sync11" specref="GL 3.2 5.2">
       Sync objects have a SYNC_STATUS property with two possible states:
       SIGNALED and UNSIGNALED.
     </task>
-    <task name="Sync12" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync12" specref="GL 3.2 5.2" mesa="done" piglit="done">
       Sync objects have an OBJECT_TYPE property which is always
       SYNC_FENCE.
+
+      Tested by spec/arb_sync/sync-initialize.c
     </task>
-    <task name="Sync13" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync13" specref="GL 3.2 5.2" mesa="done" piglit="done">
       The only condition allowed by FenceSync is
       SYNC_GPU_COMMANDS_COMPLETE (otherwise an INVALID_ENUM error is
       generated).
+
+      Tested by spec/arb_sync/FenceSync.c
     </task>
-    <task name="Sync14" specref="GL 3.2 5.2" mesa="done">
+    <task name="Sync14" specref="GL 3.2 5.2" mesa="done" piglit="done">
       The only flags value allowed by FenceSync is 0 (otherwise an
       INVALID_VALUE error is generated).
+
+      Tested by spec/arb_sync/FenceSync.c
     </task>
     <task name="Sync15" specref="GL 3.2 5.2">
       When all proceeding commands from the same command stream have
@@ -1697,13 +1826,17 @@
       ClientWaitSync() blocks waiting until a sync object is signaled,
       or a timeout expires.
     </task>
-    <task name="Sync19" specref="GL 3.2 5.2.1">
+    <task name="Sync19" specref="GL 3.2 5.2.1" piglit="done">
       ClientWaitSync() generates INVALID_VALUE if flags contains any
       bits other than SYNC_FLUSH_COMMANDS_BIT.
+
+      Tested by spec/arb_sync/ClientWaitSync-errors.c
     </task>
-    <task name="Sync20" specref="GL 3.2 5.2.1">
+    <task name="Sync20" specref="GL 3.2 5.2.1" piglit="done">
       ClientWaitSync() generates INVALID_VALUE if sync is not the name
       of a sync object.
+
+      Tested by spec/arb_sync/ClientWaitSync-errors.c
     </task>
     <task name="Sync21" specref="GL 3.2 5.2.1">
       ClientWaitSync() returns ALREADY_SIGNALED if sync was already
@@ -1778,19 +1911,27 @@
       SYNC_FLUSH_COMMANDS_BIT will not help when waiting for a fence
       command issued in another context's command stream.
     </task>
-    <task name="Sync40" specref="GL 3.2 6.1.7" mesa="done">
+    <task name="Sync40" specref="GL 3.2 6.1.7" mesa="done" piglit="done">
       If GetSynciv() is passed an invalid pname, INVALID_ENUM is
       generated.
+
+      Tested by spec/arb_sync/GetSynciv-errors.c
     </task>
-    <task name="Sync41" specref="GL 3.2 6.1.7" mesa="done">
+    <task name="Sync41" specref="GL 3.2 6.1.7" mesa="done" piglit="done">
       If sync is not the name of a sync object GetSynciv() generates
       INVALID_VALUE.
+
+      Tested by spec/arb_sync/GetSynciv-errors.c
     </task>
-    <task name="Sync42" specref="GL 3.2 6.1.7">
+    <task name="Sync42" specref="GL 3.2 6.1.7" piglit="done">
       IsSync() returns true if sync is the name of a sync object.
+
+      Tested by spec/arb_sync/IsSync.c
     </task>
-    <task name="Sync43" specref="GL 3.2 6.1.7">
+    <task name="Sync43" specref="GL 3.2 6.1.7" piglit="done">
       Properties of a sync object may be queried with GetSynciv().
+
+      Tested by spec/arb_sync/sync-initialize.c
     </task>
     <task name="Sync44" specref="GL 3.2 6.1.7">
       Sync object names immediately become invalid after calling
