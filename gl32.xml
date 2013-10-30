@@ -1279,9 +1279,10 @@
       Built-in types can be used within an interface block.
     </task>
     <task name="IB10" specref="GLSL 1.50 4.3.7" piglit="no">
-      For blocks declared as arrays, the array index must be included
-      when accessing a member of a specific block, and must be omitted
-      when querying a characteristic such as the offset of the member
+      When accessing interface members through the API: For blocks
+      declared as arrays, the array index must be included when
+      accessing a member of a specific block, and must be omitted when
+      querying a characteristic such as the offset of the member
       within the block.
     </task>
     <task name="IB11" specref="GLSL 1.50 4.3.7" piglit="no">
