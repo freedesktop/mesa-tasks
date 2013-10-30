@@ -532,9 +532,13 @@
       components of all active varying variables may not exceed
       MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS.
     </task>
-    <task name="GS38" specref="GL 3.2 2.12.4" mesa="done">
+    <task name="GS38" specref="GL 3.2 2.12.4" mesa="done" piglit="done">
       Writing to gl_Position from either the vertex or geometry shader
       is optional.
+
+      Tested by:
+      tests/spec/glsl-1.50/execution/geometry-basic.shader_test
+      tests/spec/glsl-1.50/execution/geometry/primitive-types.c
     </task>
     <task name="GS39" specref="GL 3.2 2.12.4" piglit="done" mesa="done">
       gl_in[] receives values from built-in output variables written by
