@@ -131,7 +131,7 @@
       Functions VertexAttribP{1234}ui and VertexAttribP{1234}uiv are
       added.
     </task>
-    <task name="VertexAttribPType" specref="GL 3.3 2.7" piglit="no" mesa="done">
+    <task name="VertexAttribPType" specref="GL 3.3 2.7" piglit="done" mesa="done">
       When VertexAttribP{1234}ui and VertexAttribP{1234}uiv are used,
       the type parameter must be INT_2_10_10_10_REV or
       UNSIGNED_INT_2_10_10_10_REV.
@@ -143,11 +143,11 @@
       During normalization, the conversion rules specified in
       equations 2.1 and 2.2 are followed.
     </task>
-    <task name="VertexAttribPointerType" specref="GL 3.3 2.8" piglit="no" mesa="done">
+    <task name="VertexAttribPointerType" specref="GL 3.3 2.8" piglit="done" mesa="done">
       The types INT_2_10_10_10_REV and UNSIGNED_INT_2_10_10_10_REV may
       be passed as the type parameter to VertexAttribPointer.
     </task>
-    <task name="VertexAttribPointerSize" specref="GL 3.3 2.8" piglit="no" mesa="done">
+    <task name="VertexAttribPointerSize" specref="GL 3.3 2.8" piglit="done" mesa="done">
       If INT_2_10_10_10_REV or UNSIGNED_INT_2_10_10_10_REV is passed
       to VertexAttribPointer, the size must be either 4 or BGRA.
     </task>
