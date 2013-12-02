@@ -162,7 +162,7 @@
       advance per instance depending on the value of the specified
       divisor.
     </task>
-    <task name="VertexAttribDivisorMaxIndex" specref="GL 3.3 2.8" piglit="no" mesa="done">
+    <task name="VertexAttribDivisorMaxIndex" specref="GL 3.3 2.8" piglit="done" mesa="done">
       VertextAttribDivisor generates INVALID_VALUE if index is greater
       than or equal to MAX_VERTEX_ATTRIBS.
     </task>
