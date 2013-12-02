@@ -1878,15 +1878,15 @@
       Timeout may be larger than requested due to
       implementation-dependent timeout accuracy restrictions.
     </task>
-    <task name="Sync31" specref="GL 3.2 5.2.1">
+    <task name="Sync31" specref="GL 3.2 5.2.1" piglit="done">
       WaitSync() generates INVALID_VALUE if sync is not the name of a
       sync object.
     </task>
-    <task name="Sync32" specref="GL 3.2 5.2.1">
+    <task name="Sync32" specref="GL 3.2 5.2.1" piglit="done">
       WaitSync() may only be passed a flags value of 0 (INVALID_VALUE is
       generated otherwise).
     </task>
-    <task name="Sync33" specref="GL 3.2 5.2.1">
+    <task name="Sync33" specref="GL 3.2 5.2.1" piglit="done">
       WaitSync() may only be passed a timeout value of TIMEOUT_IGNORED
       (INVALID_VALUE is generated otherwise).
     </task>
