@@ -19,7 +19,7 @@
       RGB_INTEGER, RGBA_INTEGER, and BGRA_I pixel formats are added to
       table 3.5.
     </task>
-    <task name="TextureBaseLevelError" specref="GL 3.3 3.8.8" piglit="no" mesa="done">
+    <task name="TextureBaseLevelError" specref="GL 3.3 3.8.8" piglit="done" mesa="done">
       The error for setting TEXTURE_BASE_LEVEL to a value other than
       zero is changed from INVALID_ENUM to INVALID_VALUE.
 
