@@ -29,6 +29,11 @@
     <task name="ARBvp" mesa="no">
       Add support for ARB vertex programs.
     </task>
+    <task name="fs-indirect" mesa="no">
+      Add support for indirect local variable accesses to the i965 FS
+      back-end.  We already do this in vec4 by using our spill
+      scratch-space.  We could do the same for the FS back-end.
+    </task>
   </category>
   <category name="Optimization and Analysis Passes">
     <task name="GCM" mesa="no">
@@ -45,6 +50,17 @@
     </task>
     <task name="range" mesa="no">
       Implement a control-flow and range analysis pass.
+    </task>
+    <task name="indirect" mesa="no">
+      Port the indirect local variable lowering pass to NIR.  We have a
+      pass right now that lowers indirect local variable accesses to
+      binary-search if-ladders.  It would be nice to be able to do that in
+      NIR so that NIR's superior alias analysis can be put to good use.
+    </task>
+  </category>
+  <category name="Wishlist">
+    <task name="i965-FS-SSA" mesa="no">
+      Convert the i965 FS backend to use SSA
     </task>
   </category>
 </tasks>
