@@ -34,6 +34,10 @@
       back-end.  We already do this in vec4 by using our spill
       scratch-space.  We could do the same for the FS back-end.
     </task>
+    <task name="PushConstants" mesa="no">
+      Add an analysis pass to sort uniforms by "cost" and add proper push
+      constant support in the i965 NIR backend.
+    </task>
   </category>
   <category name="Optimization and Analysis Passes">
     <task name="GCM" mesa="no">
