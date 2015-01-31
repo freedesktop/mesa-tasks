@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="tasks.xsl"?>
+<tasks name="NIR Optimization and Implementation Checklist">
+  <category name="General">
+    <task name="MemoryCleanup" mesa="no">
+      Clean up the way we use ralloc contexts so that we can more easiliy
+      clean up memory as we optimize.  This may involve changing the way we
+      allocate things or it may mean that we just write a mark-and-sweep
+      memory clean-up pass.
+    </task>
+  </category>
+  <category name="Back-end/Front-end Support">
+    <task name="ScalarVS" mesa="no">
+      Add support for scalar vertex shaders.
+    </task>
+    <task name="ScalarGS" mesa="no">
+      Add support for scalar geometry shaders.
+    </task>
+    <task name="Gen5" mesa="no">
+      Add support for Gen 4/5 hardware.  This is mostly a matter of adding
+      the code to properly resolve booleans.
+    </task>
+    <task name="vec4" mesa="no">
+      Add a vec4 backend for i965.
+    </task>
+    <task name="ARBfp" mesa="no">
+      Add support for ARB fragment programs.
+    </task>
+    <task name="ARBvp" mesa="no">
+      Add support for ARB vertex programs.
+    </task>
+  </category>
+  <category name="Optimization and Analysis Passes">
+    <task name="GCM" mesa="no">
+      Implement a Global Code Motion pass.
+    </task>
+    <task name="GVN" mesa="no">
+      Implement a Global Value Numbering pass.
+    </task>
+    <task name="uniform" mesa="no">
+      Implement a uniform analysis pass.
+    </task>
+    <task name="DCF" mesa="no">
+      Implement a dead/constant control-flow pass.
+    </task>
+    <task name="range" mesa="no">
+      Implement a control-flow and range analysis pass.
+    </task>
+  </category>
+</tasks>
