@@ -61,7 +61,7 @@
       binary-search if-ladders.  It would be nice to be able to do that in
       NIR so that NIR's superior alias analysis can be put to good use.
     </task>
-    <task name="phiCSE" mesa="yes">
+    <task name="phiCSE" mesa="done">
       Add phi nodes to the CSE pass.
     </task>
     <task name="RemovePhi" mesa="no">
