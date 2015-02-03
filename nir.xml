@@ -61,6 +61,16 @@
       binary-search if-ladders.  It would be nice to be able to do that in
       NIR so that NIR's superior alias analysis can be put to good use.
     </task>
+    <task name="phiCSE" mesa="no">
+      Add phi nodes to the CSE pass.
+    </task>
+    <task name="RemovePhi" mesa="no">
+      Implement a pass that removes pointless phi nodes.  After copy
+      propagation and other optimization passes happen, it's easy to end up
+      with phi nodes with all sources the same.  In this case, we can just
+      remove the phi node entirely and replace every use of its definition
+      with the common source.
+    </task>
   </category>
   <category name="Wishlist">
     <task name="i965-FS-SSA" mesa="no">
