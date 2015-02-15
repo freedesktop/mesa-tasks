@@ -8,6 +8,11 @@
       allocate things or it may mean that we just write a mark-and-sweep
       memory clean-up pass.
     </task>
+    <task name="64-bit" mesa="no">
+      Figure out how to represent/validate non-32-bit instructions.  This
+      will be needed for ARB_gpu_shader_fp64 as well as fp16 and the
+      variably sized integer extensions.
+    </task>
   </category>
   <category name="Back-end/Front-end Support">
     <task name="ScalarVS" mesa="no">
