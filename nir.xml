@@ -45,7 +45,7 @@
     </task>
   </category>
   <category name="Optimization and Analysis Passes">
-    <task name="GCM" mesa="yes">
+    <task name="GCM" mesa="done">
       Implement a Global Code Motion pass.
     </task>
     <task name="GVN" mesa="no">
