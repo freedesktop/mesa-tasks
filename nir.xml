@@ -15,7 +15,7 @@
     </task>
   </category>
   <category name="Back-end/Front-end Support">
-    <task name="ScalarVS" mesa="no">
+    <task name="ScalarVS" mesa="done">
       Add support for scalar vertex shaders.
     </task>
     <task name="ScalarGS" mesa="no">
