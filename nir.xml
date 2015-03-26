@@ -21,7 +21,7 @@
     <task name="ScalarGS" mesa="no">
       Add support for scalar geometry shaders.
     </task>
-    <task name="Gen5" mesa="no">
+    <task name="Gen5" mesa="done">
       Add support for Gen 4/5 hardware.  This is mostly a matter of adding
       the code to properly resolve booleans.
     </task>
