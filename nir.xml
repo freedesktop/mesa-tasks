@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="tasks.xsl"?>
 <tasks name="NIR Optimization and Implementation Checklist">
   <category name="General">
-    <task name="MemoryCleanup" mesa="no">
+    <task name="MemoryCleanup" mesa="done">
       Clean up the way we use ralloc contexts so that we can more easiliy
       clean up memory as we optimize.  This may involve changing the way we
       allocate things or it may mean that we just write a mark-and-sweep
@@ -28,10 +28,10 @@
     <task name="vec4" mesa="no">
       Add a vec4 backend for i965.
     </task>
-    <task name="ARBfp" mesa="no">
+    <task name="ARBfp" mesa="done">
       Add support for ARB fragment programs.
     </task>
-    <task name="ARBvp" mesa="no">
+    <task name="ARBvp" mesa="done">
       Add support for ARB vertex programs.
     </task>
     <task name="fs-indirect" mesa="no">
