@@ -11,7 +11,7 @@
     <task name="Copying" mesa="done">
       Add functions for copying a NIR instruction, function, or shader.
     </task>
-    <task name="64-bit" mesa="no">
+    <task name="64-bit" mesa="done">
       Figure out how to represent/validate non-32-bit instructions.  This
       will be needed for ARB_gpu_shader_fp64 as well as fp16 and the
       variably sized integer extensions.
@@ -21,14 +21,14 @@
     <task name="ScalarVS" mesa="done">
       Add support for scalar vertex shaders.
     </task>
-    <task name="ScalarGS" mesa="yes">
+    <task name="ScalarGS" mesa="done">
       Add support for scalar geometry shaders.
     </task>
     <task name="Gen5" mesa="done">
       Add support for Gen 4/5 hardware.  This is mostly a matter of adding
       the code to properly resolve booleans.
     </task>
-    <task name="vec4" mesa="yes">
+    <task name="vec4" mesa="done">
       Add a vec4 backend for i965.
     </task>
     <task name="ARBfp" mesa="done">
