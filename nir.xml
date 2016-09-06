@@ -8,7 +8,7 @@
       allocate things or it may mean that we just write a mark-and-sweep
       memory clean-up pass.
     </task>
-    <task name="Copying" mesa="no">
+    <task name="Copying" mesa="done">
       Add functions for copying a NIR instruction, function, or shader.
     </task>
     <task name="64-bit" mesa="no">
@@ -21,14 +21,14 @@
     <task name="ScalarVS" mesa="done">
       Add support for scalar vertex shaders.
     </task>
-    <task name="ScalarGS" mesa="no">
+    <task name="ScalarGS" mesa="yes">
       Add support for scalar geometry shaders.
     </task>
     <task name="Gen5" mesa="done">
       Add support for Gen 4/5 hardware.  This is mostly a matter of adding
       the code to properly resolve booleans.
     </task>
-    <task name="vec4" mesa="no">
+    <task name="vec4" mesa="yes">
       Add a vec4 backend for i965.
     </task>
     <task name="ARBfp" mesa="done">
@@ -51,19 +51,19 @@
     <task name="GCM" mesa="done">
       Implement a Global Code Motion pass.
     </task>
-    <task name="GVN" mesa="no">
+    <task name="GVN" mesa="done">
       Implement a Global Value Numbering pass.
     </task>
     <task name="uniform" mesa="no">
       Implement a uniform analysis pass.
     </task>
-    <task name="DCF" mesa="no">
+    <task name="DCF" mesa="done">
       Implement a dead/constant control-flow pass.
     </task>
     <task name="range" mesa="no">
       Implement a control-flow and range analysis pass.
     </task>
-    <task name="indirect" mesa="no">
+    <task name="indirect" mesa="done">
       Port the indirect local variable lowering pass to NIR.  We have a
       pass right now that lowers indirect local variable accesses to
       binary-search if-ladders.  It would be nice to be able to do that in
